@@ -21,6 +21,12 @@ const widthSet = [320, 390, 768, 1280];
       if (response.status() !== 200) throw Error(`Bad route ${route}`);
       const info = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > innerWidth,
+        offScreen: [...document.querySelectorAll("body *")].flatMap((el) => {
+          const box = el.getBoundingClientRect();
+          return box.right > innerWidth + 1 && box.width
+            ? [{ tag: el.tagName, className: el.getAttribute("class"), right: Math.round(box.right) }]
+            : [];
+        }).slice(0, 8),
         headings: document.querySelectorAll("main h1").length,
         missing: [...document.images].filter((i) => i.complete && !i.naturalWidth).length,
         filters: [...document.images].filter((i) => getComputedStyle(i).filter !== "none").length,

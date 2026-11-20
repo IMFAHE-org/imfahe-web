@@ -37,7 +37,7 @@ h1 { font-size: var(--title-xl); font-weight: 800; max-width: 30ch; }
 h2 { font-size: var(--title-lg); font-weight: 700; max-width: 34ch; }
 h3, h4 { font-size: var(--title-md); font-weight: 700; }
 p, ul, ol, dl, blockquote { margin: 0; max-width: var(--measure); }
-p, li, blockquote { overflow-wrap: anywhere; }
+p, li, blockquote, h1, h2, h3, h4, a { overflow-wrap: anywhere; }
 p + p { margin-block-start: .875em; }
 ul, ol { padding-inline-start: 1.35em; }
 li + li { margin-block-start: .35em; }
@@ -55,7 +55,7 @@ address { font-style: normal; }
 .wrap { width: min(calc(100% - 2 * var(--gutter)), var(--container)); margin-inline: auto; }
 .section { padding-block: var(--section); }
 .section--tint { background: var(--tint); }
-.stack { display: grid; justify-items: start; gap: 1rem; min-width: 0; }
+.stack { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start; gap: 1rem; min-width: 0; }
 .stack > * { min-width: 0; }
 .stack > h2:not(:first-child) { margin-block-start: 1rem; }
 .stack > h3:not(:first-child) { margin-block-start: .5rem; }
@@ -107,6 +107,7 @@ summary::-webkit-details-marker { display: none; }
 .hero .media img { width: 100%; }
 .hero .lead { max-width: 56ch; }
 .grid { width: 100%; display: grid; grid-template-columns: repeat(var(--columns,2), minmax(0,1fr)); gap: var(--gap); align-items: start; }
+.grid > *, .hero > *, .footer-inner > * { min-width: 0; }
 .grid--2 { --columns: 2; }
 .grid--3 { --columns: 3; }
 .grid--4 { --columns: 4; }
@@ -139,7 +140,7 @@ summary::-webkit-details-marker { display: none; }
 .video figure { position: relative; }
 .video-trigger { border: 0; background: transparent; padding: 0; color: var(--brand); cursor: pointer; text-align: left; width: 100%; }
 .video-trigger img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-.video-trigger .play-label { display: flex; gap: .55rem; align-items: center; font-weight: 700; min-height: 2.75rem; }
+.video-trigger .play-label { overflow-wrap: anywhere; display: flex; gap: .55rem; align-items: center; font-weight: 700; min-height: 2.75rem; }
 .player { width: 100%; aspect-ratio: 16 / 9; border: 0; background: var(--tint); display: block; }
 .socials { display: flex; flex-wrap: wrap; gap: 0 .75rem; }
 .socials a { display: inline-flex; gap: .4rem; align-items: center; min-height: 2.75rem; font-size: var(--small); }
