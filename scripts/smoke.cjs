@@ -43,6 +43,9 @@ const widthSet = [320, 390, 768, 1280];
   const mobile = page.locator(".mobile-nav");
   await mobile.locator(":scope > summary").click();
   await mobile.getByText("Internationalization", { exact: true }).click();
+  if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) {
+    throw Error("Expanded mobile menu causes horizontal overflow");
+  }
   await mobile.getByRole("link", { name: "IMFAHE Connects" }).click();
   if (!page.url().endsWith("/imfahe-connects-program/")) throw Error("Mobile menu did not navigate");
   await page.goto(host);
