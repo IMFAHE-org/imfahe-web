@@ -19,6 +19,7 @@ const widthSet = [320, 390, 768, 1280];
     for (const route of routes) {
       const response = await page.goto(host + route, { waitUntil: "load" });
       if (response.status() !== 200) throw Error(`Bad route ${route}`);
+      await page.evaluate(() => document.fonts.ready);
       const info = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > innerWidth,
         offScreen: [...document.querySelectorAll("body *")].flatMap((el) => {
@@ -33,6 +34,31 @@ const widthSet = [320, 390, 768, 1280];
         initialBytes: performance.getEntriesByType("resource").reduce((sum, r) => sum + r.encodedBodySize, 0),
       }));
       if (info.overflow || info.headings !== 1 || info.missing || info.filters) {
+        if (info.overflow) {
+          const diagnostic = await page.evaluate(() => {
+            const html = document.documentElement;
+            const viewport = html.clientWidth;
+            const candidates = [...document.querySelectorAll("body *")].flatMap((element) => {
+              const bounds = element.getBoundingClientRect();
+              if (!bounds.width) return [];
+              if (bounds.right > viewport || element.scrollWidth > element.clientWidth + 1 && element.scrollWidth > viewport - bounds.left) {
+                return [{tag: element.tagName, css: element.className, x: bounds.x, right: bounds.right,
+                  scroll: element.scrollWidth, client: element.clientWidth, text: element.textContent.trim().slice(0, 40)}];
+              }
+              return [];
+            }).slice(0, 20);
+            const containers = [...document.querySelectorAll("body > *, main > *")];
+            const without = containers.map((element) => {
+              const style = element.style.display;
+              element.style.display = "none";
+              const width = html.scrollWidth;
+              element.style.display = style;
+              return {tag: element.tagName, css: element.className, id: element.id, width};
+            });
+            return {innerWidth, viewport, scrollWidth: html.scrollWidth, candidates, without};
+          });
+          console.error(JSON.stringify(diagnostic, null, 2));
+        }
         throw Error(`${route || "/"} at ${width}: ${JSON.stringify(info)}`);
       }
       if (!route) stats.push({ width, ...info });
