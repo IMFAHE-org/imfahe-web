@@ -36,4 +36,5 @@ jobs:
           path: |
             ${{ runner.temp }}/imfahe-desktop.png
             ${{ runner.temp }}/imfahe-mobile.png
+            ${{ runner.temp }}/imfahe-programs-intro.png
           retention-days: 7

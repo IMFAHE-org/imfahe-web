@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render editable HTML fragments with the shared IMFAHE page template."""
 import argparse
+from hashlib import sha256
 from html import escape
 import json
 from pathlib import Path
@@ -14,6 +15,7 @@ CONTENT = ROOT / "content"
 TEMPLATE = Template((ROOT / "templates/page.html").read_text())
 PAGES = json.loads((CONTENT / "pages.json").read_text())
 MENU = json.loads((CONTENT / "navigation.json").read_text())
+CSS_VERSION = sha256((SITE / "assets/site.css").read_bytes()).hexdigest()[:10]
 
 
 def icon(name):
@@ -95,6 +97,7 @@ def render(page, origin):
         title=escape(page["title"]),
         description=escape(page["description"], quote=True),
         base=base,
+        css_version=CSS_VERSION,
         canonical=canonical,
         header=header(route),
         content=(CONTENT / f'{page["slug"]}.html').read_text().rstrip(),
