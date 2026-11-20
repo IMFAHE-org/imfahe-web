@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "home",
+    "route": "",
+    "title": "Home - imfahe.org",
+    "description": "IMFAHE is a nonprofit that pairs students and professors from partner universities with international mentors in science, engineering and entrepreneurship."
+  },
+  {
+    "slug": "contact",
+    "route": "contact/",
+    "title": "Contact - imfahe.org",
+    "description": "Contact IMFAHE to bring international mentoring to your university, join our talent platform as a student or professor, or become a mentor."
+  },
+  {
+    "slug": "economical-disclosure",
+    "route": "economical-disclosure/",
+    "title": "Financial Disclosure - imfahe.org",
+    "description": "IMFAHE Foundation is a tax-exempt nonprofit. Find our Form 990 and Form PC filings with the Massachusetts Attorney General and learn how to donate."
+  },
+  {
+    "slug": "global-mini-symposiums",
+    "route": "global-mini-symposiums/",
+    "title": "Global Mini-Symposiums - imfahe.org",
+    "description": "Free IMFAHE Global Mini-Symposiums where world-renowned experts discuss a hot topic each year, from science communication to open science."
+  },
+  {
+    "slug": "imfahe-connects-program",
+    "route": "imfahe-connects-program/",
+    "title": "IMFAHE Connects - imfahe.org",
+    "description": "IMFAHE Connects is the online community where students, researchers, mentors and professionals worldwide share opportunities and collaborate."
+  },
+  {
+    "slug": "imfahe-international-conferences-program",
+    "route": "imfahe-international-conferences-program/",
+    "title": "International Conferences - imfahe.org",
+    "description": "Join IMFAHE's free online International Innovation Camp: present your research, share ideas and connect with experts from around the world."
+  },
+  {
+    "slug": "imfahe-international-fellowships-program",
+    "route": "imfahe-international-fellowships-program/",
+    "title": "International Fellowships - imfahe.org",
+    "description": "IMFAHE International Excellence Fellowships offer funded internships and research stays at leading universities and organizations worldwide."
+  },
+  {
+    "slug": "imfahe-international-mentor-program",
+    "route": "imfahe-international-mentor-program/",
+    "title": "International Mentor Program - imfahe.org",
+    "description": "Get one-on-one international mentorship from experts at Harvard, MIT, Stanford, Google and more through IMFAHE's International Mentor Program."
+  },
+  {
+    "slug": "imfahe-international-quarter-courses",
+    "route": "imfahe-international-quarter-courses/",
+    "title": "International Quarter Courses - imfahe.org",
+    "description": "30-hour online Quarter Courses from the IMFAHE Global Academy: build professional, innovation and leadership skills with international experts."
+  },
+  {
+    "slug": "imfahe-professors-international-professional-development-program",
+    "route": "imfahe-professors-international-professional-development-program/",
+    "title": "Professors iPDP - imfahe.org",
+    "description": "iPDP is an online professional development program that helps professors and researchers at IMFAHE partner universities build careers of excellence."
+  },
+  {
+    "slug": "imfahe-shark-tank-program",
+    "route": "imfahe-shark-tank-program/",
+    "title": "Shark Tank - imfahe.org",
+    "description": "The IMFAHE Global Entrepreneurship Competition helps international teams turn innovative ideas into startups, guided by experienced mentors."
+  },
+  {
+    "slug": "imfahe-venture-building-program",
+    "route": "imfahe-venture-building-program/",
+    "title": "Venture Building Program - imfahe.org",
+    "description": "IMFAHE's Venture Building Program helps Shark Tank winners turn ideas into investor-ready business models, and runs innovation workshops for universities."
+  },
+  {
+    "slug": "who-is-imfahe",
+    "route": "who-is-imfahe/",
+    "title": "Who We Are - imfahe.org",
+    "description": "IMFAHE bridges academia and the global professional world through Ivy League-inspired education, international mentoring and a global talent platform."
+  }
+]

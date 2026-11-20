@@ -1,0 +1,39 @@
+name: Check responsive site
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Check generated HTML
+        run: |
+          python3 scripts/build.py --origin https://imfahe.github.io/imfahe-web/
+          git diff --exit-code -- docs
+      - name: Install Chromium for verification
+        run: |
+          npm install --prefix "$RUNNER_TEMP/imfahe-check" --no-save playwright@1.65.1
+          "$RUNNER_TEMP/imfahe-check/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check layout, navigation and on-demand video
+        run: |
+          python3 -m http.server 8823 --bind 127.0.0.1 --directory docs >"$RUNNER_TEMP/server.log" 2>&1 &
+          trap 'kill $!' EXIT
+          curl --silent --fail --retry 5 --retry-connrefused http://127.0.0.1:8823/ -o /dev/null
+          NODE_PATH="$RUNNER_TEMP/imfahe-check/node_modules" node scripts/smoke.cjs
+      - name: Save previews
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: imfahe-previews
+          path: |
+            ${{ runner.temp }}/imfahe-desktop.png
+            ${{ runner.temp }}/imfahe-mobile.png
+          retention-days: 7

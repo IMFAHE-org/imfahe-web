@@ -1,0 +1,84 @@
+{
+  "pages": [
+    {
+      "label": "Who We Are",
+      "path": "who-is-imfahe/"
+    },
+    {
+      "label": "Internationalization",
+      "path": "imfahe-connects-program/",
+      "children": [
+        {
+          "label": "IMFAHE Connects",
+          "path": "imfahe-connects-program/"
+        },
+        {
+          "label": "International Mentor Program",
+          "path": "imfahe-international-mentor-program/"
+        },
+        {
+          "label": "International Fellowships",
+          "path": "imfahe-international-fellowships-program/"
+        },
+        {
+          "label": "International Conferences",
+          "path": "imfahe-international-conferences-program/"
+        }
+      ]
+    },
+    {
+      "label": "Innovation",
+      "path": "imfahe-shark-tank-program/",
+      "children": [
+        {
+          "label": "Global Entrepreneurship Competition",
+          "path": "imfahe-shark-tank-program/"
+        },
+        {
+          "label": "Venture Building & Entrepreneurship",
+          "path": "imfahe-venture-building-program/"
+        }
+      ]
+    },
+    {
+      "label": "Global Education",
+      "path": "imfahe-professors-international-professional-development-program/",
+      "children": [
+        {
+          "label": "Professors iPDP",
+          "path": "imfahe-professors-international-professional-development-program/"
+        },
+        {
+          "label": "IMFAHE Global Academy",
+          "path": "imfahe-international-quarter-courses/"
+        },
+        {
+          "label": "Workshops, Symposiums & In-Person Summer Courses",
+          "path": "global-mini-symposiums/"
+        }
+      ]
+    },
+    {
+      "label": "Contact",
+      "path": "contact/"
+    }
+  ],
+  "socials": [
+    {
+      "label": "X",
+      "url": "https://x.com/imfahe"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/company/imfahe-mentors/"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/channel/UCBzfOsoPCNXwFB5FQ9oNKPA/featured"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/imfahe_org"
+    }
+  ]
+}
