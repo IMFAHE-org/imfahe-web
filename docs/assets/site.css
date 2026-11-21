@@ -333,7 +333,7 @@ address { font-style: normal; }
 
 /* How to join: the shared closing call for pages that have none of their own */
 .join { background: var(--rose); padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem); }
-.join-inner { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); }
+.join-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 1.5rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 /* The three ways share their rows, so icons, titles, texts and links line up even when one title wraps. */
 .join-list { list-style: none; padding: 0; margin: 0; max-width: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .375rem clamp(1.5rem, 4vw, 3.5rem); }
 .join-list li { margin: 0; display: grid; grid-template-rows: subgrid; grid-row: span 4; justify-items: start; }
@@ -342,27 +342,27 @@ address { font-style: normal; }
 .join-list p { color: var(--text); font-size: .9375rem; }
 
 /* Footer: site map, then one thin legal line. Compact: small type, links close together. */
-.site-footer { border-top: 1px solid var(--line); background: var(--tint); padding-block: clamp(2rem, 1.5rem + 2vw, 3rem) .75rem; color: var(--muted); font-size: .8125rem; line-height: 1.45; }
-.site-footer h3 { font-size: .8125rem; letter-spacing: 0; line-height: 1.45; }
-.footer-main { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 2rem clamp(2.5rem, 7vw, 6rem); padding-block-end: clamp(1.25rem, 1rem + 1.5vw, 2rem); }
-.footer-brand { display: grid; gap: .75rem; justify-items: start; align-content: start; }
+.site-footer { border-top: 1px solid var(--line); background: var(--tint); padding-block: clamp(1.5rem, 1.25rem + 1.5vw, 2.25rem) .375rem; color: var(--muted); font-size: .78125rem; line-height: 1.4; }
+.site-footer h3 { font-size: .78125rem; letter-spacing: 0; line-height: 1.4; }
+.footer-main { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 1.5rem clamp(2.5rem, 7vw, 6rem); padding-block-end: clamp(1rem, .75rem + 1vw, 1.5rem); }
+.footer-brand { display: grid; gap: .5rem; justify-items: start; align-content: start; }
 .footer-brand .logo { min-height: 0; }
-.footer-brand .logo img { height: 2.5rem; }
+.footer-brand .logo img { height: 2.25rem; }
 /* Columns take the width of their text and spread to both edges, so the last one ends where the legal line ends. */
 .footer-nav { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; gap: 1.5rem 2rem; }
-.footer-nav div { display: grid; gap: .375rem; align-content: start; max-width: 14.5rem; }
+.footer-nav div { display: grid; gap: .125rem; align-content: start; max-width: 14.5rem; }
 .footer-nav ul { list-style: none; padding: 0; margin: 0; max-width: none; }
 .footer-nav li { margin: 0; }
-.footer-nav a { display: block; padding-block: .3125rem; color: var(--text); text-decoration: none; }
+.footer-nav a { display: block; padding-block: .1875rem; color: var(--text); text-decoration: none; } /* rows stay 24px tall, the minimum comfortable click target */
 .footer-nav a:hover, .footer-nav a[aria-current="page"] { color: var(--brand-strong); }
 .site-footer .socials { margin-inline-start: -.125rem; }
-.site-footer .socials a { width: 2.25rem; height: 2.25rem; color: var(--ink); background: var(--white); border: 1px solid var(--line); }
+.site-footer .socials a { width: 2rem; height: 2rem; color: var(--ink); background: var(--white); border: 1px solid var(--line); }
 .site-footer .socials a:hover { color: var(--white); background: var(--brand); border-color: var(--brand); }
 .site-footer .socials .icon { width: 1rem; height: 1rem; }
-.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 2rem; padding-block-start: .5rem; border-top: 1px solid var(--line-strong); font-size: .75rem; }
+.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 2rem; padding-block-start: .125rem; border-top: 1px solid var(--line-strong); font-size: .71875rem; }
 .footer-legal p { max-width: none; }
 .footer-legal p a { color: inherit; }
-.footer-legal .link-button { min-height: 2.25rem; color: var(--muted); font-size: inherit; font-weight: 400; text-decoration: underline; text-underline-offset: .2em; }
+.footer-legal .link-button { min-height: 2rem; color: var(--muted); font-size: inherit; font-weight: 400; text-decoration: underline; text-underline-offset: .2em; }
 
 /* Cookie question: a small card in the corner, never over the whole page */
 .consent { position: fixed; inset: auto 1rem 1rem auto; z-index: 6; width: min(26rem, calc(100% - 2rem)); display: grid; gap: .875rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); font-size: .9375rem; }
@@ -431,7 +431,7 @@ address { font-style: normal; }
 }
 
 @media (max-width: 64rem) {
-  .footer-main { grid-template-columns: minmax(0, 1fr); }
+  .join-inner, .footer-main { grid-template-columns: minmax(0, 1fr); }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .pillar { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: auto; align-items: start; }
   .benefits--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
