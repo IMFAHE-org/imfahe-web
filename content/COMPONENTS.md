@@ -70,6 +70,23 @@ Rules that apply everywhere:
 </div>
 ```
 
+## Tabs (one block shown at a time)
+
+```html
+<div class="tabs">
+<div class="tab-list" role="radiogroup" aria-labelledby="id-of-the-section-heading">
+<input type="radio" name="group" id="tab-1" checked><label for="tab-1">@icon:globe@ First</label>
+<input type="radio" name="group" id="tab-2"><label for="tab-2">@icon:lightbulb@ Second</label>
+</div>
+<div class="tab-panels">
+<article class="tab-panel"><figure class="media"><img ...></figure><h3>Title</h3><div class="prose"><p>Text.</p></div><ul class="pillar-links">...</ul></article>
+<article class="tab-panel">...</article>
+</div>
+</div>
+```
+
+Blocks must be in the same order as their tabs, with the same four parts (picture, title, text, links), so they line up. Up to four tabs.
+
 ## Small cards (a title and a short list or line)
 
 ```html

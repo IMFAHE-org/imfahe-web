@@ -256,6 +256,35 @@ address { font-style: normal; }
 .pillar-links a:hover { color: var(--brand-strong); }
 .pillar-links .icon { color: var(--muted); width: 1.125em; height: 1.125em; transition: transform .25s var(--ease); }
 .pillar-links a:hover .icon { transform: translateX(.25rem); color: var(--brand); }
+/* Tabs: one block shown at a time. Every block uses the same cells, so the picture, title, text and
+   links sit in exactly the same place whichever tab is open. Without :has() support all blocks show, stacked. */
+.tabs { width: 100%; display: grid; gap: var(--gap); }
+.tab-list { display: none; }
+.tab-panel { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; margin-block-end: var(--gap); }
+.tab-panel > .media { grid-row: 1 / span 3; }
+.tab-panel > :not(.media) { grid-column: 2; }
+.tab-panel .media img { aspect-ratio: 4 / 3; object-fit: cover; }
+.tab-panel .pillar-links { margin: 0; }
+@supports selector(:has(*)) {
+  .tab-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tab-list input { position: absolute; opacity: 0; pointer-events: none; }
+  .tab-list label { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.875rem; padding: .5rem 1.15rem; border: 1px solid var(--line-strong); border-radius: 62rem; background: var(--white); color: var(--ink); font-size: .9375rem; font-weight: 700; line-height: 1.25; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+  .tab-list label:hover { border-color: var(--ink); }
+  .tab-list label .icon { width: 1.125rem; height: 1.125rem; }
+  .tab-list input:checked + label { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .tab-list input:focus-visible + label { outline: .1875rem solid var(--brand); outline-offset: .1875rem; }
+  .tab-panels { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); grid-template-rows: auto auto 1fr; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+  .tab-panel { display: contents; }
+  .tab-panel > .media { grid-column: 1; grid-row: 1 / span 3; }
+  .tab-panel > h3 { grid-row: 1; }
+  .tab-panel > .prose { grid-row: 2; }
+  .tab-panel > .pillar-links { grid-row: 3; }
+  .tab-panel > * { visibility: hidden; }
+  .tabs:has(input:nth-of-type(1):checked) .tab-panel:nth-child(1) > *,
+  .tabs:has(input:nth-of-type(2):checked) .tab-panel:nth-child(2) > *,
+  .tabs:has(input:nth-of-type(3):checked) .tab-panel:nth-child(3) > *,
+  .tabs:has(input:nth-of-type(4):checked) .tab-panel:nth-child(4) > * { visibility: visible; }
+}
 .cards { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); gap: 1rem; }
 .card { margin: 0; padding: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); display: grid; gap: .625rem; align-content: start; }
 .card > .icon { width: 1.75rem; height: 1.75rem; color: var(--brand); }
@@ -473,6 +502,13 @@ address { font-style: normal; }
 @media (max-width: 45rem) {
   .hero, .split, .cta, .pillar, .benefits, .benefits--3, .event { grid-template-columns: minmax(0, 1fr); }
   .join-list { grid-template-columns: minmax(0, 1fr); }
+  .tab-panel, .tab-panels { grid-template-columns: minmax(0, 1fr); }
+  .tab-panel > .media, .tab-panel > :not(.media) { grid-column: 1; }
+  .tab-panel > .media { grid-row: 1; }
+  .tab-panel > h3 { grid-row: 2; }
+  .tab-panel > .prose { grid-row: 3; }
+  .tab-panel > .pillar-links { grid-row: 4; }
+  .tab-panels { grid-template-rows: none; }
   .hero-home .hero, .hero-home .entry-links { grid-template-columns: minmax(0, 1fr); }
   .hero-home .entry-links li + li { border-top: 0; }
   .join-list li + li { margin-block-start: 1.25rem; }
