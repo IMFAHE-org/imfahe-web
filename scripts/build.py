@@ -3,7 +3,9 @@
 import argparse
 from hashlib import sha256
 from html import escape
+from functools import cache
 import json
+from math import cos, hypot, sin, sqrt
 from pathlib import Path
 import re
 from string import Template
@@ -18,6 +20,7 @@ PAGES = json.loads((CONTENT / "pages.json").read_text())
 MENU = json.loads((CONTENT / "navigation.json").read_text())
 I18N = json.loads((CONTENT / "i18n.json").read_text())
 CALLS = json.loads((CONTENT / "calls.json").read_text())
+NETWORK = json.loads((CONTENT / "network.json").read_text())
 LANGS = list(I18N)  # first language is the default and lives at the site root
 CSS_VERSION = sha256((SITE / "assets/site.css").read_bytes()).hexdigest()[:10]
 JS_VERSION = sha256((SITE / "assets/site.js").read_bytes()).hexdigest()[:10]
@@ -197,6 +200,101 @@ def calls_list(lang):
     return f'<ul class="calls">{"".join(rows)}</ul>'
 
 
+@cache
+def network_parts():
+    """The Connects map as SVG pieces: lines, dots and one plate per organization, from content/network.json.
+
+    Every organization gets the same area, shaped by its logo's proportions. Each starts on its city; overlapping
+    ones are pushed apart while a weak pull keeps them near home. The result is the same on every build.
+    """
+    m = NETWORK["map"]
+    k = m["width"] / (m["lon"][1] - m["lon"][0])
+    width, height = m["width"], round((m["lat"][0] - m["lat"][1]) * k, 1)
+
+    def xy(point):
+        lon, lat = point
+        return ((lon + 360 if lon < m["lon"][0] else lon) - m["lon"][0]) * k, (m["lat"][0] - lat) * k
+
+    area, gap, tiles = 1050, 1.5, []
+    for index, org in enumerate(NETWORK["orgs"]):
+        x, y = xy(org["at"])
+        ratio = min(4.2, max(1.15, org.get("ratio") or len(org["name"]) * .33))
+        tiles.append({"org": org, "hx": x, "hy": y, "w": sqrt(area * ratio), "h": sqrt(area / ratio), "x": x + sin(index * 2.4) * 4, "y": y + cos(index * 1.7) * 4})
+    for step in range(1500):
+        pull = .006 if step < 1250 else 0
+        for a, first in enumerate(tiles):
+            for second in tiles[a + 1:]:
+                dx, dy = second["x"] - first["x"], second["y"] - first["y"]
+                over_x = (first["w"] + second["w"]) / 2 + gap - abs(dx)
+                if over_x <= 0:
+                    continue
+                over_y = (first["h"] + second["h"]) / 2 + gap - abs(dy)
+                if over_y <= 0:
+                    continue
+                if over_x / (first["w"] + second["w"]) < over_y / (first["h"] + second["h"]):
+                    move = (over_x / 2) * (1 if dx >= 0 else -1)
+                    first["x"] -= move
+                    second["x"] += move
+                else:
+                    move = (over_y / 2) * (1 if dy >= 0 else -1)
+                    first["y"] -= move
+                    second["y"] += move
+        for tile in tiles:
+            tile["x"] = min(width - tile["w"] / 2 - 2, max(tile["w"] / 2 + 2, tile["x"] + (tile["hx"] - tile["x"]) * pull))
+            tile["y"] = min(height - tile["h"] / 2 - 2, max(tile["h"] / 2 + 2, tile["y"] + (tile["hy"] - tile["y"]) * pull))
+
+    hubs = {name: xy(point) for name, point in NETWORK["hubs"].items()}
+    lines, drawn = [], set()
+
+    def arc(a, b):
+        key = tuple(sorted((round(p[0] / 5), round(p[1] / 5)) for p in (a, b)))
+        length = hypot(b[0] - a[0], b[1] - a[1])
+        if key in drawn or length < 6:
+            return
+        drawn.add(key)
+        lines.append(f'<path pathLength="1" d="M{a[0]:.1f} {a[1]:.1f}Q{(a[0] + b[0]) / 2:.1f} {(a[1] + b[1]) / 2 - length * .3:.1f} {b[0]:.1f} {b[1]:.1f}"/>')
+
+    for a, b in NETWORK["links"]:
+        arc(hubs[a], hubs[b])
+    cities = [(tile["hx"], tile["hy"]) for tile in tiles] + [xy(point) for point in NETWORK["community"]]
+    for city in cities:  # every place to Madrid; the Americas to Boston too; far places to their regional hub
+        arc(hubs["madrid"], city)
+        if city[0] < 420:
+            arc(hubs["boston"], city)
+        if city[0] > 640 and city[1] > 150:
+            arc(hubs["singapore"], city)
+        elif city[0] > 600:
+            arc(hubs["doha"], city)
+        if city[0] < 420 and city[1] > 200:
+            arc(hubs["saopaulo"], city)
+    dots = "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.9"/>' for x, y in cities) + "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.2"/>' for x, y in hubs.values())
+    return width, height, "".join(lines), dots, tiles
+
+
+def network_map(lang):
+    """The map itself. On a phone the logos are too small to read, so they are also listed in a grid below it."""
+    width, height, lines, dots, tiles = network_parts()
+    plates, items = [], []
+    for tile in tiles:
+        org, w, h = tile["org"], tile["w"], tile["h"]
+        x, y, name = tile["x"] - w / 2, tile["y"] - h / 2, escape(org["name"], quote=True)
+        plate = f'<rect class="netmap-plate" x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="2"/>'
+        if org.get("logo"):
+            src = f'@site@/assets/{org["logo"]}'
+            plates.append(f'<g class="netmap-org">{plate}<image href="{src}" x="{x + 1.5:.1f}" y="{y + 1.5:.1f}" width="{w - 3:.1f}" height="{h - 3:.1f}"><title>{name}</title></image></g>')
+            items.append(f'<li><img alt="{name}" loading="lazy" decoding="async" src="{src}" width="{round(org["ratio"] * 40)}" height="40"></li>')
+        else:  # no logo file yet: the name stands in
+            size = min(7, (w - 2) / (len(org["name"]) * .56))
+            plates.append(f'<g class="netmap-org">{plate}<text x="{tile["x"]:.1f}" y="{tile["y"]:.1f}" font-size="{size:.1f}" text-anchor="middle" dominant-baseline="central">{name}</text></g>')
+            items.append(f'<li>{name}</li>')
+    return (
+        f'<figure class="netmap"><svg viewBox="0 0 {width} {height}" role="img" aria-label="{escape(ui(lang, "networkMap"), quote=True)}">'
+        f'<image class="netmap-world" href="@site@/assets/world-dots.svg" width="{width}" height="{height}"/>'
+        f'<g class="netmap-lines">{lines}</g><g class="netmap-dots">{dots}</g>{"".join(plates)}</svg>'
+        f'<ul class="netmap-list">{"".join(items)}</ul></figure>'
+    )
+
+
 def join_section(page, html, lang):
     """Every page ends with one closing call: its own, or this shared one."""
     last = html.rstrip().rsplit("<section", 1)[-1]
@@ -308,7 +406,7 @@ def render(page, lang, origin):
         js_version=JS_VERSION,
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
-        content=(text := fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang))) + join_section(page, text, lang) + related(route, lang),
+        content=(text := fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang)).replace("@network@", network_map(lang))) + join_section(page, text, lang) + related(route, lang),
         footer=footer(page, route, lang),
         consent=consent(lang),
     )

@@ -400,6 +400,29 @@ address { font-style: normal; }
 .related-card:hover { border-color: var(--ink); box-shadow: var(--shadow); transform: translateY(-.125rem); }
 .related-card:hover .icon { transform: translateX(.25rem); }
 
+/* Network map: a dotted world, connection lines and one logo per organization. The build draws it from content/network.json. */
+.netmap { width: 100%; margin: 0; }
+.netmap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.netmap-lines path { fill: none; stroke: var(--brand); stroke-width: .55; opacity: .5; }
+.netmap-dots circle { fill: var(--brand); }
+.netmap-plate { fill: var(--white); fill-opacity: .62; } /* see-through, so the map's dots show under each logo */
+.netmap-org image { filter: grayscale(1) brightness(.72) contrast(1.6); mix-blend-mode: multiply; } /* one dark ink for every logo, pale colors included */
+.netmap-org text { fill: var(--ink); font-weight: 750; }
+.netmap-list { display: none; list-style: none; padding: 0; margin: 1rem 0 0; max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .375rem; }
+.netmap-list li { margin: 0; display: grid; place-items: center; min-height: 3rem; padding: .375rem .5rem; border: 1px solid var(--line); border-radius: .375rem; font-size: .6875rem; font-weight: 700; line-height: 1.15; text-align: center; }
+.netmap-list img { width: auto; height: auto; max-width: 100%; max-height: 2rem; object-fit: contain; filter: grayscale(1) brightness(.72) contrast(1.6); }
+@media (prefers-reduced-motion: no-preference) {
+  /* site.js marks the map as waiting, then in view: the world fades in, the lines draw themselves, the logos follow */
+  .netmap.is-waiting :is(.netmap-world, .netmap-dots circle, .netmap-org) { opacity: 0; }
+  .netmap.is-waiting .netmap-lines path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .netmap.is-in .netmap-world { animation: netmap-fade .8s ease-out both; }
+  .netmap.is-in .netmap-lines path { stroke-dasharray: 1; animation: netmap-draw 1.2s ease-out both; animation-delay: calc(.4s + var(--i, 0) * 14ms); }
+  .netmap.is-in .netmap-dots circle { animation: netmap-fade .4s ease-out both; animation-delay: calc(1.2s + var(--i, 0) * 14ms); }
+  .netmap.is-in .netmap-org { animation: netmap-fade .45s ease-out both; animation-delay: calc(1.6s + var(--i, 0) * 22ms); }
+  @keyframes netmap-fade { from { opacity: 0; } }
+  @keyframes netmap-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+}
+
 /* Press: one card per piece of coverage, the source above the headline; the whole card is the link */
 .press { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 .press li { margin: 0; display: grid; }
@@ -541,6 +564,8 @@ address { font-style: normal; }
 @media (max-width: 45rem) {
   .hero, .split, .cta, .pillar, .benefits, .benefits--3, .event { grid-template-columns: minmax(0, 1fr); }
   .join-list, .related-list, .press { grid-template-columns: minmax(0, 1fr); }
+  .netmap-org { display: none; } /* too small to read on a phone: the lines stay, the logos move to the grid below */
+  .netmap-list { display: grid; }
   .team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
   .calls li { grid-template-columns: 4.5rem minmax(0, 1fr); }
   .calls .actions { grid-column: 1 / -1; justify-content: flex-start; }

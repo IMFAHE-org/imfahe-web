@@ -74,6 +74,19 @@ if (wall && !matchMedia("(prefers-reduced-motion: reduce)").matches && "Intersec
   }, { threshold: 0.2 }).observe(wall);
 }
 
+// Network map: the first time it scrolls into view the world fades in, the lines draw themselves and the logos follow.
+// Without this script, or with reduced motion, the whole map is simply visible.
+document.querySelectorAll(".netmap").forEach((map) => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  for (const group of [".netmap-lines path", ".netmap-dots circle", ".netmap-org"]) map.querySelectorAll(group).forEach((part, index) => part.style.setProperty("--i", index));
+  map.classList.add("is-waiting");
+  new IntersectionObserver((entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+    map.classList.replace("is-waiting", "is-in");
+    observer.disconnect();
+  }, { threshold: 0.2 }).observe(map);
+});
+
 // Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
 // It is also skipped on a developer's machine so previews stay out of the reports.
 // Public calls: the day after its deadline a call is marked closed and moves below the open ones.

@@ -1,0 +1,675 @@
+{
+ "map": {
+  "lon": [
+   -168,
+   192
+  ],
+  "lat": [
+   78,
+   -56
+  ],
+  "width": 1000
+ },
+ "hubs": {
+  "boston": [
+   -71.06,
+   42.36
+  ],
+  "madrid": [
+   -3.7,
+   40.4
+  ],
+  "doha": [
+   51.5,
+   25.3
+  ],
+  "singapore": [
+   103.8,
+   1.3
+  ],
+  "saopaulo": [
+   -46.6,
+   -23.5
+  ]
+ },
+ "links": [
+  [
+   "boston",
+   "madrid"
+  ],
+  [
+   "madrid",
+   "doha"
+  ],
+  [
+   "madrid",
+   "singapore"
+  ],
+  [
+   "madrid",
+   "saopaulo"
+  ],
+  [
+   "boston",
+   "saopaulo"
+  ],
+  [
+   "doha",
+   "singapore"
+  ],
+  [
+   "boston",
+   "singapore"
+  ]
+ ],
+ "community": [
+  [
+   -58.4,
+   -34.6
+  ],
+  [
+   -70.7,
+   -33.4
+  ],
+  [
+   -74.1,
+   4.7
+  ],
+  [
+   -77,
+   -12
+  ],
+  [
+   3.4,
+   6.5
+  ],
+  [
+   36.8,
+   -1.3
+  ],
+  [
+   28,
+   -26.2
+  ],
+  [
+   31.2,
+   30
+  ],
+  [
+   77.2,
+   28.6
+  ],
+  [
+   72.9,
+   19
+  ],
+  [
+   116.4,
+   39.9
+  ],
+  [
+   127,
+   37.6
+  ],
+  [
+   151.2,
+   -33.9
+  ],
+  [
+   174.8,
+   -36.8
+  ],
+  [
+   100.5,
+   13.7
+  ],
+  [
+   106.8,
+   -6.2
+  ],
+  [
+   37.6,
+   55.75
+  ],
+  [
+   -123.1,
+   49.3
+  ],
+  [
+   -149.9,
+   61.2
+  ]
+ ],
+ "orgs": [
+  {
+   "name": "Repsol",
+   "at": [
+    -114,
+    51
+   ],
+   "logo": "logos/repsol.svg",
+   "ratio": 4.27
+  },
+  {
+   "name": "University of Waterloo",
+   "at": [
+    -80.5,
+    43.5
+   ],
+   "logo": "logos/university-of-waterloo.svg",
+   "ratio": 4.68
+  },
+  {
+   "name": "Amazon Robotics",
+   "at": [
+    -122.3,
+    47.6
+   ],
+   "logo": "logos/amazon-robotics.svg",
+   "ratio": 3.21
+  },
+  {
+   "name": "IBM",
+   "at": [
+    -73.7,
+    41.1
+   ],
+   "logo": "logos/ibm.svg",
+   "ratio": 2.68
+  },
+  {
+   "name": "Non Conformist Scientist",
+   "at": [
+    -71.0,
+    42.3
+   ],
+   "logo": "images/logo-ncs-34ce8888-146.webp",
+   "ratio": 1.07
+  },
+  {
+   "name": "Harvard University",
+   "at": [
+    -71.1,
+    42.4
+   ],
+   "logo": "logos/harvard-university.svg",
+   "ratio": 3.64
+  },
+  {
+   "name": "Google",
+   "at": [
+    -122.1,
+    37.4
+   ],
+   "logo": "logos/google.svg",
+   "ratio": 2.96
+  },
+  {
+   "name": "Stanford University",
+   "at": [
+    -122.2,
+    37.4
+   ],
+   "logo": "logos/stanford-university.svg",
+   "ratio": 4.76
+  },
+  {
+   "name": "McKinsey & Company",
+   "at": [
+    -87.6,
+    41.9
+   ],
+   "logo": "logos/mckinsey-company.svg",
+   "ratio": 3.24
+  },
+  {
+   "name": "Purdue University",
+   "at": [
+    -86.9,
+    40.4
+   ],
+   "logo": "logos/purdue-university.svg",
+   "ratio": 5.57
+  },
+  {
+   "name": "MIT",
+   "at": [
+    -71.1,
+    42.36
+   ],
+   "logo": "logos/massachusetts-institute-of-technology.svg",
+   "ratio": 1.78
+  },
+  {
+   "name": "Massachusetts General Hospital",
+   "at": [
+    -71.07,
+    42.36
+   ],
+   "logo": "logos/massachusetts-general-hospital.svg",
+   "ratio": 0.86
+  },
+  {
+   "name": "Boston University",
+   "at": [
+    -71.1,
+    42.35
+   ],
+   "logo": "logos/boston-university.svg",
+   "ratio": 2.23
+  },
+  {
+   "name": "Broad Institute",
+   "at": [
+    -71.09,
+    42.36
+   ]
+  },
+  {
+   "name": "UC Davis",
+   "at": [
+    -121.7,
+    38.5
+   ],
+   "logo": "logos/uc-davis.svg",
+   "ratio": 5.77
+  },
+  {
+   "name": "Thermo Fisher Scientific",
+   "at": [
+    -71.2,
+    42.4
+   ],
+   "logo": "logos/thermo-fisher-scientific.svg",
+   "ratio": 4.44
+  },
+  {
+   "name": "Memorial Sloan Kettering Cancer Center",
+   "at": [
+    -73.96,
+    40.76
+   ],
+   "logo": "images/mskcc-logo-b8328927-489.webp",
+   "ratio": 4.75
+  },
+  {
+   "name": "UTHealth Houston",
+   "at": [
+    -95.4,
+    29.7
+   ],
+   "logo": "logos/uthealth-houston.svg",
+   "ratio": 10.71
+  },
+  {
+   "name": "Bank of America",
+   "at": [
+    -80.8,
+    35.2
+   ],
+   "logo": "logos/bank-of-america.svg",
+   "ratio": 9.86
+  },
+  {
+   "name": "Johns Hopkins University",
+   "at": [
+    -76.6,
+    39.3
+   ],
+   "logo": "logos/johns-hopkins-university.svg",
+   "ratio": 5.77
+  },
+  {
+   "name": "Princeton University",
+   "at": [
+    -74.65,
+    40.35
+   ],
+   "logo": "logos/princeton-university.svg",
+   "ratio": 3.91
+  },
+  {
+   "name": "National Institute of Mental Health",
+   "at": [
+    -77.1,
+    39
+   ],
+   "logo": "logos/national-institute-of-mental-health.webp",
+   "ratio": 3.79
+  },
+  {
+   "name": "Be The Match",
+   "at": [
+    -93.3,
+    45
+   ]
+  },
+  {
+   "name": "University of Alabama at Birmingham",
+   "at": [
+    -86.8,
+    33.5
+   ],
+   "logo": "logos/university-of-alabama-at-birmingham.svg",
+   "ratio": 2.39
+  },
+  {
+   "name": "PCOM",
+   "at": [
+    -75.2,
+    40
+   ]
+  },
+  {
+   "name": "UNAM",
+   "at": [
+    -99.1,
+    19.4
+   ],
+   "logo": "logos/universidad-nacional-autonoma-de-mexico.svg",
+   "ratio": 0.89
+  },
+  {
+   "name": "UNICEF",
+   "at": [
+    -79.5,
+    9
+   ],
+   "logo": "logos/unicef.svg",
+   "ratio": 4.16
+  },
+  {
+   "name": "FAAP",
+   "at": [
+    -46.6,
+    -23.5
+   ]
+  },
+  {
+   "name": "Meta",
+   "at": [
+    -6.3,
+    53.3
+   ],
+   "logo": "logos/meta.svg",
+   "ratio": 4.96
+  },
+  {
+   "name": "NTNU",
+   "at": [
+    10.4,
+    63.4
+   ],
+   "logo": "logos/ntnu.svg",
+   "ratio": 5.45
+  },
+  {
+   "name": "Imperial College London",
+   "at": [
+    -0.18,
+    51.5
+   ],
+   "logo": "logos/imperial-college-london.webp",
+   "ratio": 9.09
+  },
+  {
+   "name": "Karolinska Institutet",
+   "at": [
+    18,
+    59.3
+   ],
+   "logo": "logos/karolinska-institutet.svg",
+   "ratio": 0.79
+  },
+  {
+   "name": "IKEA",
+   "at": [
+    14.1,
+    56.5
+   ],
+   "logo": "logos/ikea.svg",
+   "ratio": 2.5
+  },
+  {
+   "name": "European Space Agency",
+   "at": [
+    4.4,
+    52.2
+   ],
+   "logo": "logos/european-space-agency.svg",
+   "ratio": 2.57
+  },
+  {
+   "name": "Lund University",
+   "at": [
+    13.2,
+    55.7
+   ],
+   "logo": "logos/lund-university.webp",
+   "ratio": 0.83
+  },
+  {
+   "name": "Merck",
+   "at": [
+    8.65,
+    49.9
+   ],
+   "logo": "logos/merck.svg",
+   "ratio": 5.82
+  },
+  {
+   "name": "Inselgruppe",
+   "at": [
+    7.4,
+    46.95
+   ]
+  },
+  {
+   "name": "University of Oxford",
+   "at": [
+    -1.25,
+    51.75
+   ],
+   "logo": "logos/university-of-oxford.svg",
+   "ratio": 3.4
+  },
+  {
+   "name": "Universidade do Minho",
+   "at": [
+    -8.4,
+    41.55
+   ],
+   "logo": "images/udomi-abe04f52-280.webp",
+   "ratio": 1.65
+  },
+  {
+   "name": "Novo Nordisk",
+   "at": [
+    12.45,
+    55.75
+   ]
+  },
+  {
+   "name": "Roche",
+   "at": [
+    7.6,
+    47.56
+   ],
+   "logo": "logos/roche.svg",
+   "ratio": 1.93
+  },
+  {
+   "name": "Nature",
+   "at": [
+    0.1,
+    51.53
+   ]
+  },
+  {
+   "name": "Instituto Politécnico de Bragança",
+   "at": [
+    -6.76,
+    41.8
+   ],
+   "logo": "images/upb-1664f818-730.webp",
+   "ratio": 2.67
+  },
+  {
+   "name": "Polytechnic University of Coimbra",
+   "at": [
+    -8.4,
+    40.2
+   ],
+   "logo": "images/puc-4c1d05ed-537.webp",
+   "ratio": 0.94
+  },
+  {
+   "name": "Universidad de Valladolid",
+   "at": [
+    -4.72,
+    41.65
+   ],
+   "logo": "images/uva-9f00e009-170.webp",
+   "ratio": 1.0
+  },
+  {
+   "name": "CNRS",
+   "at": [
+    2.3,
+    48.85
+   ]
+  },
+  {
+   "name": "IÉSEG",
+   "at": [
+    3.06,
+    50.63
+   ]
+  },
+  {
+   "name": "ETH Zürich",
+   "at": [
+    8.55,
+    47.38
+   ],
+   "logo": "logos/eth-zurich.svg",
+   "ratio": 6.0
+  },
+  {
+   "name": "Faculdade de Medicina da Universidade de Lisboa",
+   "at": [
+    -9.15,
+    38.75
+   ],
+   "logo": "images/logo-fmul-ef2a095b-280.webp",
+   "ratio": 1.56
+  },
+  {
+   "name": "Fomento de San Sebastián",
+   "at": [
+    -1.98,
+    43.32
+   ],
+   "logo": "images/ds-f0e65066-330.webp",
+   "ratio": 3.67
+  },
+  {
+   "name": "Airbus",
+   "at": [
+    1.44,
+    43.6
+   ],
+   "logo": "logos/airbus.svg",
+   "ratio": 5.39
+  },
+  {
+   "name": "Novartis",
+   "at": [
+    7.58,
+    47.55
+   ],
+   "logo": "logos/novartis.svg",
+   "ratio": 6.65
+  },
+  {
+   "name": "Universidad de Málaga",
+   "at": [
+    -4.42,
+    36.72
+   ],
+   "logo": "images/udema-c72a11ad-390.webp",
+   "ratio": 2.29
+  },
+  {
+   "name": "Universidad Rey Juan Carlos",
+   "at": [
+    -3.7,
+    40.4
+   ],
+   "logo": "images/logo-urjc-ec6243cb-364.webp",
+   "ratio": 2.64
+  },
+  {
+   "name": "Universidad de Sevilla",
+   "at": [
+    -5.98,
+    37.39
+   ],
+   "logo": "images/us-fdc0d529-220.webp",
+   "ratio": 1.16
+  },
+  {
+   "name": "Universidad de Jaén",
+   "at": [
+    -3.79,
+    37.77
+   ],
+   "logo": "images/logo-uja-7caaa829-314.webp",
+   "ratio": 1.96
+  },
+  {
+   "name": "Cepsa",
+   "at": [
+    54.4,
+    24.45
+   ]
+  },
+  {
+   "name": "NICT",
+   "at": [
+    139.5,
+    35.7
+   ]
+  },
+  {
+   "name": "Aspire Academy",
+   "at": [
+    51.5,
+    25.3
+   ]
+  },
+  {
+   "name": "Titansoft",
+   "at": [
+    103.8,
+    1.3
+   ]
+  },
+  {
+   "name": "Unscripted",
+   "at": [
+    121.5,
+    25
+   ]
+  },
+  {
+   "name": "La Trobe University",
+   "at": [
+    145,
+    -37.7
+   ],
+   "logo": "logos/la-trobe-university.svg",
+   "ratio": 3.5
+  }
+ ]
+}

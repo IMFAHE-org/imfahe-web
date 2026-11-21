@@ -52,7 +52,8 @@
         "October",
         "November",
         "December"
-      ]
+      ],
+      "networkMap": "World map showing organizations where IMFAHE Connects members work and study"
     }
   },
   "es": {
@@ -108,7 +109,8 @@
         "octubre",
         "noviembre",
         "diciembre"
-      ]
+      ],
+      "networkMap": "Mapamundi con las organizaciones en las que trabajan y estudian los miembros de IMFAHE Connects"
     },
     "nav": {
       "Who We Are": "Quiénes somos",
@@ -245,7 +247,8 @@
         "outubro",
         "novembro",
         "dezembro"
-      ]
+      ],
+      "networkMap": "Mapa-múndi com as organizações onde os membros do IMFAHE Connects trabalham e estudam"
     },
     "nav": {
       "Who We Are": "Quem somos",

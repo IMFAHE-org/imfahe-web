@@ -8,6 +8,7 @@ Rules that apply everywhere:
 - One `<h1>` per page. Heading levels never skip (h1, h2, h3).
 - Icons: write `@icon:name@` and the build inlines `docs/assets/icons/name.svg` (Lucide). Social logos: `@brand:name@`.
 - Links to pages: `@site@/page-slug/`. Files: `@site@/assets/...`.
+- Network map: `@network@` becomes the world map on IMFAHE Connects, drawn from `content/network.json`. To add an organization, add one entry with its `name`, its place as `at: [longitude, latitude]`, and, when there is a logo file, `logo` (a path under `docs/assets/`, ideally an SVG with a transparent background) and `ratio` (the logo's width divided by its height). The build places it near its city without overlapping the others; an entry without a logo shows its name. `hubs`, `links` and `community` are the places the lines start from, the lines between hubs, and places that get a dot and a line but no logo.
 - Public calls: `@calls@` becomes the list of calls and `@calls-pdf@` the address of the PDF poster, both from `content/calls.json`. To change a deadline, link or organization, edit that file only; the three languages follow. A call is shown as closed from the day after its `date`.
 - Images: local WebP, `width` and `height` set, `loading="lazy"` below the first screen, meaningful `alt` (empty `alt=""` for decoration).
 - The row of sibling programs at the foot of a program page is added by the build. Do not write a sub-menu.

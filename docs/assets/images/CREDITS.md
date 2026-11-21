@@ -13,3 +13,5 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `who-top-*.webp` | Who We Are, top | https://www.pexels.com/photo/7683910/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
+
+The dotted world map (`../world-dots.svg`) is drawn from Natural Earth land data (naturalearthdata.com), which is in the public domain. Logos on the Connects map are listed in `../logos/SOURCES.md`.
