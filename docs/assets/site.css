@@ -94,6 +94,7 @@ address { font-style: normal; }
 .split > * { min-width: 0; }
 /* Sections alternate sides down a page: split--flip shows the picture first without changing the reading order. */
 .split--flip > :first-child { order: 2; }
+.split--flip.split--big-media { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } /* a picture that needs room, such as a screenshot */
 .split:has(> .accordion) { padding-block-start: var(--gap); border-top: 1px solid var(--line-strong); } /* a list of details beside its title starts a new row, set apart by a line */
 .media { width: 100%; }
 .media img { width: 100%; border-radius: var(--radius-lg); }
@@ -169,8 +170,8 @@ address { font-style: normal; }
 .hero-home .hero-title--home { font-size: clamp(1.75rem, 1.1rem + 2.2vw, 2.5rem); }
 .hero-home .hero-copy { gap: 1rem; }
 .hero-extras { display: grid; gap: clamp(1rem, .75rem + 1vw, 1.5rem); margin-block-start: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
-.hero-home .stats strong { font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem); }
-.hero-home .stats .icon { margin-block-end: .125rem; }
+.stats-block .stats strong { font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem); }
+.stats-block .stats .icon { margin-block-end: .125rem; }
 .hero-home .entry-links { max-width: none; margin: 0; border: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1rem, 2.5vw, 2rem); }
 .hero-home .entry-links li { border-top: 1px solid var(--line); }
 .hero--single { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; justify-items: start; }
@@ -300,6 +301,7 @@ address { font-style: normal; }
 /* Benefits: what used to be "why join" infographics */
 .benefits { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2rem, 6vw, 5rem); }
 .benefits--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.benefits--1 { grid-template-columns: minmax(0, 1fr); }
 .benefits li { margin: 0; padding-block: 1.5rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .25rem 1.125rem; align-content: start; }
 .section--tint .benefits li, .section--tint .steps li::before { border-color: var(--line-strong); }
 .benefits li > .icon { grid-row: 1 / span 3; width: 3rem; height: 3rem; padding: .7rem; border-radius: 50%; background: var(--rose); color: var(--brand); stroke-width: 1.75; }
@@ -332,12 +334,12 @@ address { font-style: normal; }
 
 /* Quotes */
 .quotes { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr)); gap: var(--gap); }
-.quote { display: grid; grid-template-rows: 1fr auto; gap: 1.5rem; padding: var(--panel); border-radius: var(--radius-lg); background: var(--tint); }
+.quote { display: grid; grid-template-rows: auto 1fr; gap: 1.25rem; padding: var(--panel); border-radius: var(--radius-lg); background: var(--tint); }
 .section--tint .quote { background: var(--white); }
 .quote blockquote { margin: 0; color: var(--ink); font-size: 1.0625rem; line-height: 1.55; }
 .quote blockquote::before { content: "“"; display: block; height: 2.25rem; color: var(--brand); font-size: 4rem; font-weight: 800; line-height: 1; }
-.quote figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 .875rem; align-items: center; }
-.quote figcaption img { grid-row: 1 / span 2; width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; }
+.quote figcaption { order: -1; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .125rem 1.125rem; align-items: center; } /* shown above the words; read after them */
+.quote figcaption img { grid-row: 1 / span 2; width: 6.5rem; height: 6.5rem; border-radius: 50%; object-fit: cover; }
 .quote figcaption h3 { font-size: 1rem; align-self: end; }
 .quote figcaption p { color: var(--muted); font-size: .8125rem; line-height: 1.4; align-self: start; margin: 0; }
 
@@ -430,6 +432,9 @@ address { font-style: normal; }
 .join-list .icon:first-child { width: 1.75rem; height: 1.75rem; color: var(--brand); margin-block-end: .25rem; }
 .join-list h3 { align-self: end; }
 .join-list p { color: var(--text); font-size: .9375rem; }
+/* A page's own version: its title and button on one row, four ways below */
+.join-head { width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.join-list--4 { width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(1.25rem, 2.5vw, 2rem); }
 
 /* Footer: site map, then one thin legal line. Compact: small type, links close together. */
 .site-footer { border-top: 1px solid var(--line); background: var(--tint); padding-block: clamp(1.5rem, 1.25rem + 1.5vw, 2.25rem) .375rem; color: var(--muted); font-size: .78125rem; line-height: 1.4; }
@@ -523,6 +528,8 @@ address { font-style: normal; }
   .tab-list label { flex-direction: column; justify-content: flex-start; gap: .25rem; padding-inline: .5rem; }
   .join-inner, .footer-main, .related .wrap { grid-template-columns: minmax(0, 1fr); }
   .pillars { grid-template-columns: minmax(0, 1fr); }
+  .join-list--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .join-list--4 li:nth-child(n+3) { margin-block-start: 1.5rem; }
   .team { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
   .press { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pillar { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: auto; align-items: start; }
@@ -538,6 +545,8 @@ address { font-style: normal; }
   .calls li { grid-template-columns: 4.5rem minmax(0, 1fr); }
   .calls .actions { grid-column: 1 / -1; justify-content: flex-start; }
   .split--flip > :first-child { order: 0; }
+  .split--flip.split--big-media, .join-list--4 { grid-template-columns: minmax(0, 1fr); }
+  .join-list--4 li:nth-child(n+3) { margin-block-start: 0; }
   .tab-panel, .tab-panels { grid-template-columns: minmax(0, 1fr); }
   .tab-panel > .media, .tab-panel > :not(.media) { grid-column: 1; }
   .tab-panel > .media { grid-row: 1; }

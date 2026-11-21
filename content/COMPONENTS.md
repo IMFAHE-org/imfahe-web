@@ -12,6 +12,8 @@ Rules that apply everywhere:
 - Images: local WebP, `width` and `height` set, `loading="lazy"` below the first screen, meaningful `alt` (empty `alt=""` for decoration).
 - The row of sibling programs at the foot of a program page is added by the build. Do not write a sub-menu.
 - Layout habits from the home page review: sections that pair text with a picture swap sides from one to the next (`split--flip`); a heading shares its row with an intro, or runs wide when it is alone; links in a row of columns sit on one line; a short statement with one link is a quiet band, not a full section.
+- A page can write its own "How to join": `<section class="section join">` with a `join-head` (title and button) and `<ul class="join-list join-list--4">` of icon, title, text and arrow link; see imfahe-connects-program.html. Add the page to `join.skip` in navigation.json so the shared one is not added too.
+- The numbers block of the home page (`stats-block` inside `wrap hero-extras`) can close any page top; see the same page.
 - Every page ends with one closing call. If a page has its own (a `cta` block, or a red `band` as its last section) it keeps it; otherwise the build adds the shared "How to join IMFAHE" section. Contact and Financial Disclosure get none (`join.skip` in `content/navigation.json`).
 - In a row of actions use at most two button styles: one `button`, alternatives as `button button--outline`. A `link-arrow` in the same `actions` row drops to its own line.
 
