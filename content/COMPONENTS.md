@@ -10,6 +10,8 @@ Rules that apply everywhere:
 - Links to pages: `@site@/page-slug/`. Files: `@site@/assets/...`.
 - Images: local WebP, `width` and `height` set, `loading="lazy"` below the first screen, meaningful `alt` (empty `alt=""` for decoration).
 - The row of sibling programs at the foot of a program page is added by the build. Do not write a sub-menu.
+- Every page ends with one closing call. If a page has its own (a `cta` block, or a red `band` as its last section) it keeps it; otherwise the build adds the shared "How to join IMFAHE" section. Contact and Financial Disclosure get none (`join.skip` in `content/navigation.json`).
+- In a row of actions use at most two button styles: one `button`, alternatives as `button button--outline`. A `link-arrow` in the same `actions` row drops to its own line.
 
 ## Program page hero
 

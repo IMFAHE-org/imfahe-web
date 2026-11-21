@@ -90,7 +90,7 @@ def navigation_items(route, lang):
     for item in MENU["pages"]:
         if "children" in item:
             links = "".join(
-                f'<li>{menu_link(child, route, lang, tagline=True)}</li>' for child in item["children"]
+                f'<li>{menu_link(child, route, lang)}</li>' for child in item["children"]
             )
             active = ' data-active' if any(child["path"] == route for child in item["children"]) else ""
             items.append(
@@ -102,32 +102,40 @@ def navigation_items(route, lang):
     return "\n      ".join(items)
 
 
-def language_switch(page, route, lang):
+def language_switch(page, route, lang, menu=False):
+    """The header bar gets one small dropdown; the phone panel gets a row of pills."""
     links = []
     for other in LANGS:
         if page["slug"] == "404" or not fragment(page, other).exists():
             continue
         current = ' aria-current="true"' if other == lang else ""
-        links.append(
-            f'<li><a href="@root@/{prefix(other)}{escape(route, quote=True)}" lang="{escape(I18N[other]["htmlLang"], quote=True)}" hreflang="{escape(I18N[other]["htmlLang"], quote=True)}"'
-            f' title="{escape(I18N[other]["name"], quote=True)}"{current}>{other.upper()}</a></li>'
-        )
+        code = escape(I18N[other]["htmlLang"], quote=True)
+        text = escape(I18N[other]["name"]) if menu else other.upper()
+        title = "" if menu else f' title="{escape(I18N[other]["name"], quote=True)}"'
+        links.append(f'<li><a href="@root@/{prefix(other)}{escape(route, quote=True)}" lang="{code}" hreflang="{code}"{title}{current}>{text}</a></li>')
     if len(links) < 2:
         return ""
-    return f'<ul class="lang-switch" aria-label="{escape(ui(lang, "language"), quote=True)}">{"".join(links)}</ul>'
+    name = escape(ui(lang, "language"), quote=True)
+    if menu:
+        return (
+            f'<details class="nav-group lang-menu" name="nav"><summary aria-label="{name}: {escape(I18N[lang]["name"], quote=True)}">'
+            f'@icon:globe@ {lang.upper()} @icon:chevron-down@</summary><ul>{"".join(links)}</ul></details>'
+        )
+    return f'<ul class="lang-switch" aria-label="{name}">{"".join(links)}</ul>'
 
 
 def header(page, route, lang):
     items = navigation_items(route, lang)
     switch = language_switch(page, route, lang)
+    lang_menu = language_switch(page, route, lang, menu=True)
     nav_name = escape(ui(lang, "mainNavigation"), quote=True)
     return f'''  <header class="site-header">
     <div class="wrap header-inner">
       {home_logo()}
       <nav class="main-nav" aria-label="{nav_name}">
       {items}
+      {lang_menu}
       </nav>
-      {switch}
       <details class="mobile-nav">
         <summary>@icon:menu@ {escape(ui(lang, "menu"))}</summary>
         <nav aria-label="{nav_name}">
@@ -160,23 +168,27 @@ def related(route, lang):
     return ""
 
 
-def join_block(lang):
-    """Three ways into IMFAHE, shown at the top of the footer on every page."""
+def join_section(page, html, lang):
+    """Every page ends with one closing call: its own, or this shared one."""
+    last = html.rstrip().rsplit("<section", 1)[-1]
+    if page["slug"] in MENU["join"]["skip"] or 'class="cta' in html or last.lstrip().startswith('class="band"'):
+        return ""
     join = MENU["join"]
     ways = [
-        ("joinStudent", f'@site@/{join["calls"]}'),
-        ("joinMentor", join["mentorForm"]),
-        ("joinOrg", f'mailto:{MENU["email"]}'),  # escaped below with the other links
+        ("joinStudent", "graduation-cap", f'@site@/{join["calls"]}'),
+        ("joinMentor", "handshake", join["mentorForm"]),
+        ("joinOrg", "landmark", f'mailto:{MENU["email"]}'),
     ]
     items = "".join(
-        f'<li><h3>{escape(ui(lang, key))}</h3><p>{escape(ui(lang, key + "Text"))}</p>'
+        f'<li>@icon:{icon_name}@<h3>{escape(ui(lang, key))}</h3><p>{escape(ui(lang, key + "Text"))}</p>'
         f'<a class="link-arrow" href="{escape(href, quote=True)}">{escape(ui(lang, key + "Action"))} @icon:arrow-right@</a></li>'
-        for key, href in ways
+        for key, icon_name, href in ways
     )
-    return f'''<section class="footer-join" aria-labelledby="join-title">
-        <h2 id="join-title">{escape(ui(lang, "joinTitle"))}</h2>
-        <ul class="join-list">{items}</ul>
-      </section>'''
+    return f'''
+<section class="section join" aria-labelledby="join-title"><div class="wrap join-inner">
+<h2 id="join-title">{escape(ui(lang, "joinTitle"))}</h2>
+<ul class="join-list">{items}</ul>
+</div></section>'''
 
 
 def footer(page, route, lang):
@@ -191,27 +203,25 @@ def footer(page, route, lang):
         for item in MENU["pages"] if "children" in item
     )
     email = escape(MENU["email"], quote=True)
-    links = "".join(f'<li>{menu_link(item, route, lang)}</li>' for item in MENU["pages"] if "children" not in item)
+    about = "".join(f'<li>{menu_link(item, route, lang)}</li>' for item in MENU["pages"] if "children" not in item)
+    support = escape(ui(lang, "support"))
     return f'''  <footer class="site-footer">
     <div class="wrap">
-      {join_block(lang)}
       <div class="footer-main">
         <div class="footer-brand">
           {home_logo()}
           <p>{escape(ui(lang, "nonprofit"))}</p>
           <nav class="socials" aria-label="{escape(ui(lang, "socialMedia"), quote=True)}">{social_links}</nav>
         </div>
-        <nav class="footer-nav" aria-label="{escape(ui(lang, "programs"), quote=True)}">{columns}</nav>
+        <nav class="footer-nav" aria-label="{escape(ui(lang, "programs"), quote=True)}">{columns}<div><h3>IMFAHE</h3><ul>
+          {about}
+          <li><a href="mailto:{email}?subject={support.replace(" ", "%20")}">{support}</a></li>
+          <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
+        </ul></div></nav>
       </div>
       <div class="footer-legal">
-        <ul class="footer-links">
-          {links}
-          <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
-          <li><button class="link-button" type="button" data-consent-open>{escape(ui(lang, "cookieSettings"))}</button></li>
-          <li><a href="mailto:{email}?subject={escape(ui(lang, "support"), quote=True).replace(" ", "%20")}">{escape(ui(lang, "support"))}</a></li>
-        </ul>
-        {language_switch(page, route, lang)}
         <p>Copyright © 2026 {escape(MENU["legalName"])} (<a href="@site@/">imfahe.org</a>). {escape(ui(lang, "rights"))}</p>
+        <button class="link-button" type="button" data-consent-open>{escape(ui(lang, "cookieSettings"))}</button>
       </div>
     </div>
   </footer>'''
@@ -268,7 +278,7 @@ def render(page, lang, origin):
         js_version=JS_VERSION,
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
-        content=fragment(page, lang).read_text().rstrip() + related(route, lang),
+        content=(text := fragment(page, lang).read_text().rstrip()) + join_section(page, text, lang) + related(route, lang),
         footer=footer(page, route, lang),
         consent=consent(lang),
     )

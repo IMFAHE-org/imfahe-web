@@ -14,6 +14,18 @@ document.querySelectorAll(".video-trigger").forEach((button) => {
   });
 });
 
+// With a mouse, the header dropdowns open on hover as well as on click. A short delay keeps
+// them open while the pointer crosses the gap between the label and its list.
+if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  document.querySelectorAll(".main-nav details").forEach((menu) => {
+    let closing;
+    menu.addEventListener("mouseenter", () => { clearTimeout(closing); menu.open = true; });
+    menu.addEventListener("mouseleave", () => { closing = setTimeout(() => { menu.open = false; }, 180); });
+    // A mouse click on a label that hover already opened should not close it again (keyboard Enter still toggles).
+    menu.querySelector("summary").addEventListener("click", (event) => { if (menu.open && event.detail > 0) event.preventDefault(); });
+  });
+}
+
 const menus = Array.from(document.querySelectorAll(".main-nav details, .mobile-nav details, .mobile-nav"));
 document.addEventListener("click", (event) => {
   menus.forEach((menu) => {
