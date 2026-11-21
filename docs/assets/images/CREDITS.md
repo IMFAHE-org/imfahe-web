@@ -10,5 +10,6 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `connects-community-*.webp` | IMFAHE Connects, closing section | https://www.pexels.com/photo/5486096/ |
 | `conferences-hero-*.webp` | International Conferences, top | https://www.pexels.com/photo/4226140/ |
 | `fellowships-hero-*.webp` | International Fellowships, top | https://www.pexels.com/photo/7972324/ |
+| `who-top-*.webp` | Who We Are, top | https://www.pexels.com/photo/7683910/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
