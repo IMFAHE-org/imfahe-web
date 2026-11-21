@@ -408,8 +408,7 @@ address { font-style: normal; }
 .call-logo img { width: auto; height: auto; max-width: 100%; max-height: 3.5rem; object-fit: contain; }
 .calls h3 { font-size: var(--title-md); letter-spacing: -.01em; }
 .call-deadline { color: var(--muted); font-size: .9375rem; margin-block-start: .25rem; max-width: none; }
-.call-status { display: inline-block; margin-inline-start: .375rem; padding: .1875rem .625rem; border-radius: 62rem; background: var(--tint); color: var(--ink); font-size: .8125rem; font-weight: 700; line-height: 1.2; }
-.call-status:empty { display: none; }
+.call-status { margin-inline-start: .375rem; color: var(--ink); font-size: .8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
 .calls .actions { justify-content: flex-end; }
 .calls .is-closed .call-logo { filter: grayscale(1); opacity: .55; }
 .calls .is-closed h3 { color: var(--muted); }
