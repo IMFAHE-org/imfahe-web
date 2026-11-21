@@ -51,7 +51,7 @@
       "path": "imfahe-professors-international-professional-development-program/",
       "children": [
         {
-          "label": "Professors iPDP",
+          "label": "Professors' Professional Development (iPDP)",
           "path": "imfahe-professors-international-professional-development-program/",
           "tagline": "Stand out as a researcher and educator."
         },
@@ -91,5 +91,10 @@
     }
   ],
   "email": "contact@imfahe.org",
-  "shareImage": "imfahe-share-1200.jpg"
+  "shareImage": "imfahe-share-1200.jpg",
+  "legalName": "International Mentoring Foundation for the Advancement of Higher Education",
+  "join": {
+    "calls": "assets/resources/2026/10/Public-Calls-2026-To-be-part-of-IMFAHE-s-Global-Platform-of-Talent-2026-2027_Updated-Oct-30-deff5ae.pdf",
+    "mentorForm": "https://forms.gle/KUjYaorwWaB5d3XY9"
+  }
 }

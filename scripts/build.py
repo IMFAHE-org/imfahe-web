@@ -99,7 +99,7 @@ def navigation_items(route, lang):
 def language_switch(page, route, lang):
     links = []
     for other in LANGS:
-        if not fragment(page, other).exists():
+        if page["slug"] == "404" or not fragment(page, other).exists():
             continue
         current = ' aria-current="true"' if other == lang else ""
         links.append(
@@ -154,27 +154,72 @@ def related(route, lang):
     return ""
 
 
-def footer(lang):
+def join_block(lang):
+    """Three ways into IMFAHE, shown at the top of the footer on every page."""
+    join = MENU["join"]
+    ways = [
+        ("joinStudent", f'@site@/{join["calls"]}'),
+        ("joinMentor", join["mentorForm"]),
+        ("joinOrg", f'mailto:{MENU["email"]}'),
+    ]
+    items = "".join(
+        f'<li><h3>{escape(ui(lang, key))}</h3><p>{escape(ui(lang, key + "Text"))}</p>'
+        f'<a class="link-arrow" href="{escape(href, quote=True)}">{escape(ui(lang, key + "Action"))} @icon:arrow-right@</a></li>'
+        for key, href in ways
+    )
+    return f'''<section class="footer-join" aria-labelledby="join-title">
+        <h2 id="join-title">{escape(ui(lang, "joinTitle"))}</h2>
+        <ul class="join-list">{items}</ul>
+      </section>'''
+
+
+def footer(page, route, lang):
     social_links = "".join(
         f'<a href="{escape(item["url"], quote=True)}" aria-label="{escape(item["label"], quote=True)}" title="{escape(item["label"], quote=True)}">@brand:{item["label"].lower()}@</a>'
         for item in MENU["socials"]
     )
+    columns = "".join(
+        f'<div><h3>{escape(label(lang, item["label"]))}</h3><ul>'
+        + "".join(f'<li>{menu_link(child, route, lang)}</li>' for child in item["children"])
+        + '</ul></div>'
+        for item in MENU["pages"] if "children" in item
+    )
     email = MENU["email"]
+    links = "".join(f'<li>{menu_link(item, route, lang)}</li>' for item in MENU["pages"] if "children" not in item)
     return f'''  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div class="footer-brand">
-        {home_logo()}
-        <p>{escape(ui(lang, "nonprofit"))}</p>
+    <div class="wrap">
+      {join_block(lang)}
+      <div class="footer-main">
+        <div class="footer-brand">
+          {home_logo()}
+          <p>{escape(ui(lang, "nonprofit"))}</p>
+          <nav class="socials" aria-label="{escape(ui(lang, "socialMedia"), quote=True)}">{social_links}</nav>
+        </div>
+        <nav class="footer-nav" aria-label="{escape(ui(lang, "programs"), quote=True)}">{columns}</nav>
       </div>
-      <ul class="footer-links">
-        <li><a href="mailto:{email}">@icon:mail@ {email}</a></li>
-        <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "nonprofitInfo"))}</a></li>
-        <li><a href="#top">{escape(ui(lang, "backToTop"))} @icon:arrow-up@</a></li>
-      </ul>
-      <nav class="socials" aria-label="{escape(ui(lang, "socialMedia"), quote=True)}">{social_links}</nav>
-      <p class="footer-legal">Copyright © 2026 <a href="@site@/">imfahe.org</a>. {escape(ui(lang, "rights"))}</p>
+      <div class="footer-legal">
+        <ul class="footer-links">
+          {links}
+          <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
+          <li><a href="mailto:{email}?subject={escape(ui(lang, "support"), quote=True).replace(" ", "%20")}">{escape(ui(lang, "support"))}</a></li>
+        </ul>
+        {language_switch(page, route, lang)}
+        <p>Copyright © 2026 {escape(MENU["legalName"])} (<a href="@site@/">imfahe.org</a>). {escape(ui(lang, "rights"))}</p>
+      </div>
     </div>
   </footer>'''
+
+
+def new_tab_links(html):
+    """Links that leave the site, and PDF files, open in a new tab. One rule for every page."""
+    def fix(match):
+        tag = match[0]
+        href = re.search(r'href="([^"]*)"', tag)
+        if not href or not (href[1].startswith(("http://", "https://")) or href[1].lower().endswith(".pdf")):
+            return tag
+        tag = re.sub(r'\s(target|rel)="[^"]*"', "", tag)
+        return tag[:-1] + ' target="_blank" rel="noopener">'
+    return re.sub(r"<a\b[^>]*>", fix, html)
 
 
 def head_links(page, route, lang, origin):
@@ -207,11 +252,40 @@ def render(page, lang, origin):
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
         content=fragment(page, lang).read_text().rstrip() + related(route, lang),
-        footer=footer(lang),
+        footer=footer(page, route, lang),
     )
     # Assets are shared by every language; page links stay inside the current language.
     html = html.replace("@root@", base).replace("@site@/assets/", f"{base}/assets/").replace("@site@/", f"{base}/{prefix(lang)}")
-    return icons(html)
+    return new_tab_links(icons(html))
+
+
+def not_found(origin):
+    """GitHub Pages serves this file for any missing address, so its links must not be relative."""
+    root = urlsplit(origin).path.rstrip("/") if origin else "."
+    page = {"slug": "404", "route": "", "title": "Page not found - imfahe.org", "description": "Page not found."}
+    first = LANGS[0]
+    blocks = "".join(
+        f'<div class="stack" lang="{I18N[lang]["htmlLang"]}"><h2>{escape(ui(lang, "notFoundTitle"))}</h2>'
+        f'<p>{escape(ui(lang, "notFoundText"))}</p>'
+        f'<a class="link-arrow" href="@root@/{prefix(lang)}">{escape(ui(lang, "notFoundHome"))} @icon:arrow-right@</a></div>'
+        for lang in LANGS[1:]
+    )
+    content = f'''<section class="section section--hero">
+<div class="wrap hero hero--single">
+<h1>{escape(ui(first, "notFoundTitle"))}</h1>
+<p class="lead">{escape(ui(first, "notFoundText"))}</p>
+<a class="button" href="@root@/">{escape(ui(first, "notFoundHome"))}</a>
+</div>
+</section>
+<section class="section section--slim section--tint"><div class="wrap"><div class="split">{blocks}</div></div></section>'''
+    html = TEMPLATE.substitute(
+        lang=I18N[first]["htmlLang"], title=escape(page["title"]), description=escape(page["description"], quote=True),
+        skip=escape(ui(first, "skip")), base=root, css_version=CSS_VERSION, js_version=JS_VERSION,
+        head_links='  <meta name="robots" content="noindex">', header=header(page, "404", first), content=content,
+        footer=footer(page, "404", first),
+    )
+    html = html.replace("@root@", root).replace("@site@/assets/", f"{root}/assets/").replace("@site@/", f"{root}/")
+    return new_tab_links(icons(html))
 
 
 def write_sitemap(origin, routes):
@@ -248,14 +322,7 @@ def main():
             target.write_text(render(page, lang, origin))
             routes.append(prefix(lang) + page["route"])
     write_sitemap(origin, routes)
-    home = escape(origin or "./", quote=True)
-    (SITE / "404.html").write_text(f'''<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | IMFAHE</title>
-<style>body{{font:1rem/1.6 system-ui,sans-serif;margin:clamp(1.25rem,10vw,6rem);color:#3a3a3a}}a{{color:#c20e24}}</style></head>
-<body><main><h1>Page not found</h1><p><a href="{home}">Return to IMFAHE</a></p></main></body>
-</html>
-''')
+    (SITE / "404.html").write_text(not_found(origin))
     print(f"Built {len(routes)} IMFAHE pages in {len(LANGS)} languages.")
 
 

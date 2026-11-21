@@ -2,7 +2,7 @@
   {
     "slug": "home",
     "route": "",
-    "title": "Home - imfahe.org",
+    "title": "IMFAHE: Global Mentoring, Talent Development and Entrepreneurship",
     "description": "IMFAHE is a nonprofit that pairs students and professors from partner universities with international mentors in science, engineering and entrepreneurship."
   },
   {
@@ -20,7 +20,7 @@
   {
     "slug": "global-mini-symposiums",
     "route": "global-mini-symposiums/",
-    "title": "Global Mini-Symposiums - imfahe.org",
+    "title": "Workshops, Symposiums & In-Person Summer Courses - imfahe.org",
     "description": "Free IMFAHE Global Mini-Symposiums where world-renowned experts discuss a hot topic each year, from science communication to open science."
   },
   {
@@ -50,25 +50,25 @@
   {
     "slug": "imfahe-international-quarter-courses",
     "route": "imfahe-international-quarter-courses/",
-    "title": "International Quarter Courses - imfahe.org",
+    "title": "IMFAHE Global Academy - imfahe.org",
     "description": "30-hour online Quarter Courses from the IMFAHE Global Academy: build professional, innovation and leadership skills with international experts."
   },
   {
     "slug": "imfahe-professors-international-professional-development-program",
     "route": "imfahe-professors-international-professional-development-program/",
-    "title": "Professors iPDP - imfahe.org",
+    "title": "Professors' Professional Development (iPDP) - imfahe.org",
     "description": "iPDP is an online professional development program that helps professors and researchers at IMFAHE partner universities build careers of excellence."
   },
   {
     "slug": "imfahe-shark-tank-program",
     "route": "imfahe-shark-tank-program/",
-    "title": "Shark Tank - imfahe.org",
+    "title": "Global Entrepreneurship Competition - imfahe.org",
     "description": "The IMFAHE Global Entrepreneurship Competition helps international teams turn innovative ideas into startups, guided by experienced mentors."
   },
   {
     "slug": "imfahe-venture-building-program",
     "route": "imfahe-venture-building-program/",
-    "title": "Venture Building Program - imfahe.org",
+    "title": "Venture Building & Entrepreneurship - imfahe.org",
     "description": "IMFAHE's Venture Building Program helps Shark Tank winners turn ideas into investor-ready business models, and runs innovation workshops for universities."
   },
   {

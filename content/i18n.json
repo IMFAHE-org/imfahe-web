@@ -10,9 +10,23 @@
       "socialMedia": "Social media",
       "moreIn": "More in {group}",
       "nonprofit": "A 501(c)(3) nonprofit organization founded in 2015 and headquartered in Massachusetts, USA.",
-      "nonprofitInfo": "Non-Profit Information",
-      "backToTop": "Back to Top",
-      "rights": "All rights reserved."
+      "rights": "All rights reserved.",
+      "programs": "Programs",
+      "joinTitle": "How to join IMFAHE",
+      "joinStudent": "Students and professors",
+      "joinStudentText": "Apply through your university's annual call.",
+      "joinStudentAction": "See the open calls",
+      "joinMentor": "Mentors",
+      "joinMentorText": "Share your expertise with the next generation of talent.",
+      "joinMentorAction": "Register as a mentor",
+      "joinOrg": "Universities and organizations",
+      "joinOrgText": "Bring IMFAHE's programs to your institution.",
+      "joinOrgAction": "Write to us",
+      "support": "Support IMFAHE",
+      "financial": "Financial Disclosure",
+      "notFoundTitle": "Page not found",
+      "notFoundText": "The page you are looking for does not exist or has moved.",
+      "notFoundHome": "Go to the home page"
     }
   },
   "es": {
@@ -26,9 +40,23 @@
       "socialMedia": "Redes sociales",
       "moreIn": "Más en {group}",
       "nonprofit": "Organización sin ánimo de lucro 501(c)(3) fundada en 2015 y con sede en Massachusetts, EE. UU.",
-      "nonprofitInfo": "Información sobre la organización sin ánimo de lucro",
-      "backToTop": "Volver arriba",
-      "rights": "Todos los derechos reservados."
+      "rights": "Todos los derechos reservados.",
+      "programs": "Programas",
+      "joinTitle": "Cómo unirte a IMFAHE",
+      "joinStudent": "Estudiantes y profesores",
+      "joinStudentText": "Solicita tu plaza a través de la convocatoria anual de tu universidad.",
+      "joinStudentAction": "Ver las convocatorias abiertas",
+      "joinMentor": "Mentores",
+      "joinMentorText": "Comparte tu experiencia con la próxima generación de talento.",
+      "joinMentorAction": "Inscríbete como mentor",
+      "joinOrg": "Universidades y organizaciones",
+      "joinOrgText": "Lleva los programas de IMFAHE a tu institución.",
+      "joinOrgAction": "Escríbenos",
+      "support": "Apoya a IMFAHE",
+      "financial": "Información financiera",
+      "notFoundTitle": "Página no encontrada",
+      "notFoundText": "La página que buscas no existe o se ha movido.",
+      "notFoundHome": "Ir a la página de inicio"
     },
     "nav": {
       "Who We Are": "Quiénes somos",
@@ -40,7 +68,6 @@
       "Global Entrepreneurship Competition": "Competición Global de Emprendimiento",
       "Venture Building & Entrepreneurship": "Venture Building y Emprendimiento",
       "Global Education": "Educación Global",
-      "Professors iPDP": "iPDP para Profesores",
       "Workshops, Symposiums & In-Person Summer Courses": "Talleres, simposios y cursos de verano presenciales",
       "Contact": "Contacto",
       "One global community. Endless possibilities.": "Una comunidad global. Infinitas posibilidades.",
@@ -51,11 +78,12 @@
       "Transforming ideas into ventures.": "Transformamos ideas en empresas.",
       "Stand out as a researcher and educator.": "Destaca como investigador y docente.",
       "Learn from global experts. Develop future-ready skills.": "Aprende de expertos internacionales. Desarrolla competencias para el futuro.",
-      "Connecting science, innovation & career opportunities.": "Conectamos ciencia, innovación y oportunidades profesionales."
+      "Connecting science, innovation & career opportunities.": "Conectamos ciencia, innovación y oportunidades profesionales.",
+      "Professors' Professional Development (iPDP)": "Desarrollo profesional para profesores (iPDP)"
     },
     "pages": {
       "home": {
-        "title": "Inicio - imfahe.org",
+        "title": "IMFAHE: mentoría global, desarrollo del talento y emprendimiento",
         "description": "IMFAHE es una organización sin ánimo de lucro que conecta a estudiantes y profesores de universidades asociadas con mentores internacionales en ciencia, ingeniería y emprendimiento."
       },
       "contact": {
@@ -67,7 +95,7 @@
         "description": "IMFAHE Foundation es una organización sin ánimo de lucro exenta de impuestos. Consulta nuestros formularios 990 y PC presentados ante la Fiscalía General de Massachusetts y descubre cómo donar."
       },
       "global-mini-symposiums": {
-        "title": "Mini-simposios globales - imfahe.org",
+        "title": "Talleres, simposios y cursos de verano presenciales - imfahe.org",
         "description": "Mini-simposios globales gratuitos de IMFAHE en los que expertos de prestigio mundial debaten cada año un tema de actualidad, de la comunicación científica a la ciencia abierta."
       },
       "imfahe-connects-program": {
@@ -87,19 +115,19 @@
         "description": "Recibe mentoría internacional personalizada de expertos de Harvard, MIT, Stanford, Google y más a través del Programa Internacional de Mentoría de IMFAHE."
       },
       "imfahe-international-quarter-courses": {
-        "title": "Cursos trimestrales internacionales - imfahe.org",
+        "title": "IMFAHE Global Academy - imfahe.org",
         "description": "Cursos trimestrales en línea de 30 horas de la IMFAHE Global Academy: desarrolla competencias profesionales, de innovación y de liderazgo con expertos internacionales."
       },
       "imfahe-professors-international-professional-development-program": {
-        "title": "iPDP para Profesores - imfahe.org",
+        "title": "Desarrollo profesional para profesores (iPDP) - imfahe.org",
         "description": "El iPDP es un programa en línea de desarrollo profesional que ayuda a profesores e investigadores de las universidades asociadas a IMFAHE a construir carreras de excelencia."
       },
       "imfahe-shark-tank-program": {
-        "title": "Shark Tank - imfahe.org",
+        "title": "Competición Global de Emprendimiento - imfahe.org",
         "description": "La Competición Global de Emprendimiento de IMFAHE ayuda a equipos internacionales a convertir ideas innovadoras en startups, con la guía de mentores con experiencia."
       },
       "imfahe-venture-building-program": {
-        "title": "Programa de Venture Building - imfahe.org",
+        "title": "Venture Building y Emprendimiento - imfahe.org",
         "description": "El Programa de Venture Building de IMFAHE ayuda a los ganadores del Shark Tank a convertir sus ideas en modelos de negocio listos para inversores y organiza talleres de innovación para universidades."
       },
       "who-is-imfahe": {
@@ -119,9 +147,23 @@
       "socialMedia": "Redes sociais",
       "moreIn": "Mais em {group}",
       "nonprofit": "Organização sem fins lucrativos 501(c)(3) fundada em 2015 e com sede em Massachusetts, EUA.",
-      "nonprofitInfo": "Informação sobre a organização sem fins lucrativos",
-      "backToTop": "Voltar ao topo",
-      "rights": "Todos os direitos reservados."
+      "rights": "Todos os direitos reservados.",
+      "programs": "Programas",
+      "joinTitle": "Como juntar-se à IMFAHE",
+      "joinStudent": "Estudantes e professores",
+      "joinStudentText": "Candidate-se através do edital anual da sua universidade.",
+      "joinStudentAction": "Ver os editais abertos",
+      "joinMentor": "Mentores",
+      "joinMentorText": "Partilhe a sua experiência com a próxima geração de talento.",
+      "joinMentorAction": "Inscreva-se como mentor",
+      "joinOrg": "Universidades e organizações",
+      "joinOrgText": "Leve os programas da IMFAHE à sua instituição.",
+      "joinOrgAction": "Escreva-nos",
+      "support": "Apoie a IMFAHE",
+      "financial": "Informação financeira",
+      "notFoundTitle": "Página não encontrada",
+      "notFoundText": "A página que procura não existe ou foi movida.",
+      "notFoundHome": "Ir para a página inicial"
     },
     "nav": {
       "Who We Are": "Quem somos",
@@ -133,7 +175,6 @@
       "Global Entrepreneurship Competition": "Competição Global de Empreendedorismo",
       "Venture Building & Entrepreneurship": "Venture Building e Empreendedorismo",
       "Global Education": "Educação Global",
-      "Professors iPDP": "iPDP para Professores",
       "Workshops, Symposiums & In-Person Summer Courses": "Workshops, simpósios e cursos de verão presenciais",
       "Contact": "Contacto",
       "One global community. Endless possibilities.": "Uma comunidade global. Possibilidades infinitas.",
@@ -144,11 +185,12 @@
       "Transforming ideas into ventures.": "Transformamos ideias em empresas.",
       "Stand out as a researcher and educator.": "Destaque-se como investigador e docente.",
       "Learn from global experts. Develop future-ready skills.": "Aprenda com especialistas internacionais. Desenvolva competências para o futuro.",
-      "Connecting science, innovation & career opportunities.": "Ligamos ciência, inovação e oportunidades de carreira."
+      "Connecting science, innovation & career opportunities.": "Ligamos ciência, inovação e oportunidades de carreira.",
+      "Professors' Professional Development (iPDP)": "Desenvolvimento profissional para professores (iPDP)"
     },
     "pages": {
       "home": {
-        "title": "Início - imfahe.org",
+        "title": "IMFAHE: mentoria global, desenvolvimento de talento e empreendedorismo",
         "description": "A IMFAHE é uma organização sem fins lucrativos que liga estudantes e professores de universidades parceiras a mentores internacionais em ciência, engenharia e empreendedorismo."
       },
       "contact": {
@@ -160,7 +202,7 @@
         "description": "A IMFAHE Foundation é uma organização sem fins lucrativos isenta de impostos. Consulte os nossos formulários 990 e PC apresentados à Procuradoria-Geral de Massachusetts e saiba como doar."
       },
       "global-mini-symposiums": {
-        "title": "Mini-simpósios globais - imfahe.org",
+        "title": "Workshops, simpósios e cursos de verão presenciais - imfahe.org",
         "description": "Mini-simpósios globais gratuitos da IMFAHE, nos quais especialistas de renome mundial debatem todos os anos um tema atual, da comunicação de ciência à ciência aberta."
       },
       "imfahe-connects-program": {
@@ -180,19 +222,19 @@
         "description": "Receba mentoria internacional individual de especialistas de Harvard, MIT, Stanford, Google e outros através do Programa Internacional de Mentoria da IMFAHE."
       },
       "imfahe-international-quarter-courses": {
-        "title": "Cursos trimestrais internacionais - imfahe.org",
+        "title": "IMFAHE Global Academy - imfahe.org",
         "description": "Cursos trimestrais online de 30 horas da IMFAHE Global Academy: desenvolva competências profissionais, de inovação e de liderança com especialistas internacionais."
       },
       "imfahe-professors-international-professional-development-program": {
-        "title": "iPDP para Professores - imfahe.org",
+        "title": "Desenvolvimento profissional para professores (iPDP) - imfahe.org",
         "description": "O iPDP é um programa online de desenvolvimento profissional que ajuda professores e investigadores das universidades parceiras da IMFAHE a construir carreiras de excelência."
       },
       "imfahe-shark-tank-program": {
-        "title": "Shark Tank - imfahe.org",
+        "title": "Competição Global de Empreendedorismo - imfahe.org",
         "description": "A Competição Global de Empreendedorismo da IMFAHE ajuda equipas internacionais a transformar ideias inovadoras em startups, com a orientação de mentores experientes."
       },
       "imfahe-venture-building-program": {
-        "title": "Programa de Venture Building - imfahe.org",
+        "title": "Venture Building e Empreendedorismo - imfahe.org",
         "description": "O Programa de Venture Building da IMFAHE ajuda os vencedores do Shark Tank a transformar ideias em modelos de negócio prontos para investidores e organiza workshops de inovação para universidades."
       },
       "who-is-imfahe": {
