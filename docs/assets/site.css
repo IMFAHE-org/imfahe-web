@@ -153,6 +153,16 @@ address { font-style: normal; }
 .hero-title--home .title-brand, .hero-title--home .title-line { display: block; }
 .hero-title--home .title-brand { color: var(--brand); }
 .hero-title--home .title-sep { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } /* the pipes stay in the text, the lines replace them on screen */
+/* Home: text and a larger video, then the three ways in and the numbers, all on the first screen. */
+.hero-home { padding-block: clamp(1.25rem, .75rem + 1.5vw, 2rem) clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+.hero-home .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 3.5rem); }
+.hero-home .hero-title--home { font-size: clamp(1.75rem, 1.1rem + 2.2vw, 2.5rem); }
+.hero-home .hero-copy { gap: 1rem; }
+.hero-extras { display: grid; gap: clamp(1rem, .75rem + 1vw, 1.5rem); margin-block-start: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
+.hero-home .stats strong { font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem); }
+.hero-home .stats .icon { margin-block-end: .125rem; }
+.hero-home .entry-links { max-width: none; margin: 0; border: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1rem, 2.5vw, 2rem); }
+.hero-home .entry-links li { border-top: 1px solid var(--line); }
 .hero--single { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; justify-items: start; }
 .hero--single > .prose { max-width: var(--measure); }
 /* "IMFAHE" is the page title and the first word of its opening sentence. */
@@ -445,6 +455,8 @@ address { font-style: normal; }
 @media (max-width: 45rem) {
   .hero, .split, .cta, .pillar, .benefits, .benefits--3, .event { grid-template-columns: minmax(0, 1fr); }
   .join-list { grid-template-columns: minmax(0, 1fr); }
+  .hero-home .hero, .hero-home .entry-links { grid-template-columns: minmax(0, 1fr); }
+  .hero-home .entry-links li + li { border-top: 0; }
   .join-list li + li { margin-block-start: 1.25rem; }
   .footer-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; }
   .footer-nav a { padding-block: .5625rem; } /* fingers need more room than a mouse */
