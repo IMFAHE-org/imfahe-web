@@ -503,7 +503,9 @@
    "at": [
     0.1,
     51.53
-   ]
+   ],
+   "logo": "logos/nature.svg",
+   "ratio": 4.08
   },
   {
    "name": "Instituto Politécnico de Bragança",
@@ -537,7 +539,9 @@
    "at": [
     2.3,
     48.85
-   ]
+   ],
+   "logo": "logos/cnrs.svg",
+   "ratio": 1.0
   },
   {
    "name": "IÉSEG",
@@ -632,7 +636,9 @@
    "at": [
     54.4,
     24.45
-   ]
+   ],
+   "logo": "logos/cepsa.svg",
+   "ratio": 3.68
   },
   {
    "name": "NICT",

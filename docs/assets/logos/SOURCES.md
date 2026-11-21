@@ -8,6 +8,8 @@ Each file is the organization's own logo, taken from Wikimedia Commons or the or
 | `amazon-robotics.svg` | Amazon Robotics | https://commons.wikimedia.org/wiki/File:Amazon_Robotics_logo.svg | Public domain |
 | `bank-of-america.svg` | Bank of America | https://commons.wikimedia.org/wiki/File:Bank_of_America_logo.svg | Public domain |
 | `boston-university.svg` | Boston University | https://commons.wikimedia.org/wiki/File:Boston_University_wordmark.svg | Public domain |
+| `cepsa.svg` | Cepsa | https://commons.wikimedia.org/wiki/File:Cepsa.svg | Public domain |
+| `cnrs.svg` | CNRS | https://commons.wikimedia.org/wiki/File:Cnrs-logo.svg | Public domain |
 | `eth-zurich.svg` | ETH Zürich | https://commons.wikimedia.org/wiki/File:ETH_Z%C3%BCrich_Logo_black.svg | Public domain |
 | `european-space-agency.svg` | European Space Agency (ESA) | https://commons.wikimedia.org/wiki/File:European_Space_Agency_logo.svg | Public domain |
 | `google.svg` | Google | https://commons.wikimedia.org/wiki/File:Google_2015_logo.svg | Public domain |
@@ -25,6 +27,7 @@ Each file is the organization's own logo, taken from Wikimedia Commons or the or
 | `merck.svg` | Merck | https://commons.wikimedia.org/wiki/File:Logo_Merck_KGaA_2015.svg | Public domain |
 | `meta.svg` | Meta | https://commons.wikimedia.org/wiki/File:Meta_Platforms_Inc._logo.svg | Public domain |
 | `national-institute-of-mental-health.webp` | National Institute of Mental Health (NIH NIMH) | https://commons.wikimedia.org/wiki/File:NIH-NIMH-logo-new.png | Public domain |
+| `nature.svg` | Nature | https://commons.wikimedia.org/wiki/File:Nature_journal_logo.svg | Public domain |
 | `novartis.svg` | Novartis | https://commons.wikimedia.org/wiki/File:Novartis-Logo-2023.svg | Public domain |
 | `ntnu.svg` | NTNU | https://commons.wikimedia.org/wiki/File:NTNU-logo.svg | Public domain |
 | `princeton-university.svg` | Princeton University | https://commons.wikimedia.org/wiki/File:Princeton_text_logo.svg | Public domain |
