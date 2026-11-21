@@ -161,6 +161,12 @@ Blocks must be in the same order as their tabs, with the same four parts (pictur
 </div></div></section>
 ```
 
+A quiet band is the same row on grey and thinner. Use it for a short statement with one link that is not the page's main call (the nonprofit line at the foot of the home page). It does not count as a closing call, so the build still adds "How to join" after it.
+
+```html
+<section class="band band--quiet"><div class="wrap"><div><h2>Statement</h2><p>One sentence.</p></div><a class="button button--outline" href="...">Label</a></div></section>
+```
+
 ## Other pieces
 
 - Buttons: `button`, `button button--outline`. Text link with arrow: `link-arrow`. Row of buttons: `<div class="actions">`.

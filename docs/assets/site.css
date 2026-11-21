@@ -221,6 +221,14 @@ address { font-style: normal; }
 .band h2 a { color: inherit; text-decoration: none; }
 .band .button { background: var(--white); border-color: var(--white); color: var(--brand-strong); }
 .band .button:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+/* Quiet band: the same one-row layout on grey, thinner, for a statement that is not the page's main call. */
+.band--quiet { background: var(--tint); color: var(--ink); }
+.band--quiet .wrap { padding-block: 1.25rem; }
+.band--quiet .wrap > div { flex: 1 1 20rem; } /* the text wraps before the button drops to its own row */
+.band--quiet h2 { font-size: 1.0625rem; max-width: none; }
+.band--quiet p { color: var(--muted); font-size: .9375rem; max-width: none; margin-block-start: .25rem; }
+.band--quiet .button { background: transparent; border-color: var(--brand); }
+.band--quiet .button:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
 
 /* Partner logos */
 .logos { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
