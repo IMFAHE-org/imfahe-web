@@ -188,7 +188,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 - **Table** (`table-scroll` + `table`): real data. Numbers use `class="num"`.
 - **Red call band** (`band`): one line and one button on red, for the single most important call on a page.
 - **Closing call to action** (`cta`, `cta--plain`): heading, text and buttons at the end of a page, with a 4:5 picture or without one.
-- **Home pillars** (`pillars` / `pillar` / `pillar-links`): the three program areas on the home page.
+- **Home program tabs** (`tabs` / `tab-list` / `tab-panel`): the three program areas on the home page, one open at a time, each ending in one Learn More button. `pillars` / `pillar` remain for the three audience columns on Contact.
 - **Partner logos** (`logos`): a grid of linked logos. Add `data-shape="square"` to square logos so they show a little taller.
 - **Team** (`team-group`, `team`, `photo-card`, `card-role`, `socials`): people with a round photo, name and role.
 - **Buttons and links** (`button`, `button button--outline`, `link-arrow`, `actions`): a solid button for the main action, an outline button for a second one, a text link with an arrow for the rest. `actions` holds a row of them.
