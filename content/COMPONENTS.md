@@ -64,7 +64,7 @@ Rules that apply everywhere:
 ## Two columns
 
 ```html
-<div class="split">              <!-- split--media centers a picture beside text -->
+<div class="split">              <!-- split--media centers a picture beside text; add split--flip to show the picture on the left while the text still comes first for phones and screen readers -->
 <div class="prose">...</div>
 <div class="prose">...</div>
 </div>
