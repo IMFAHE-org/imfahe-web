@@ -40,6 +40,27 @@ document.addEventListener("keydown", (event) => {
   openMenu.querySelector("summary")?.focus();
 });
 
+// Numbers count up once when they scroll into view. Skipped for people who ask their device for less motion.
+// shortcut: treats "." and "," as thousands separators, never decimals; revisit if a figure like "1.5" is ever shown.
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  const counter = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    counter.unobserve(entry.target);
+    const el = entry.target, final = el.textContent;
+    const parts = final.match(/^(\D*)(\d[\d.,\u00a0 ]*\d|\d)(\D*)$/);
+    if (!parts) return;
+    const target = Number(parts[2].replace(/\D/g, "")), separator = (parts[2].match(/\D/) || [""])[0], start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min(1, (now - start) / 1200), eased = 1 - (1 - progress) ** 4;
+      const shown = String(Math.round(target * eased)).replace(/\B(?=(\d{3})+$)/g, separator);
+      el.textContent = progress < 1 ? parts[1] + shown + parts[3] : final; // always ends on the exact original text
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.6 });
+  document.querySelectorAll(".stats strong").forEach((el) => counter.observe(el));
+}
+
 // Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
 // It is also skipped on a developer's machine so previews stay out of the reports.
 function loadAnalytics() {
