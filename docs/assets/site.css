@@ -172,7 +172,7 @@ address { font-style: normal; }
 /* Video */
 .video { width: 100%; }
 .video-trigger { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--ink); cursor: pointer; text-align: left; box-shadow: var(--shadow); }
-.video-trigger > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; scale: 1.05; transition: transform .6s var(--ease), opacity .3s; } /* the slight zoom hides black edge rows in some YouTube pictures */
+.video-trigger > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .6s var(--ease), opacity .3s; }
 .video-trigger:hover > img { transform: scale(1.03); opacity: .9; }
 .play-button { position: absolute; inset: 0; margin: auto; display: grid; place-items: center; width: clamp(3.25rem, 2.5rem + 3vw, 4.75rem); aspect-ratio: 1; border-radius: 50%; background: var(--brand); color: var(--white); box-shadow: 0 .5rem 1.5rem -.25rem rgba(0, 0, 0, .45); transition: transform .3s var(--ease), background-color .2s; }
 .play-button .icon { width: 42%; height: 42%; fill: currentColor; translate: 6% 0; }
@@ -355,6 +355,13 @@ address { font-style: normal; }
 .footer-legal .lang-switch { margin-inline-start: auto; background: var(--white); }
 .footer-legal p { flex: 1 1 100%; max-width: none; }
 .footer-legal p a { color: inherit; }
+
+/* Cookie question: a small card in the corner, never over the whole page */
+.consent { position: fixed; inset: auto 1rem 1rem auto; z-index: 6; width: min(26rem, calc(100% - 2rem)); display: grid; gap: .875rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); font-size: .9375rem; }
+.consent[hidden] { display: none; }
+.consent .button { min-height: 2.75rem; padding: .5rem 1.15rem; }
+.link-button { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0; border: 0; background: none; color: var(--ink); font-weight: 600; cursor: pointer; }
+.link-button:hover { color: var(--brand-strong); }
 
 /* Scroll reveal: content is visible by default; browsers with scroll timelines ease sections in. */
 @media (prefers-reduced-motion: no-preference) {

@@ -26,7 +26,11 @@
       "financial": "Financial Disclosure",
       "notFoundTitle": "Page not found",
       "notFoundText": "The page you are looking for does not exist or has moved.",
-      "notFoundHome": "Go to the home page"
+      "notFoundHome": "Go to the home page",
+      "consentText": "We use Google Analytics cookies to understand how this site is used. You can accept or decline them.",
+      "consentAccept": "Accept",
+      "consentDecline": "Decline",
+      "cookieSettings": "Cookie settings"
     }
   },
   "es": {
@@ -56,7 +60,11 @@
       "financial": "Información financiera",
       "notFoundTitle": "Página no encontrada",
       "notFoundText": "La página que buscas no existe o se ha movido.",
-      "notFoundHome": "Ir a la página de inicio"
+      "notFoundHome": "Ir a la página de inicio",
+      "consentText": "Usamos cookies de Google Analytics para saber cómo se utiliza esta web. Puedes aceptarlas o rechazarlas.",
+      "consentAccept": "Aceptar",
+      "consentDecline": "Rechazar",
+      "cookieSettings": "Configuración de cookies"
     },
     "nav": {
       "Who We Are": "Quiénes somos",
@@ -163,7 +171,11 @@
       "financial": "Informação financeira",
       "notFoundTitle": "Página não encontrada",
       "notFoundText": "A página que procura não existe ou foi movida.",
-      "notFoundHome": "Ir para a página inicial"
+      "notFoundHome": "Ir para a página inicial",
+      "consentText": "Utilizamos cookies do Google Analytics para perceber como este site é utilizado. Pode aceitá-las ou recusá-las.",
+      "consentAccept": "Aceitar",
+      "consentDecline": "Recusar",
+      "cookieSettings": "Definições de cookies"
     },
     "nav": {
       "Who We Are": "Quem somos",

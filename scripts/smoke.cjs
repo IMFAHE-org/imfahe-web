@@ -16,6 +16,7 @@ const widthSet = [320, 390, 768, 1280];
     headless: true,
   });
   const page = await browser.newPage();
+  await page.addInitScript(() => localStorage.setItem("imfahe-analytics", "no"));
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   const stats = [];

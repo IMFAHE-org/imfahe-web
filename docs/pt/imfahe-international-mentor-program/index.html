@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Programa Internacional de Mentoria - imfahe.org</title>
   <meta name="description" content="Receba mentoria internacional individual de especialistas de Harvard, MIT, Stanford, Google e outros através do Programa Internacional de Mentoria da IMFAHE.">
   <meta name="theme-color" content="#ffffff">
@@ -16,13 +17,13 @@
   <link rel="alternate" hreflang="en" href="https://imfahe.github.io/imfahe-web/imfahe-international-mentor-program/">
   <link rel="alternate" hreflang="es" href="https://imfahe.github.io/imfahe-web/es/imfahe-international-mentor-program/">
   <link rel="alternate" hreflang="pt-PT" href="https://imfahe.github.io/imfahe-web/pt/imfahe-international-mentor-program/">
-  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/imfahe-share-1200.jpg">
+  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/share-mentor.jpg">
   <link rel="icon" href="../../assets/images/site-icon-48.png" sizes="48x48" type="image/png">
   <link rel="icon" href="../../assets/images/site-icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="../../assets/images/site-icon-192.png">
   <link rel="preload" href="../../assets/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/site.css?v=c0eac4f33c">
-  <script defer src="../../assets/site.js?v=718cea7cb5"></script>
+  <link rel="stylesheet" href="../../assets/site.css?v=d11f7b8340">
+  <script defer src="../../assets/site.js?v=d6eb923c64"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
@@ -147,6 +148,7 @@
         <ul class="footer-links">
           <li><a href="../../pt/who-is-imfahe/">Quem somos</a></li><li><a href="../../pt/contact/">Contacto</a></li>
           <li><a href="../../pt/economical-disclosure/">Informação financeira</a></li>
+          <li><button class="link-button" type="button" data-consent-open>Definições de cookies</button></li>
           <li><a href="mailto:contact@imfahe.org?subject=Apoie%20a%20IMFAHE">Apoie a IMFAHE</a></li>
         </ul>
         <ul class="lang-switch" aria-label="Idioma"><li><a href="../../imfahe-international-mentor-program/" lang="en" hreflang="en" title="English">EN</a></li><li><a href="../../es/imfahe-international-mentor-program/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="../../pt/imfahe-international-mentor-program/" lang="pt-PT" hreflang="pt-PT" title="Português" aria-current="true">PT</a></li></ul>
@@ -154,5 +156,9 @@
       </div>
     </div>
   </footer>
+  <div class="consent" id="consent" role="region" aria-label="Definições de cookies" hidden>
+    <p>Utilizamos cookies do Google Analytics para perceber como este site é utilizado. Pode aceitá-las ou recusá-las.</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">Aceitar</button><button class="button button--outline" type="button" data-consent="no">Recusar</button></div>
+  </div>
 </body>
 </html>

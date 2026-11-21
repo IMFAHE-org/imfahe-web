@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Page not found - imfahe.org</title>
   <meta name="description" content="Page not found.">
   <meta name="theme-color" content="#ffffff">
@@ -16,8 +17,8 @@
   <link rel="icon" href="/imfahe-web/assets/images/site-icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/imfahe-web/assets/images/site-icon-192.png">
   <link rel="preload" href="/imfahe-web/assets/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/imfahe-web/assets/site.css?v=c0eac4f33c">
-  <script defer src="/imfahe-web/assets/site.js?v=718cea7cb5"></script>
+  <link rel="stylesheet" href="/imfahe-web/assets/site.css?v=d11f7b8340">
+  <script defer src="/imfahe-web/assets/site.js?v=d6eb923c64"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -73,6 +74,7 @@
         <ul class="footer-links">
           <li><a href="/imfahe-web/who-is-imfahe/">Who We Are</a></li><li><a href="/imfahe-web/contact/">Contact</a></li>
           <li><a href="/imfahe-web/economical-disclosure/">Financial Disclosure</a></li>
+          <li><button class="link-button" type="button" data-consent-open>Cookie settings</button></li>
           <li><a href="mailto:contact@imfahe.org?subject=Support%20IMFAHE">Support IMFAHE</a></li>
         </ul>
         
@@ -80,5 +82,9 @@
       </div>
     </div>
   </footer>
+  <div class="consent" id="consent" role="region" aria-label="Cookie settings" hidden>
+    <p>We use Google Analytics cookies to understand how this site is used. You can accept or decline them.</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">Accept</button><button class="button button--outline" type="button" data-consent="no">Decline</button></div>
+  </div>
 </body>
 </html>

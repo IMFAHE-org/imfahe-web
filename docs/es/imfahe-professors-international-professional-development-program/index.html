@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Desarrollo profesional para profesores (iPDP) - imfahe.org</title>
   <meta name="description" content="El iPDP es un programa en línea de desarrollo profesional que ayuda a profesores e investigadores de las universidades asociadas a IMFAHE a construir carreras de excelencia.">
   <meta name="theme-color" content="#ffffff">
@@ -16,13 +17,13 @@
   <link rel="alternate" hreflang="en" href="https://imfahe.github.io/imfahe-web/imfahe-professors-international-professional-development-program/">
   <link rel="alternate" hreflang="es" href="https://imfahe.github.io/imfahe-web/es/imfahe-professors-international-professional-development-program/">
   <link rel="alternate" hreflang="pt-PT" href="https://imfahe.github.io/imfahe-web/pt/imfahe-professors-international-professional-development-program/">
-  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/imfahe-share-1200.jpg">
+  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/share-professors-professional-deve.jpg">
   <link rel="icon" href="../../assets/images/site-icon-48.png" sizes="48x48" type="image/png">
   <link rel="icon" href="../../assets/images/site-icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="../../assets/images/site-icon-192.png">
   <link rel="preload" href="../../assets/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/site.css?v=c0eac4f33c">
-  <script defer src="../../assets/site.js?v=718cea7cb5"></script>
+  <link rel="stylesheet" href="../../assets/site.css?v=d11f7b8340">
+  <script defer src="../../assets/site.js?v=d6eb923c64"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -75,7 +76,7 @@
 <li><svg class="icon" aria-hidden="true" focusable="false" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /> </svg><strong>1</strong> <span>Portafolio de liderazgo académico</span></li>
 </ul>
 <p class="meta">Colaboración • IA • Docencia • Innovación • Liderazgo • Comunicación</p>
-<div class="stack"><p><strong>Inscríbete AQUÍ*</strong></p>
+<div class="stack"><a class="button" href="mailto:contact@imfahe.org"><svg class="icon" aria-hidden="true" focusable="false" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /> </svg> Inscríbete AQUÍ*</a>
 <p class="meta">*Utiliza la misma dirección de correo electrónico durante todo el curso</p>
 <p class="meta">IMFAHE Foundation, curso académico 2026-2027</p></div>
 </div>
@@ -114,6 +115,7 @@
         <ul class="footer-links">
           <li><a href="../../es/who-is-imfahe/">Quiénes somos</a></li><li><a href="../../es/contact/">Contacto</a></li>
           <li><a href="../../es/economical-disclosure/">Información financiera</a></li>
+          <li><button class="link-button" type="button" data-consent-open>Configuración de cookies</button></li>
           <li><a href="mailto:contact@imfahe.org?subject=Apoya%20a%20IMFAHE">Apoya a IMFAHE</a></li>
         </ul>
         <ul class="lang-switch" aria-label="Idioma"><li><a href="../../imfahe-professors-international-professional-development-program/" lang="en" hreflang="en" title="English">EN</a></li><li><a href="../../es/imfahe-professors-international-professional-development-program/" lang="es" hreflang="es" title="Español" aria-current="true">ES</a></li><li><a href="../../pt/imfahe-professors-international-professional-development-program/" lang="pt-PT" hreflang="pt-PT" title="Português">PT</a></li></ul>
@@ -121,5 +123,9 @@
       </div>
     </div>
   </footer>
+  <div class="consent" id="consent" role="region" aria-label="Configuración de cookies" hidden>
+    <p>Usamos cookies de Google Analytics para saber cómo se utiliza esta web. Puedes aceptarlas o rechazarlas.</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">Aceptar</button><button class="button button--outline" type="button" data-consent="no">Rechazar</button></div>
+  </div>
 </body>
 </html>

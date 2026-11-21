@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>IMFAHE Global Academy - imfahe.org</title>
   <meta name="description" content="30-hour online Quarter Courses from the IMFAHE Global Academy: build professional, innovation and leadership skills with international experts.">
   <meta name="theme-color" content="#ffffff">
@@ -16,13 +17,13 @@
   <link rel="alternate" hreflang="en" href="https://imfahe.github.io/imfahe-web/imfahe-international-quarter-courses/">
   <link rel="alternate" hreflang="es" href="https://imfahe.github.io/imfahe-web/es/imfahe-international-quarter-courses/">
   <link rel="alternate" hreflang="pt-PT" href="https://imfahe.github.io/imfahe-web/pt/imfahe-international-quarter-courses/">
-  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/imfahe-share-1200.jpg">
+  <meta property="og:image" content="https://imfahe.github.io/imfahe-web/assets/images/share-quarter-courses.jpg">
   <link rel="icon" href="../assets/images/site-icon-48.png" sizes="48x48" type="image/png">
   <link rel="icon" href="../assets/images/site-icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="../assets/images/site-icon-192.png">
   <link rel="preload" href="../assets/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/site.css?v=c0eac4f33c">
-  <script defer src="../assets/site.js?v=718cea7cb5"></script>
+  <link rel="stylesheet" href="../assets/site.css?v=d11f7b8340">
+  <script defer src="../assets/site.js?v=d6eb923c64"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -55,7 +56,7 @@
 <div class="wrap hero hero--banner">
 <h1>IMFAHE Global Academy: International Education &amp; Professional Development</h1>
 <p class="lead">Learn from Global Experts. Develop Future-Ready Skills. Advance Your Career.</p>
-<figure class="media hero-photo"><img alt="Students and professors learning online through IMFAHE" decoding="async" fetchpriority="high" height="333" sizes="(max-width: 1280px) calc(100vw - 2.5rem), 1216px" src="../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-800.webp" srcset="../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-400.webp 400w, ../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-800.webp 800w, ../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-1000.webp 1000w" width="1000"/></figure>
+<figure class="media hero-photo"><img alt="Students and professors learning online through IMFAHE" decoding="async" fetchpriority="high" height="500" sizes="(max-width: 1280px) calc(100vw - 2.5rem), 1216px" src="../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-1500.webp" srcset="../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-400.webp 400w, ../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-800.webp 800w, ../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-1000.webp 1000w, ../assets/images/aprendizaje-global-graduacion-y-masterclass-online-1000x333-3cf976aa-1500.webp 1500w" width="1500"/></figure>
 <div class="prose prose--cols"><p>The <strong>IMFAHE Global Academy</strong> offers international professional development courses designed to empower students, researchers, professors, and professionals to thrive in a rapidly evolving, AI-driven world.</p><p>Through <strong>30-hour Quarter Courses</strong>, participants learn from internationally recognized experts in academia, industry, and entrepreneurship. Our programs combine interactive masterclasses, AI-powered tools, and practical assignments to develop essential skills, strengthen professional portfolios, and accelerate career growth.</p><p><strong>Students, researchers, and professors from IMFAHE partner institutions, as well as our international mentors, are eligible to earn a 30-hour IMFAHE certificate</strong> upon successful completion of the course requirements.</p></div>
 </div>
 </section>
@@ -136,6 +137,7 @@
         <ul class="footer-links">
           <li><a href="../who-is-imfahe/">Who We Are</a></li><li><a href="../contact/">Contact</a></li>
           <li><a href="../economical-disclosure/">Financial Disclosure</a></li>
+          <li><button class="link-button" type="button" data-consent-open>Cookie settings</button></li>
           <li><a href="mailto:contact@imfahe.org?subject=Support%20IMFAHE">Support IMFAHE</a></li>
         </ul>
         <ul class="lang-switch" aria-label="Language"><li><a href="../imfahe-international-quarter-courses/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="../es/imfahe-international-quarter-courses/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="../pt/imfahe-international-quarter-courses/" lang="pt-PT" hreflang="pt-PT" title="Português">PT</a></li></ul>
@@ -143,5 +145,9 @@
       </div>
     </div>
   </footer>
+  <div class="consent" id="consent" role="region" aria-label="Cookie settings" hidden>
+    <p>We use Google Analytics cookies to understand how this site is used. You can accept or decline them.</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">Accept</button><button class="button button--outline" type="button" data-consent="no">Decline</button></div>
+  </div>
 </body>
 </html>

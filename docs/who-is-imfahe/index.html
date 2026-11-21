@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Who We Are - imfahe.org</title>
   <meta name="description" content="IMFAHE bridges academia and the global professional world through Ivy League-inspired education, international mentoring and a global talent platform.">
   <meta name="theme-color" content="#ffffff">
@@ -21,8 +22,8 @@
   <link rel="icon" href="../assets/images/site-icon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="../assets/images/site-icon-192.png">
   <link rel="preload" href="../assets/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/site.css?v=c0eac4f33c">
-  <script defer src="../assets/site.js?v=718cea7cb5"></script>
+  <link rel="stylesheet" href="../assets/site.css?v=d11f7b8340">
+  <script defer src="../assets/site.js?v=d6eb923c64"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -158,8 +159,8 @@
 </div></div>
 </div>
 </section>
-<section class="section"><div class="wrap section-layout"><div class="section-intro"><h2>LEARN MORE ABOUT US</h2>
-<div class="prose"><ul><li><strong>US Wire Article:</strong> <a href="https://usawire.com/imfahe-revolutionizing-global-career-development/" target="_blank" rel="noopener"><em>IMFAHE: Revolutionizing Global Career Development.</em></a></li><li><strong>Radio Interview (in Spanish)</strong>: <a href="https://open.spotify.com/episode/0snFCgwKfR1pMXsb8sn6wm" target="_blank" rel="noopener"><em>Connecting Talent with Global Opportunities</em></a></li><li><strong> European Commission Newsletter:</strong> <a href="https://ec.europa.eu/newsroom/dae/items/126670" target="_blank" rel="noopener"><i>International e-Mentoring Platforms as New Open Innovation Strategies</i></a></li><li><strong>Nature Biotechnology Article</strong>: <a href="https://www.nature.com/articles/nbt.3822.epdf?author_access_token=vZOfZpfLMNuYo8GLeVQ5xtRgN0jAjWel9jnR3ZoTv0McZW1PWhVGhsPvCTCTTAcJEouCFYjcqol_sz0dNR_xOwqkneSFWhzFBg8NM1rwy9r1-QXB8-Ym8s3D7lwTZYBK" target="_blank" rel="noopener"><i>International mentoring as a new educational approach to alleviate brain drain, empower young talent, and internationalize education.</i></a></li></ul></div>
+<section class="section"><div class="wrap section-layout"><div class="section-intro"><h2>Learn More About Us</h2>
+<div class="prose"><ul><li><strong>USA Wire Article:</strong> <a href="https://usawire.com/imfahe-revolutionizing-global-career-development/" target="_blank" rel="noopener"><em>IMFAHE: Revolutionizing Global Career Development.</em></a></li><li><strong>Radio Interview (in Spanish)</strong>: <a href="https://open.spotify.com/episode/0snFCgwKfR1pMXsb8sn6wm" target="_blank" rel="noopener"><em>Connecting Talent with Global Opportunities</em></a></li><li><strong> European Commission Newsletter:</strong> <a href="https://ec.europa.eu/newsroom/dae/items/126670" target="_blank" rel="noopener"><i>International e-Mentoring Platforms as New Open Innovation Strategies</i></a></li><li><strong>Nature Biotechnology Article</strong>: <a href="https://www.nature.com/articles/nbt.3822.epdf?author_access_token=vZOfZpfLMNuYo8GLeVQ5xtRgN0jAjWel9jnR3ZoTv0McZW1PWhVGhsPvCTCTTAcJEouCFYjcqol_sz0dNR_xOwqkneSFWhzFBg8NM1rwy9r1-QXB8-Ym8s3D7lwTZYBK" target="_blank" rel="noopener"><i>International mentoring as a new educational approach to alleviate brain drain, empower young talent, and internationalize education.</i></a></li></ul></div>
 </div>
 </div>
 </section>
@@ -188,6 +189,7 @@
         <ul class="footer-links">
           <li><a href="../who-is-imfahe/" aria-current="page">Who We Are</a></li><li><a href="../contact/">Contact</a></li>
           <li><a href="../economical-disclosure/">Financial Disclosure</a></li>
+          <li><button class="link-button" type="button" data-consent-open>Cookie settings</button></li>
           <li><a href="mailto:contact@imfahe.org?subject=Support%20IMFAHE">Support IMFAHE</a></li>
         </ul>
         <ul class="lang-switch" aria-label="Language"><li><a href="../who-is-imfahe/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="../es/who-is-imfahe/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="../pt/who-is-imfahe/" lang="pt-PT" hreflang="pt-PT" title="Português">PT</a></li></ul>
@@ -195,5 +197,9 @@
       </div>
     </div>
   </footer>
+  <div class="consent" id="consent" role="region" aria-label="Cookie settings" hidden>
+    <p>We use Google Analytics cookies to understand how this site is used. You can accept or decline them.</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">Accept</button><button class="button button--outline" type="button" data-consent="no">Decline</button></div>
+  </div>
 </body>
 </html>

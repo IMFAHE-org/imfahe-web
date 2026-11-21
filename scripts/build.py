@@ -207,6 +207,7 @@ def footer(page, route, lang):
         <ul class="footer-links">
           {links}
           <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
+          <li><button class="link-button" type="button" data-consent-open>{escape(ui(lang, "cookieSettings"))}</button></li>
           <li><a href="mailto:{email}?subject={escape(ui(lang, "support"), quote=True).replace(" ", "%20")}">{escape(ui(lang, "support"))}</a></li>
         </ul>
         {language_switch(page, route, lang)}
@@ -214,6 +215,14 @@ def footer(page, route, lang):
       </div>
     </div>
   </footer>'''
+
+
+def consent(lang):
+    """Analytics only loads after the visitor accepts. The choice is kept in the browser."""
+    return f'''  <div class="consent" id="consent" role="region" aria-label="{escape(ui(lang, "cookieSettings"), quote=True)}" hidden>
+    <p>{escape(ui(lang, "consentText"))}</p>
+    <div class="actions"><button class="button" type="button" data-consent="yes">{escape(ui(lang, "consentAccept"))}</button><button class="button button--outline" type="button" data-consent="no">{escape(ui(lang, "consentDecline"))}</button></div>
+  </div>'''
 
 
 def new_tab_links(html):
@@ -261,6 +270,7 @@ def render(page, lang, origin):
         header=header(page, route, lang),
         content=fragment(page, lang).read_text().rstrip() + related(route, lang),
         footer=footer(page, route, lang),
+        consent=consent(lang),
     )
     # Assets are shared by every language; page links stay inside the current language.
     html = html.replace("@root@", base).replace("@site@/assets/", f"{base}/assets/").replace("@site@/", f"{base}/{prefix(lang)}")
@@ -290,7 +300,7 @@ def not_found(origin):
         lang=I18N[first]["htmlLang"], title=escape(page["title"]), description=escape(page["description"], quote=True),
         skip=escape(ui(first, "skip")), base=root, css_version=CSS_VERSION, js_version=JS_VERSION,
         head_links='  <meta name="robots" content="noindex">', header=header(page, "404", first), content=content,
-        footer=footer(page, "404", first),
+        footer=footer(page, "404", first), consent=consent(first),
     )
     html = html.replace("@root@", root).replace("@site@/assets/", f"{root}/assets/").replace("@site@/", f"{root}/")
     return new_tab_links(icons(html))

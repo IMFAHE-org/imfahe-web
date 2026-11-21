@@ -28,8 +28,10 @@ document.addEventListener("keydown", (event) => {
   openMenu.querySelector("summary")?.focus();
 });
 
-// Same Google Analytics property as imfahe.org. Skipped on a developer's machine so previews stay out of the reports.
-if (!/^(localhost|127\.|\[::1\])/.test(location.hostname)) {
+// Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
+// It is also skipped on a developer's machine so previews stay out of the reports.
+function loadAnalytics() {
+  if (window.gtag || /^(localhost|127\.|\[::1\])/.test(location.hostname)) return;
   const tag = document.createElement("script");
   tag.async = true;
   tag.src = "https://www.googletagmanager.com/gtag/js?id=G-8Q9PR9CWSB";
@@ -39,3 +41,22 @@ if (!/^(localhost|127\.|\[::1\])/.test(location.hostname)) {
   window.gtag("js", new Date());
   window.gtag("config", "G-8Q9PR9CWSB");
 }
+
+const consent = document.getElementById("consent");
+const CONSENT_KEY = "imfahe-analytics";
+// Private windows can block storage: treat that as "no answer yet" and never load analytics.
+const stored = () => { try { return localStorage.getItem(CONSENT_KEY); } catch { return null; } };
+if (stored() === "yes") loadAnalytics();
+else if (!stored() && consent) consent.hidden = false;
+consent?.addEventListener("click", (event) => {
+  const answer = event.target.closest("[data-consent]")?.dataset.consent;
+  if (!answer) return;
+  try { localStorage.setItem(CONSENT_KEY, answer); } catch { /* the banner will ask again next visit */ }
+  consent.hidden = true;
+  if (answer === "yes") loadAnalytics();
+});
+document.querySelector("[data-consent-open]")?.addEventListener("click", () => {
+  if (!consent) return;
+  consent.hidden = false;
+  consent.querySelector("button")?.focus();
+});
