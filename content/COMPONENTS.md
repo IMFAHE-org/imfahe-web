@@ -173,4 +173,4 @@ A quiet band is the same row on grey and thinner. Use it for a short statement w
 
 - Buttons: `button`, `button button--outline`. Text link with arrow: `link-arrow`. Row of buttons: `<div class="actions">`.
 - Picture that must not be cropped (a flyer, a chart): `<figure class="media media--contain">`.
-- Partner logos: `<ul class="logos">`, see home.html. Team cards: `<div class="team">` with `<article class="photo-card">`, see who-is-imfahe.html.
+- Partner logos: `<ul class="logos">`, see home.html. Team cards: `<div class="team">` with `<article class="photo-card">`, see who-is-imfahe.html. Press cards: `<ul class="press">`, same page. A page top with a title, text and a photo is a `split split--media` inside `section--hero`, also on that page.
