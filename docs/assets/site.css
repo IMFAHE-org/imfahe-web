@@ -488,6 +488,8 @@ address { font-style: normal; }
 }
 
 @media (max-width: 64rem) {
+  /* Tablet: a tab name can wrap to two lines, so its icon sits above it instead of drifting left. */
+  .tab-list label { flex-direction: column; justify-content: flex-start; gap: .25rem; padding-inline: .5rem; }
   .join-inner, .footer-main { grid-template-columns: minmax(0, 1fr); }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .pillar { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: auto; align-items: start; }
@@ -508,7 +510,7 @@ address { font-style: normal; }
   .tab-panels { grid-template-rows: none; }
   /* On a phone the tab names are too long for one row: they stack, and the open one is marked by its line. */
   .tab-list { grid-auto-flow: row; border-bottom: 0; }
-  .tab-list label { justify-content: flex-start; padding-inline: 0; border-bottom: 1px solid var(--line); margin: 0; }
+  .tab-list label { flex-direction: row; gap: .5rem; justify-content: flex-start; padding-inline: 0; border-bottom: 1px solid var(--line); margin: 0; }
   .tab-list input:checked + label { border-bottom: .1875rem solid var(--brand); }
   .hero-home .hero, .hero-home .entry-links { grid-template-columns: minmax(0, 1fr); }
   .hero-home .entry-links li + li { border-top: 0; }
