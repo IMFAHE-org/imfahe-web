@@ -228,6 +228,20 @@ address { font-style: normal; }
 .logos a:hover { background: var(--tint); }
 .logos img { width: auto; height: auto; max-width: 100%; max-height: 3.25rem; object-fit: contain; }
 .logos img[data-shape="square"] { max-height: 4.25rem; }
+/* Each logo on its own card. With motion allowed, the cards appear one after another the first time the wall is seen. */
+.logos--cards { gap: .75rem; border: 0; background: none; border-radius: 0; overflow: visible; }
+.logos--cards li { border: 1px solid var(--line); border-radius: var(--radius); transition: border-color .2s, box-shadow .3s var(--ease), translate .3s var(--ease); }
+.logos--cards li:hover { border-color: var(--ink); box-shadow: var(--shadow); translate: 0 -.125rem; }
+.logos--cards a { border-radius: var(--radius); }
+.logos--cards a:hover { background: none; }
+.logos--cards img { transition: transform .3s var(--ease); }
+.logos--cards a:hover img { transform: scale(1.06); }
+@media (prefers-reduced-motion: no-preference) {
+  .logos--cards.is-waiting li { opacity: 0; }
+  .logos--cards.is-in li { animation: logo-in .6s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  @keyframes logo-in { from { opacity: 0; transform: translateY(.75rem) scale(.96); } }
+}
+.section-intro .entry-links { max-width: none; margin: 0; }
 
 /* Pillars and cards */
 .pillars { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }

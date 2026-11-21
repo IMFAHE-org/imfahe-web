@@ -61,6 +61,19 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
   document.querySelectorAll(".stats strong").forEach((el) => counter.observe(el));
 }
 
+// Partner logos appear one after another the first time the wall scrolls into view.
+// Without this script, or with reduced motion, the wall is simply visible.
+const wall = document.querySelector(".logos--cards");
+if (wall && !matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  wall.classList.add("is-waiting");
+  [...wall.children].forEach((logo, index) => logo.style.setProperty("--i", index));
+  new IntersectionObserver((entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+    wall.classList.replace("is-waiting", "is-in");
+    observer.disconnect();
+  }, { threshold: 0.2 }).observe(wall);
+}
+
 // Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
 // It is also skipped on a developer's machine so previews stay out of the reports.
 function loadAnalytics() {
