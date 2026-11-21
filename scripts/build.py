@@ -17,6 +17,7 @@ TEMPLATE = Template((ROOT / "templates/page.html").read_text())
 PAGES = json.loads((CONTENT / "pages.json").read_text())
 MENU = json.loads((CONTENT / "navigation.json").read_text())
 I18N = json.loads((CONTENT / "i18n.json").read_text())
+CALLS = json.loads((CONTENT / "calls.json").read_text())
 LANGS = list(I18N)  # first language is the default and lives at the site root
 CSS_VERSION = sha256((SITE / "assets/site.css").read_bytes()).hexdigest()[:10]
 JS_VERSION = sha256((SITE / "assets/site.js").read_bytes()).hexdigest()[:10]
@@ -168,6 +169,34 @@ def related(route, lang):
     return ""
 
 
+def calls_list(lang):
+    """The public calls, one row per organization, from content/calls.json. site.js marks the ones whose date has passed."""
+    rows = []
+    for call in CALLS["calls"]:
+        logo = call["logo"]
+        links = "".join(
+            f'<a class="button button--outline" href="{escape(link["url"], quote=True)}">{escape(ui(lang, "calls" + link.get("for", "see").capitalize()))} @icon:arrow-up-right@</a>'
+            for link in call["links"]
+        )
+        if "date" in call:
+            year, month, day = (int(part) for part in call["date"].split("-"))
+            text = ui(lang, "dateFormat").format(day=day, month=ui(lang, "months")[month - 1], year=year)
+            time = call.get("time")
+            when = (
+                f'{escape(ui(lang, "callsDeadline"))}: <time datetime="{call["date"]}{"T" + time if time else ""}">{escape(text)}{", " + time if time else ""}</time>'
+                f' <span class="call-status" data-closed="{escape(ui(lang, "callsClosed"), quote=True)}"></span>'
+            )
+            deadline = f' data-deadline="{call["date"]}"'
+        else:
+            when, deadline = escape(ui(lang, "callsSoon")), ""
+        rows.append(
+            f'<li{deadline}><span class="call-logo"><img alt="" decoding="async" loading="lazy" src="@site@/assets/images/{logo["file"]}" width="{logo["width"]}" height="{logo["height"]}"></span>'
+            f'<div><h3>{escape(call["name"])}</h3><p class="call-deadline">{when}</p></div>'
+            + (f'<div class="actions">{links}</div>' if links else "") + "</li>"
+        )
+    return f'<ul class="calls">{"".join(rows)}</ul>'
+
+
 def join_section(page, html, lang):
     """Every page ends with one closing call: its own, or this shared one."""
     last = html.rstrip().rsplit("<section", 1)[-1]
@@ -216,6 +245,7 @@ def footer(page, route, lang):
         <nav class="footer-nav" aria-label="{escape(ui(lang, "programs"), quote=True)}">{columns}<div><h3>IMFAHE</h3><ul>
           {about}
           <li><a href="mailto:{email}?subject={support.replace(" ", "%20")}">{support}</a></li>
+          <li><a href="@site@/public-calls/">{escape(ui(lang, "calls"))}</a></li>
           <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
         </ul></div></nav>
       </div>
@@ -278,12 +308,12 @@ def render(page, lang, origin):
         js_version=JS_VERSION,
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
-        content=(text := fragment(page, lang).read_text().rstrip()) + join_section(page, text, lang) + related(route, lang),
+        content=(text := fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang))) + join_section(page, text, lang) + related(route, lang),
         footer=footer(page, route, lang),
         consent=consent(lang),
     )
     # Assets are shared by every language; page links stay inside the current language.
-    html = html.replace("@root@", base).replace("@site@/assets/", f"{base}/assets/").replace("@site@/", f"{base}/{prefix(lang)}")
+    html = html.replace("@calls-pdf@", f'@site@/{CALLS["pdf"]}').replace("@root@", base).replace("@site@/assets/", f"{base}/assets/").replace("@site@/", f"{base}/{prefix(lang)}")
     return new_tab_links(icons(html))
 
 

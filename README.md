@@ -7,6 +7,7 @@ The institutional website is built from plain HTML and CSS and published from `m
 - Edit the shared page template in `templates/page.html` and styles in `docs/assets/site.css`. Brand colors (`#E6122C` red, `#F39220` orange) and Noto Sans match the imfahe.org theme. The design rules are written down in [DESIGN.md](DESIGN.md).
 - In fragments, `@site@/page-slug/` links to a page in the current language (`/`, `/es/` or `/pt/`), and `@site@/assets/...` always points at the shared assets folder. Both work when GitHub Pages serves the site from a repository subpath. A page that has no translation is linked in English.
 - Use local, compressed WebP images with a `srcset`, intrinsic dimensions, meaningful alt text where applicable and lazy loading below the first screen. Keep images in their original colors. Text is real text, never a picture of text.
+- Public calls: `content/calls.json` holds each organization's logo, deadline (`date` as YYYY-MM-DD, optional `time`) and links (`for` is `students`, `professors` or left out), plus the path of the PDF poster. The Public Calls page and every link to the poster are built from it. The page marks a call as closed in the browser from the day after its date, so no rebuild is needed when a deadline passes.
 - Icons: write `@icon:name@` in a fragment and the build inlines `docs/assets/icons/name.svg`. Use only Lucide SVGs for interface icons. The four social logos in `docs/assets/brands/` come from Simple Icons and are written `@brand:name@`.
 
 ## Languages

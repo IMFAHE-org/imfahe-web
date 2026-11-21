@@ -76,6 +76,19 @@ if (wall && !matchMedia("(prefers-reduced-motion: reduce)").matches && "Intersec
 
 // Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
 // It is also skipped on a developer's machine so previews stay out of the reports.
+// Public calls: the day after its deadline a call is marked closed and moves below the open ones.
+// Dates are compared as plain days in the visitor's own time, so a call stays open through its deadline day.
+const today = new Date().toLocaleDateString("sv"); // "sv" formats as YYYY-MM-DD
+document.querySelectorAll(".calls").forEach((list) => {
+  list.querySelectorAll("li[data-deadline]").forEach((item) => {
+    if (item.dataset.deadline >= today) return;
+    item.classList.add("is-closed");
+    const status = item.querySelector(".call-status");
+    status.textContent = status.dataset.closed;
+    list.append(item);
+  });
+});
+
 function loadAnalytics() {
   if (window.gtag || /^(localhost|127\.|\[::1\])/.test(location.hostname)) return;
   const tag = document.createElement("script");

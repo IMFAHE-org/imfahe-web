@@ -1,0 +1,172 @@
+{
+  "pdf": "assets/resources/2026/10/Public-Calls-2026-To-be-part-of-IMFAHE-s-Global-Platform-of-Talent-2026-2027_Updated-Oct-30-deff5ae.pdf",
+  "calls": [
+    {
+      "name": "Universidad Rey Juan Carlos",
+      "logo": {
+        "file": "logo-urjc-ec6243cb-364.webp",
+        "width": 364,
+        "height": 138
+      },
+      "date": "2026-10-09",
+      "time": "23:59",
+      "links": [
+        {
+          "url": "https://sede.urjc.es/web/guest/convocatorias?p_p_id=es_tangrambpm_liferay_BpmPortlet_INSTANCE_514ikmouN9nu&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_es_tangrambpm_liferay_BpmPortlet_INSTANCE_514ikmouN9nu_id=99b3o31000-1-ukkC1"
+        }
+      ]
+    },
+    {
+      "name": "Universidad de Jaén",
+      "logo": {
+        "file": "logo-uja-7caaa829-314.webp",
+        "width": 314,
+        "height": 160
+      },
+      "date": "2026-10-20",
+      "time": "14:00",
+      "links": [
+        {
+          "url": "https://www.ujaen.es/internacional/convocatorias-internacionales/convocatoria-para-la-seleccion-de-estudiantado-y-personal-docente-e-1"
+        }
+      ]
+    },
+    {
+      "name": "Universidad de Sevilla",
+      "logo": {
+        "file": "us-fdc0d529-220.webp",
+        "width": 220,
+        "height": 190
+      },
+      "date": "2026-10-23",
+      "time": "14:30",
+      "links": [
+        {
+          "url": "https://doctorado.us.es/convocatorias/imfahe"
+        }
+      ]
+    },
+    {
+      "name": "Universidad Europea de Madrid",
+      "logo": {
+        "file": "logo-universidad-europea-12f55a18-431.webp",
+        "width": 431,
+        "height": 117
+      },
+      "date": "2026-10-23",
+      "time": "23:59",
+      "links": [
+        {
+          "for": "students",
+          "url": "https://drive.google.com/file/d/1lbyEnwyvVuAeoR6Xvwvc6gQZwJFEMMK6/view?usp=sharing"
+        },
+        {
+          "for": "professors",
+          "url": "https://drive.google.com/file/d/1_KTsedUDpD7qvvszKq5bOFAB8z7M_5Ap/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "name": "Polytechnic University of Bragança",
+      "logo": {
+        "file": "upb-1664f818-730.webp",
+        "width": 730,
+        "height": 273
+      },
+      "date": "2026-10-25",
+      "time": "23:59",
+      "links": [
+        {
+          "url": "https://step.ipb.pt/opportunities/imfahe-2026-2027/"
+        }
+      ]
+    },
+    {
+      "name": "Universidade do Minho",
+      "logo": {
+        "file": "udomi-abe04f52-280.webp",
+        "width": 280,
+        "height": 170
+      },
+      "date": "2026-10-28",
+      "links": [
+        {
+          "url": "https://www.uminho.pt/PT/siga-a-uminho/Paginas/Detalhe-do-evento.aspx?Codigo=69373"
+        }
+      ]
+    },
+    {
+      "name": "Polytechnic University of Coimbra",
+      "logo": {
+        "file": "puc-4c1d05ed-537.webp",
+        "width": 537,
+        "height": 570
+      },
+      "date": "2026-10-30",
+      "time": "23:59",
+      "links": [
+        {
+          "url": "https://www.ipc.pt/artigos/upcoimbra-programas-internacionais-de-mentoria-e-desenvolvimento-profissional-da-imfahe/"
+        }
+      ]
+    },
+    {
+      "name": "Universidad de Málaga",
+      "logo": {
+        "file": "udema-c72a11ad-390.webp",
+        "width": 390,
+        "height": 170
+      },
+      "date": "2026-10-31",
+      "time": "23:59",
+      "links": [
+        {
+          "url": "https://www.uma.es/UMA-Empresa/info/105086/IMFAHE/"
+        }
+      ]
+    },
+    {
+      "name": "Faculty of Medicine, University of Lisbon",
+      "logo": {
+        "file": "logo-fmul-ef2a095b-280.webp",
+        "width": 280,
+        "height": 180
+      },
+      "date": "2026-10-31",
+      "links": [
+        {
+          "url": "https://www.medicina.ulisboa.pt/en/fmul-and-imfahe-launch-new-international-mentoring-and-professional-development-programmes"
+        }
+      ]
+    },
+    {
+      "name": "Universidad de Valladolid",
+      "logo": {
+        "file": "uva-9f00e009-170.webp",
+        "width": 170,
+        "height": 170
+      },
+      "date": "2026-11-03",
+      "time": "14:00",
+      "links": [
+        {
+          "for": "students",
+          "url": "https://portal.sede.uva.es/tablon/relaciones-internacionales/0b0af52b-f329-470b-8d8b-d5cc1ff2edfd"
+        },
+        {
+          "for": "professors",
+          "url": "https://portal.sede.uva.es/detalle-tablon/458c6144-9b47-4a6d-9c79-a5930bae7842"
+        }
+      ]
+    },
+    {
+      "name": "Non Conformist Scientist",
+      "logo": {
+        "file": "logo-ncs-34ce8888-146.webp",
+        "width": 146,
+        "height": 136
+      },
+      "links": []
+    }
+  ]
+}

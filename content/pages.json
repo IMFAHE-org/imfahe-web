@@ -86,5 +86,11 @@
     "route": "who-is-imfahe/",
     "title": "Who We Are - imfahe.org",
     "description": "IMFAHE bridges academia and the global professional world through Ivy League-inspired education, international mentoring and a global talent platform."
+  },
+  {
+    "slug": "public-calls",
+    "route": "public-calls/",
+    "title": "Public Calls 2026-2027 - imfahe.org",
+    "description": "Open calls at IMFAHE's partner universities and organizations to join the Global Platform of Talent 2026-2027, with each deadline and a link to apply."
   }
 ]

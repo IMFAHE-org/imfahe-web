@@ -40,6 +40,9 @@
     <loc>https://imfahe.github.io/imfahe-web/who-is-imfahe/</loc>
   </url>
   <url>
+    <loc>https://imfahe.github.io/imfahe-web/public-calls/</loc>
+  </url>
+  <url>
     <loc>https://imfahe.github.io/imfahe-web/es/</loc>
   </url>
   <url>
@@ -79,6 +82,9 @@
     <loc>https://imfahe.github.io/imfahe-web/es/who-is-imfahe/</loc>
   </url>
   <url>
+    <loc>https://imfahe.github.io/imfahe-web/es/public-calls/</loc>
+  </url>
+  <url>
     <loc>https://imfahe.github.io/imfahe-web/pt/</loc>
   </url>
   <url>
@@ -116,5 +122,8 @@
   </url>
   <url>
     <loc>https://imfahe.github.io/imfahe-web/pt/who-is-imfahe/</loc>
+  </url>
+  <url>
+    <loc>https://imfahe.github.io/imfahe-web/pt/public-calls/</loc>
   </url>
 </urlset>

@@ -30,7 +30,29 @@
       "consentText": "We use Google Analytics cookies to understand how this site is used. You can accept or decline them.",
       "consentAccept": "Accept",
       "consentDecline": "Decline",
-      "cookieSettings": "Cookie settings"
+      "cookieSettings": "Cookie settings",
+      "calls": "Public Calls",
+      "callsDeadline": "Deadline",
+      "callsClosed": "Closed",
+      "callsSoon": "Call for applications coming soon",
+      "callsSee": "See the call",
+      "callsStudents": "Call for students",
+      "callsProfessors": "Call for professors",
+      "dateFormat": "{month} {day}, {year}",
+      "months": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ]
     }
   },
   "es": {
@@ -64,7 +86,29 @@
       "consentText": "Usamos cookies de Google Analytics para saber cómo se utiliza esta web. Puedes aceptarlas o rechazarlas.",
       "consentAccept": "Aceptar",
       "consentDecline": "Rechazar",
-      "cookieSettings": "Configuración de cookies"
+      "cookieSettings": "Configuración de cookies",
+      "calls": "Convocatorias públicas",
+      "callsDeadline": "Fecha límite",
+      "callsClosed": "Cerrada",
+      "callsSoon": "Convocatoria próximamente",
+      "callsSee": "Ver la convocatoria",
+      "callsStudents": "Convocatoria para estudiantes",
+      "callsProfessors": "Convocatoria para profesorado",
+      "dateFormat": "{day} de {month} de {year}",
+      "months": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
     },
     "nav": {
       "Who We Are": "Quiénes somos",
@@ -141,6 +185,10 @@
       "who-is-imfahe": {
         "title": "Quiénes somos - imfahe.org",
         "description": "IMFAHE tiende puentes entre el mundo académico y el mundo profesional global mediante una educación inspirada en la Ivy League, mentoría internacional y una plataforma global de talento."
+      },
+      "public-calls": {
+        "title": "Convocatorias públicas 2026-2027 - imfahe.org",
+        "description": "Convocatorias abiertas en las universidades y organizaciones asociadas a IMFAHE para formar parte de la Plataforma Global de Talento 2026-2027, con su fecha límite y el enlace para solicitarla."
       }
     }
   },
@@ -175,7 +223,29 @@
       "consentText": "Utilizamos cookies do Google Analytics para perceber como este site é utilizado. Pode aceitá-las ou recusá-las.",
       "consentAccept": "Aceitar",
       "consentDecline": "Recusar",
-      "cookieSettings": "Definições de cookies"
+      "cookieSettings": "Definições de cookies",
+      "calls": "Editais",
+      "callsDeadline": "Prazo",
+      "callsClosed": "Encerrado",
+      "callsSoon": "Edital em breve",
+      "callsSee": "Ver o edital",
+      "callsStudents": "Edital para estudantes",
+      "callsProfessors": "Edital para docentes",
+      "dateFormat": "{day} de {month} de {year}",
+      "months": [
+        "janeiro",
+        "fevereiro",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "dezembro"
+      ]
     },
     "nav": {
       "Who We Are": "Quem somos",
@@ -252,6 +322,10 @@
       "who-is-imfahe": {
         "title": "Quem somos - imfahe.org",
         "description": "A IMFAHE aproxima a academia do mundo profissional global através de educação inspirada na Ivy League, mentoria internacional e uma plataforma global de talento."
+      },
+      "public-calls": {
+        "title": "Editais 2026-2027 - imfahe.org",
+        "description": "Editais abertos nas universidades e organizações parceiras da IMFAHE para integrar a Plataforma Global de Talento 2026-2027, com o prazo e a ligação para a candidatura."
       }
     }
   }

@@ -225,14 +225,15 @@ address { font-style: normal; }
 .band h2 a { color: inherit; text-decoration: none; }
 .band .button { background: var(--white); border-color: var(--white); color: var(--brand-strong); }
 .band .button:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.band .button--outline { background: transparent; color: var(--white); }
 /* Quiet band: the same one-row layout on grey, thinner, for a statement that is not the page's main call. */
 .band--quiet { background: var(--tint); color: var(--ink); }
 .band--quiet .wrap { padding-block: 1.25rem; }
 .band--quiet .wrap > div { flex: 1 1 20rem; } /* the text wraps before the button drops to its own row */
 .band--quiet h2 { font-size: 1.0625rem; max-width: none; }
 .band--quiet p { color: var(--muted); font-size: .9375rem; max-width: none; margin-block-start: .25rem; }
-.band--quiet .button { background: transparent; border-color: var(--brand); }
-.band--quiet .button:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
+.band--quiet .button { background: transparent; border-color: var(--brand); color: var(--brand-strong); }
+.band--quiet .button:hover { background: var(--brand-strong); border-color: var(--brand-strong); color: var(--white); }
 
 /* Partner logos */
 .logos { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -400,6 +401,19 @@ address { font-style: normal; }
 .related-card:hover { border-color: var(--ink); box-shadow: var(--shadow); transform: translateY(-.125rem); }
 .related-card:hover .icon { transform: translateX(.25rem); }
 
+/* Public calls: one row per organization with its logo, deadline and links. site.js adds is-closed after the deadline day. */
+.calls { list-style: none; padding: 0; margin: 0; width: 100%; max-width: none; display: grid; gap: .75rem; }
+.calls li { margin: 0; display: grid; grid-template-columns: 8rem minmax(0, 1fr) auto; gap: .75rem 1.5rem; align-items: center; padding: 1rem 1.25rem; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--white); }
+.call-logo { display: grid; place-items: center; height: 3.5rem; }
+.call-logo img { width: auto; height: auto; max-width: 100%; max-height: 3.5rem; object-fit: contain; }
+.calls h3 { font-size: var(--title-md); letter-spacing: -.01em; }
+.call-deadline { color: var(--muted); font-size: .9375rem; margin-block-start: .25rem; max-width: none; }
+.call-status { display: inline-block; margin-inline-start: .375rem; padding: .1875rem .625rem; border-radius: 62rem; background: var(--tint); color: var(--ink); font-size: .8125rem; font-weight: 700; line-height: 1.2; }
+.call-status:empty { display: none; }
+.calls .actions { justify-content: flex-end; }
+.calls .is-closed .call-logo { filter: grayscale(1); opacity: .55; }
+.calls .is-closed h3 { color: var(--muted); }
+
 /* How to join: the shared closing call for pages that have none of their own */
 .join { background: var(--rose); padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem); }
 .join-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 1.5rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
@@ -514,6 +528,8 @@ address { font-style: normal; }
 @media (max-width: 45rem) {
   .hero, .split, .cta, .pillar, .benefits, .benefits--3, .event { grid-template-columns: minmax(0, 1fr); }
   .join-list, .related-list { grid-template-columns: minmax(0, 1fr); }
+  .calls li { grid-template-columns: 4.5rem minmax(0, 1fr); }
+  .calls .actions { grid-column: 1 / -1; justify-content: flex-start; }
   .split--flip > :first-child { order: 0; }
   .tab-panel, .tab-panels { grid-template-columns: minmax(0, 1fr); }
   .tab-panel > .media, .tab-panel > :not(.media) { grid-column: 1; }

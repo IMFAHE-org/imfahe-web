@@ -8,6 +8,7 @@ Rules that apply everywhere:
 - One `<h1>` per page. Heading levels never skip (h1, h2, h3).
 - Icons: write `@icon:name@` and the build inlines `docs/assets/icons/name.svg` (Lucide). Social logos: `@brand:name@`.
 - Links to pages: `@site@/page-slug/`. Files: `@site@/assets/...`.
+- Public calls: `@calls@` becomes the list of calls and `@calls-pdf@` the address of the PDF poster, both from `content/calls.json`. To change a deadline, link or organization, edit that file only; the three languages follow. A call is shown as closed from the day after its `date`.
 - Images: local WebP, `width` and `height` set, `loading="lazy"` below the first screen, meaningful `alt` (empty `alt=""` for decoration).
 - The row of sibling programs at the foot of a program page is added by the build. Do not write a sub-menu.
 - Layout habits from the home page review: sections that pair text with a picture swap sides from one to the next (`split--flip`); a heading shares its row with an intro, or runs wide when it is alone; links in a row of columns sit on one line; a short statement with one link is a quiet band, not a full section.
