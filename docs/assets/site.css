@@ -65,6 +65,7 @@ button, summary { font: inherit; color: inherit; }
 summary { cursor: pointer; list-style: none; }
 summary::-webkit-details-marker { display: none; }
 address { font-style: normal; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .icon { flex: 0 0 auto; width: 1.25em; height: 1.25em; display: inline-block; vertical-align: -.25em; }
 
 /* Layout */
@@ -264,21 +265,23 @@ address { font-style: normal; }
 .tab-panel > .media { grid-row: 1 / span 3; }
 .tab-panel > :not(.media) { grid-column: 2; }
 .tab-panel .media img { aspect-ratio: 4 / 3; object-fit: cover; }
-.tab-panel .pillar-links { margin: 0; }
+.tab-panel > .button { justify-self: start; margin-block-start: .25rem; }
 @supports selector(:has(*)) {
-  .tab-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+  /* The tabs span the full width in equal parts, with a line under the open one. */
+  .tab-list { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border-bottom: 1px solid var(--line); }
   .tab-list input { position: absolute; opacity: 0; pointer-events: none; }
-  .tab-list label { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.875rem; padding: .5rem 1.15rem; border: 1px solid var(--line-strong); border-radius: 62rem; background: var(--white); color: var(--ink); font-size: .9375rem; font-weight: 700; line-height: 1.25; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
-  .tab-list label:hover { border-color: var(--ink); }
-  .tab-list label .icon { width: 1.125rem; height: 1.125rem; }
-  .tab-list input:checked + label { background: var(--ink); border-color: var(--ink); color: var(--white); }
-  .tab-list input:focus-visible + label { outline: .1875rem solid var(--brand); outline-offset: .1875rem; }
+  .tab-list label { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.25rem; padding: .5rem 1rem; margin-block-end: -1px; border-bottom: .1875rem solid transparent; color: var(--muted); font-size: 1rem; font-weight: 700; line-height: 1.25; text-align: center; cursor: pointer; transition: color .2s, border-color .2s; }
+  .tab-list label:hover { color: var(--ink); }
+  .tab-list label .icon { width: 1.25rem; height: 1.25rem; }
+  .tab-list input:checked + label { color: var(--ink); border-bottom-color: var(--brand); }
+  .tab-list input:checked + label .icon { color: var(--brand); }
+  .tab-list input:focus-visible + label { outline: .1875rem solid var(--brand); outline-offset: -.1875rem; border-radius: .25rem; }
   .tab-panels { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); grid-template-rows: auto auto 1fr; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
   .tab-panel { display: contents; }
   .tab-panel > .media { grid-column: 1; grid-row: 1 / span 3; }
   .tab-panel > h3 { grid-row: 1; }
   .tab-panel > .prose { grid-row: 2; }
-  .tab-panel > .pillar-links { grid-row: 3; }
+  .tab-panel > :last-child { grid-row: 3; }
   .tab-panel > * { visibility: hidden; }
   .tabs:has(input:nth-of-type(1):checked) .tab-panel:nth-child(1) > *,
   .tabs:has(input:nth-of-type(2):checked) .tab-panel:nth-child(2) > *,
@@ -507,8 +510,12 @@ address { font-style: normal; }
   .tab-panel > .media { grid-row: 1; }
   .tab-panel > h3 { grid-row: 2; }
   .tab-panel > .prose { grid-row: 3; }
-  .tab-panel > .pillar-links { grid-row: 4; }
+  .tab-panel > :last-child { grid-row: 4; }
   .tab-panels { grid-template-rows: none; }
+  /* On a phone the tab names are too long for one row: they stack, and the open one is marked by its line. */
+  .tab-list { grid-auto-flow: row; border-bottom: 0; }
+  .tab-list label { justify-content: flex-start; padding-inline: 0; border-bottom: 1px solid var(--line); margin: 0; }
+  .tab-list input:checked + label { border-bottom: .1875rem solid var(--brand); }
   .hero-home .hero, .hero-home .entry-links { grid-template-columns: minmax(0, 1fr); }
   .hero-home .entry-links li + li { border-top: 0; }
   .join-list li + li { margin-block-start: 1.25rem; }

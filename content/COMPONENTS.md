@@ -79,13 +79,13 @@ Rules that apply everywhere:
 <input type="radio" name="group" id="tab-2"><label for="tab-2">@icon:lightbulb@ Second</label>
 </div>
 <div class="tab-panels">
-<article class="tab-panel"><figure class="media"><img ...></figure><h3>Title</h3><div class="prose"><p>Text.</p></div><ul class="pillar-links">...</ul></article>
+<article class="tab-panel"><figure class="media"><img ...></figure><h3>Title</h3><div class="prose"><p>Text.</p></div><a class="button" href="...">Learn More<span class="sr-only"> about First</span></a></article>
 <article class="tab-panel">...</article>
 </div>
 </div>
 ```
 
-Blocks must be in the same order as their tabs, with the same four parts (picture, title, text, links), so they line up. Up to four tabs.
+Blocks must be in the same order as their tabs, with the same four parts (picture, title, text, one button), so they line up. The hidden words after "Learn More" tell screen readers and search engines where each button goes. Up to four tabs.
 
 ## Small cards (a title and a short list or line)
 
