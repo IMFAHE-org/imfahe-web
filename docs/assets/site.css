@@ -407,10 +407,12 @@ address { font-style: normal; }
 .netmap-dots circle { fill: var(--brand); }
 .netmap-plate { fill: var(--white); fill-opacity: .62; } /* see-through, so the map's dots show under each logo */
 .netmap-org image { filter: grayscale(1) brightness(.72) contrast(1.6); mix-blend-mode: multiply; } /* one dark ink for every logo, pale colors included */
+.netmap-flat :is(image, img) { filter: grayscale(1) contrast(1.15); } /* a white background must stay white to blend away */
 .netmap-org text { fill: var(--ink); font-weight: 750; }
 .netmap-list { display: none; list-style: none; padding: 0; margin: 1rem 0 0; max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .375rem; }
 .netmap-list li { margin: 0; display: grid; place-items: center; min-height: 3rem; padding: .375rem .5rem; border: 1px solid var(--line); border-radius: .375rem; font-size: .6875rem; font-weight: 700; line-height: 1.15; text-align: center; }
 .netmap-list img { width: auto; height: auto; max-width: 100%; max-height: 2rem; object-fit: contain; filter: grayscale(1) brightness(.72) contrast(1.6); }
+.netmap-list .netmap-flat img { filter: grayscale(1) contrast(1.15); }
 @media (prefers-reduced-motion: no-preference) {
   /* site.js marks the map as waiting, then in view: the world fades in, the lines draw themselves, the logos follow */
   .netmap.is-waiting :is(.netmap-world, .netmap-dots circle, .netmap-org) { opacity: 0; }

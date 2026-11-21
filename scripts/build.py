@@ -281,8 +281,9 @@ def network_map(lang):
         plate = f'<rect class="netmap-plate" x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="2"/>'
         if org.get("logo"):
             src = f'@site@/assets/{org["logo"]}'
-            plates.append(f'<g class="netmap-org">{plate}<image href="{src}" x="{x + 1.5:.1f}" y="{y + 1.5:.1f}" width="{w - 3:.1f}" height="{h - 3:.1f}"><title>{name}</title></image></g>')
-            items.append(f'<li><img alt="{name}" loading="lazy" decoding="async" src="{src}" width="{round(org["ratio"] * 40)}" height="40"></li>')
+            flat = " netmap-flat" if org["logo"].startswith("images/") else ""  # a file with a white background, not a transparent one
+            plates.append(f'<g class="netmap-org{flat}">{plate}<image href="{src}" x="{x + 1.5:.1f}" y="{y + 1.5:.1f}" width="{w - 3:.1f}" height="{h - 3:.1f}"><title>{name}</title></image></g>')
+            items.append(f'<li{" class=" + chr(34) + "netmap-flat" + chr(34) if flat else ""}><img alt="{name}" loading="lazy" decoding="async" src="{src}" width="{round(org["ratio"] * 40)}" height="40"></li>')
         else:  # no logo file yet: the name stands in
             size = min(7, (w - 2) / (len(org["name"]) * .56))
             plates.append(f'<g class="netmap-org">{plate}<text x="{tile["x"]:.1f}" y="{tile["y"]:.1f}" font-size="{size:.1f}" text-anchor="middle" dominant-baseline="central">{name}</text></g>')
