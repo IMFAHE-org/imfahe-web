@@ -2,11 +2,18 @@
 
 The institutional website is built from plain HTML and CSS and published from `main:/docs` on GitHub Pages.
 
-- Edit page copy and sections in `content/<page>.html`.
-- Edit navigation and page metadata in `content/navigation.json` and `content/pages.json`.
-- Edit the shared page template in `templates/page.html` and styles in `docs/assets/site.css`.
+- Edit page copy and sections in `content/<page>.html`. The building blocks (hero, benefits, steps, quotes, cards and so on) are listed with their markup in [content/COMPONENTS.md](content/COMPONENTS.md).
+- Edit navigation, menu taglines, the footer email and social links in `content/navigation.json`, and page titles and descriptions in `content/pages.json`.
+- Edit the shared page template in `templates/page.html` and styles in `docs/assets/site.css`. Brand colors (`#E6122C` red, `#F39220` orange) and Noto Sans match the imfahe.org theme.
 - The `@site@/` prefix in fragments resolves to the site's root, including when GitHub Pages serves the site from a repository subpath.
-- Use local, compressed WebP images with a `srcset`, intrinsic dimensions, meaningful alt text where applicable and lazy loading below the first screen. Keep images in their original colors. Use only Lucide SVGs for icons.
+- Use local, compressed WebP images with a `srcset`, intrinsic dimensions, meaningful alt text where applicable and lazy loading below the first screen. Keep images in their original colors. Text is real text, never a picture of text.
+- Icons: write `@icon:name@` in a fragment and the build inlines `docs/assets/icons/name.svg`. Use only Lucide SVGs for interface icons. The four social logos in `docs/assets/brands/` come from Simple Icons and are written `@brand:name@`.
+
+## Languages
+
+English lives in `content/` and is served from the site root. Spanish and Portuguese live in `content/es/` and `content/pt/` and are served from `/es/` and `/pt/`. Menu labels, interface words and translated page titles are in `content/i18n.json`. A page without a translated fragment is simply not built in that language, and the language switch hides that option. When you change an English fragment, make the same change in the other two.
+
+## Build and preview
 
 After editing, rebuild and preview with Python 3.10 or newer:
 
@@ -17,6 +24,8 @@ python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 
 Preview at http://127.0.0.1:8080/. Commit the edited source and the regenerated files under `docs` together. A merge to `main` publishes the updated site. Python is used only to assemble common HTML and does not run on the server.
 
-`archive/images/` is the original public image archive. See `archive/inventory.json` for each captured URL and source page. The archive is excluded from Pages deployment; only the web renditions under `docs/assets/images/` are requested by visitors. Public PDFs and other downloadable resources are under `docs/assets/resources/`. Noto Sans and Lucide are stored locally with their licenses.
+## Assets and sources
 
-The page slugs match the original WordPress site. The contact page uses the foundation's published email address because GitHub Pages cannot process the former WordPress form. YouTube players load when selected. The Pages URL is the deployment target. The live imfahe.org domain is still served by its current hosting.
+`archive/images/` is the original public image archive. See `archive/inventory.json` for each captured URL and source page. The archive is excluded from Pages deployment; only the web renditions under `docs/assets/images/` are requested by visitors. Public PDFs and other downloadable resources are under `docs/assets/resources/`. Noto Sans, Lucide and Simple Icons are stored locally with their licenses. Stock photos and their sources are listed in [docs/assets/images/CREDITS.md](docs/assets/images/CREDITS.md).
+
+The page slugs match the original WordPress site. The contact page uses the address the WordPress contact form delivers to (`contact@imfahe.org`) because GitHub Pages cannot process the form itself. YouTube players load when selected. Google Analytics uses the same property as imfahe.org and is skipped on `localhost`. The Pages URL is the deployment target. The live imfahe.org domain is still served by its current hosting.

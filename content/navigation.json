@@ -10,19 +10,23 @@
       "children": [
         {
           "label": "IMFAHE Connects",
-          "path": "imfahe-connects-program/"
+          "path": "imfahe-connects-program/",
+          "tagline": "One global community. Endless possibilities."
         },
         {
           "label": "International Mentor Program",
-          "path": "imfahe-international-mentor-program/"
+          "path": "imfahe-international-mentor-program/",
+          "tagline": "Accelerate your career with global experts."
         },
         {
           "label": "International Fellowships",
-          "path": "imfahe-international-fellowships-program/"
+          "path": "imfahe-international-fellowships-program/",
+          "tagline": "Your pathway to world-leading institutions."
         },
         {
           "label": "International Conferences",
-          "path": "imfahe-international-conferences-program/"
+          "path": "imfahe-international-conferences-program/",
+          "tagline": "Global research, innovation, entrepreneurship & collaboration."
         }
       ]
     },
@@ -32,11 +36,13 @@
       "children": [
         {
           "label": "Global Entrepreneurship Competition",
-          "path": "imfahe-shark-tank-program/"
+          "path": "imfahe-shark-tank-program/",
+          "tagline": "Turn innovative ideas into startups, guided by experienced mentors."
         },
         {
           "label": "Venture Building & Entrepreneurship",
-          "path": "imfahe-venture-building-program/"
+          "path": "imfahe-venture-building-program/",
+          "tagline": "Transforming ideas into ventures."
         }
       ]
     },
@@ -46,15 +52,18 @@
       "children": [
         {
           "label": "Professors iPDP",
-          "path": "imfahe-professors-international-professional-development-program/"
+          "path": "imfahe-professors-international-professional-development-program/",
+          "tagline": "Stand out as a researcher and educator."
         },
         {
           "label": "IMFAHE Global Academy",
-          "path": "imfahe-international-quarter-courses/"
+          "path": "imfahe-international-quarter-courses/",
+          "tagline": "Learn from global experts. Develop future-ready skills."
         },
         {
           "label": "Workshops, Symposiums & In-Person Summer Courses",
-          "path": "global-mini-symposiums/"
+          "path": "global-mini-symposiums/",
+          "tagline": "Connecting science, innovation & career opportunities."
         }
       ]
     },
@@ -80,5 +89,7 @@
       "label": "Instagram",
       "url": "https://www.instagram.com/imfahe_org"
     }
-  ]
+  ],
+  "email": "contact@imfahe.org",
+  "shareImage": "imfahe-share-1200.jpg"
 }

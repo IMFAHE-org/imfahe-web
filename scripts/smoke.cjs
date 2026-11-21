@@ -2,7 +2,12 @@ const { chromium } = require("playwright");
 const fs = require("node:fs");
 const path = require("node:path");
 const root = path.resolve(__dirname, "..");
-const routes = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json"))).map((p) => p.route);
+const pages = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json")));
+const languages = Object.keys(JSON.parse(fs.readFileSync(path.join(root, "content/i18n.json"))));
+// The first language is served from the site root; the others from /<code>/. A page without a translation is skipped.
+const routes = languages.flatMap((code, index) => pages
+  .filter((p) => index === 0 || fs.existsSync(path.join(root, "content", code, `${p.slug}.html`)))
+  .map((p) => (index === 0 ? "" : `${code}/`) + p.route));
 const host = process.argv[2] || "http://127.0.0.1:8823/";
 const widthSet = [320, 390, 768, 1280];
 

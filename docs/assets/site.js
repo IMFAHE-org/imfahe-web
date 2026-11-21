@@ -27,3 +27,15 @@ document.addEventListener("keydown", (event) => {
   openMenu.open = false;
   openMenu.querySelector("summary")?.focus();
 });
+
+// Same Google Analytics property as imfahe.org. Skipped on a developer's machine so previews stay out of the reports.
+if (!/^(localhost|127\.|\[::1\])/.test(location.hostname)) {
+  const tag = document.createElement("script");
+  tag.async = true;
+  tag.src = "https://www.googletagmanager.com/gtag/js?id=G-8Q9PR9CWSB";
+  document.head.append(tag);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", "G-8Q9PR9CWSB");
+}
