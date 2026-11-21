@@ -41,6 +41,12 @@ def fragment(page, lang):
     return folder / f'{page["slug"]}.html'
 
 
+def home_of(path, lang):
+    """Where links to a page start: its own language, or the default language when it has no translation."""
+    page = next((item for item in PAGES if item["route"] == path), None)
+    return "@site@" if page is None or fragment(page, lang).exists() else "@root@"
+
+
 def meta(page, lang, field):
     return I18N[lang].get("pages", {}).get(page["slug"], {}).get(field) or page[field]
 
@@ -76,7 +82,7 @@ def menu_link(item, route, lang, button=False, tagline=False):
     text = f'<span class="nav-label">{escape(label(lang, item["label"]))}</span>' if tagline else escape(label(lang, item["label"]))
     if tagline and item.get("tagline"):
         text += f'<span class="nav-tagline">{escape(label(lang, item["tagline"]))}</span>'
-    return f'<a href="@site@/{escape(item["path"], quote=True)}"{style}{current}>{text}</a>'
+    return f'<a href="{home_of(item["path"], lang)}/{escape(item["path"], quote=True)}"{style}{current}>{text}</a>'
 
 
 def navigation_items(route, lang):
@@ -103,7 +109,7 @@ def language_switch(page, route, lang):
             continue
         current = ' aria-current="true"' if other == lang else ""
         links.append(
-            f'<li><a href="@root@/{prefix(other)}{route}" lang="{I18N[other]["htmlLang"]}" hreflang="{I18N[other]["htmlLang"]}"'
+            f'<li><a href="@root@/{prefix(other)}{escape(route, quote=True)}" lang="{escape(I18N[other]["htmlLang"], quote=True)}" hreflang="{escape(I18N[other]["htmlLang"], quote=True)}"'
             f' title="{escape(I18N[other]["name"], quote=True)}"{current}>{other.upper()}</a></li>'
         )
     if len(links) < 2:
@@ -140,7 +146,7 @@ def related(route, lang):
         if not any(child["path"] == route for child in children):
             continue
         cards = "".join(
-            f'<li><a class="related-card" href="@site@/{escape(child["path"], quote=True)}">'
+            f'<li><a class="related-card" href="{home_of(child["path"], lang)}/{escape(child["path"], quote=True)}">'
             f'<span class="nav-label">{escape(label(lang, child["label"]))}</span>'
             f'<span class="nav-tagline">{escape(label(lang, child.get("tagline", "")))}</span>@icon:arrow-right@</a></li>'
             for child in children if child["path"] != route
@@ -160,7 +166,7 @@ def join_block(lang):
     ways = [
         ("joinStudent", f'@site@/{join["calls"]}'),
         ("joinMentor", join["mentorForm"]),
-        ("joinOrg", f'mailto:{MENU["email"]}'),
+        ("joinOrg", f'mailto:{MENU["email"]}'),  # escaped below with the other links
     ]
     items = "".join(
         f'<li><h3>{escape(ui(lang, key))}</h3><p>{escape(ui(lang, key + "Text"))}</p>'
@@ -184,7 +190,7 @@ def footer(page, route, lang):
         + '</ul></div>'
         for item in MENU["pages"] if "children" in item
     )
-    email = MENU["email"]
+    email = escape(MENU["email"], quote=True)
     links = "".join(f'<li>{menu_link(item, route, lang)}</li>' for item in MENU["pages"] if "children" not in item)
     return f'''  <footer class="site-footer">
     <div class="wrap">
@@ -217,8 +223,10 @@ def new_tab_links(html):
         href = re.search(r'href="([^"]*)"', tag)
         if not href or not (href[1].startswith(("http://", "https://")) or href[1].lower().endswith(".pdf")):
             return tag
+        rel = re.search(r'\srel="([^"]*)"', tag)
+        tokens = dict.fromkeys((rel[1].split() if rel else []) + ["noopener"])  # keep nofollow, noreferrer and the like
         tag = re.sub(r'\s(target|rel)="[^"]*"', "", tag)
-        return tag[:-1] + ' target="_blank" rel="noopener">'
+        return tag[:-1] + f' target="_blank" rel="{" ".join(tokens)}">'
     return re.sub(r"<a\b[^>]*>", fix, html)
 
 
@@ -242,7 +250,7 @@ def render(page, lang, origin):
     depth = (prefix(lang) + route).count("/")
     base = "/".join([".."] * depth) if depth else "."
     html = TEMPLATE.substitute(
-        lang=I18N[lang]["htmlLang"],
+        lang=escape(I18N[lang]["htmlLang"], quote=True),
         title=escape(meta(page, lang, "title")),
         description=escape(meta(page, lang, "description"), quote=True),
         skip=escape(ui(lang, "skip")),

@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T01:18:20+00:00",
+  "title": "Design System: IMFAHE website",
+  "extensions": {
+    "colorMeta": {
+      "brand": {
+        "role": "primary",
+        "displayName": "Brand red",
+        "canonical": "#e6122c",
+        "tonalRamp": [
+          "#3a1317",
+          "#800a18",
+          "#b40e22",
+          "#ec132d",
+          "#f14b60",
+          "#f58492",
+          "#f9b8c0",
+          "#f9eced"
+        ]
+      },
+      "brand-strong": {
+        "role": "primary",
+        "displayName": "Strong red",
+        "canonical": "#c20e24",
+        "tonalRamp": [
+          "#3a1217",
+          "#800918",
+          "#b50d22",
+          "#ee112c",
+          "#f24a5f",
+          "#f68391",
+          "#fab8c0",
+          "#f9eced"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Orange accent",
+        "canonical": "#f39220",
+        "tonalRamp": [
+          "#3b2812",
+          "#834a07",
+          "#b8680a",
+          "#f2890d",
+          "#f5a547",
+          "#f8c181",
+          "#fbdcb6",
+          "#f9f3eb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1d1d1f",
+        "tonalRamp": [
+          "#252527",
+          "#434347",
+          "#5e5e64",
+          "#7b7b84",
+          "#9b9ba1",
+          "#bababf",
+          "#d7d7da",
+          "#f2f2f3"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Body text grey",
+        "canonical": "#3a3a3a",
+        "tonalRamp": [
+          "#262626",
+          "#454545",
+          "#616161",
+          "#808080",
+          "#9e9e9e",
+          "#bdbdbd",
+          "#d9d9d9",
+          "#f2f2f2"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted grey",
+        "canonical": "#5e6066",
+        "tonalRamp": [
+          "#252627",
+          "#424348",
+          "#5d5f65",
+          "#7a7d85",
+          "#9a9ca2",
+          "#babbbf",
+          "#d7d8da",
+          "#f2f2f3"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line grey",
+        "canonical": "#e2e2e2",
+        "tonalRamp": [
+          "#262626",
+          "#454545",
+          "#616161",
+          "#808080",
+          "#9e9e9e",
+          "#bdbdbd",
+          "#d9d9d9",
+          "#f2f2f2"
+        ]
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "Tint grey",
+        "canonical": "#f5f5f7",
+        "tonalRamp": [
+          "#242429",
+          "#3d3d4c",
+          "#56566c",
+          "#71718e",
+          "#9393a9",
+          "#b5b5c4",
+          "#d4d4dd",
+          "#f1f1f3"
+        ]
+      },
+      "rose": {
+        "role": "neutral",
+        "displayName": "Rose",
+        "canonical": "#fdecee",
+        "tonalRamp": [
+          "#391418",
+          "#7d0d1a",
+          "#af1225",
+          "#e71831",
+          "#ed5062",
+          "#f28794",
+          "#f8bac1",
+          "#f8ecee"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#454545",
+          "#616161",
+          "#808080",
+          "#9e9e9e",
+          "#bdbdbd",
+          "#d9d9d9",
+          "#f2f2f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "title-xl": {
+        "displayName": "Title XL",
+        "purpose": "h1, one per page."
+      },
+      "title-lg": {
+        "displayName": "Title LG",
+        "purpose": "h2 section headings."
+      },
+      "title-md": {
+        "displayName": "Title MD",
+        "purpose": "h3; headings in prose, footer and related row."
+      },
+      "title-sm": {
+        "displayName": "Title SM",
+        "purpose": "h4."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": ".lead and .section-summary lines."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": ".meta lines and the footer."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow",
+        "value": "0 .5rem 1.5rem -.5rem rgba(29, 29, 31, .18)",
+        "purpose": "Only on things that float or lift: open menu, mobile menu panel, video thumbnail, related card on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Arrow slides, menu fade-in, card lift, hero entrance."
+      },
+      {
+        "name": "hover",
+        "value": ".2s",
+        "purpose": "Color and background fades on hover."
+      },
+      {
+        "name": "hero-in",
+        "value": ".9s, children staggered .08s",
+        "purpose": "Hero parts fade up once on load; off under reduced motion."
+      },
+      {
+        "name": "rise",
+        "value": "animation-timeline: view(); entry 0% to 35%",
+        "purpose": "Sections fade up on scroll where supported; off under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "max-width: 45rem"
+      },
+      {
+        "name": "tablet",
+        "value": "max-width: 64rem"
+      },
+      {
+        "name": "wide",
+        "value": "min-width: 64.0625rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Main action of a section.",
+      "html": "<a class=\"ds-button\" href=\"#\">Apply now</a>",
+      "css": ".ds-button { min-height: 2.875rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1.4rem; border: .125rem solid var(--brand); border-radius: 62rem; background: var(--brand); color: var(--white); font: 700 .9375rem/1.25 'Noto Sans', sans-serif; text-decoration: none; transition: background-color .2s, border-color .2s, color .2s, transform .2s var(--ease); } .ds-button:hover { background: var(--brand-strong); border-color: var(--brand-strong); } .ds-button:active { transform: scale(.98); } .ds-button:focus-visible { outline: .1875rem solid var(--brand); outline-offset: .1875rem; }"
+    },
+    {
+      "name": "Outline button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Second action beside a solid button.",
+      "html": "<a class=\"ds-button-outline\" href=\"#\">Watch the session</a>",
+      "css": ".ds-button-outline { min-height: 2.875rem; display: inline-flex; align-items: center; justify-content: center; padding: .7rem 1.4rem; border: .125rem solid var(--brand); border-radius: 62rem; background: transparent; color: var(--brand-strong); font: 700 .9375rem/1.25 'Noto Sans', sans-serif; text-decoration: none; transition: background-color .2s, border-color .2s, color .2s; } .ds-button-outline:hover { background: var(--brand-strong); border-color: var(--brand-strong); color: var(--white); } .ds-button-outline:focus-visible { outline: .1875rem solid var(--brand); outline-offset: .1875rem; }"
+    },
+    {
+      "name": "Arrow link",
+      "kind": "custom",
+      "description": "Text link with an arrow for lesser actions.",
+      "html": "<a class=\"ds-link-arrow\" href=\"#\">Learn more <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-link-arrow { display: inline-flex; align-items: center; gap: .375rem; min-height: 2.75rem; color: var(--brand-strong); font: 700 1rem 'Noto Sans', sans-serif; text-decoration: none; transition: color .2s; } .ds-link-arrow svg { width: 1.25em; height: 1.25em; transition: transform .25s var(--ease); } .ds-link-arrow:hover { color: var(--ink); } .ds-link-arrow:hover svg { transform: translateX(.25rem); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "A title with a short list or line.",
+      "html": "<div class=\"ds-card\"><h3>United States</h3><p>Harvard University</p></div>",
+      "css": ".ds-card { display: grid; gap: .625rem; padding: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); font-family: 'Noto Sans', sans-serif; } .ds-card h3 { margin: 0; color: var(--ink); font-size: var(--title-md); font-weight: 700; } .ds-card p { margin: 0; color: var(--text); font-size: .9375rem; }"
+    },
+    {
+      "name": "Quote",
+      "kind": "card",
+      "refersTo": "quote",
+      "description": "Testimonial with name and role.",
+      "html": "<figure class=\"ds-quote\"><blockquote>Quote text.</blockquote><figcaption><strong>Name</strong><span>Role, organization (country)</span></figcaption></figure>",
+      "css": ".ds-quote { display: grid; gap: 1.5rem; margin: 0; padding: var(--panel); border-radius: var(--radius-lg); background: var(--tint); font-family: 'Noto Sans', sans-serif; } .ds-quote blockquote { margin: 0; color: var(--ink); font-size: 1.0625rem; line-height: 1.55; } .ds-quote blockquote::before { content: '\\201C'; display: block; height: 2.25rem; color: var(--brand); font-size: 4rem; font-weight: 800; line-height: 1; } .ds-quote figcaption { display: grid; } .ds-quote strong { color: var(--ink); } .ds-quote span { color: var(--muted); font-size: .8125rem; }"
+    },
+    {
+      "name": "Step",
+      "kind": "custom",
+      "description": "One numbered step of a process.",
+      "html": "<div class=\"ds-step\"><h3>Apply</h3><p>Send the form.</p></div>",
+      "css": ".ds-step { position: relative; padding-top: 4rem; display: grid; gap: .5rem; font-family: 'Noto Sans', sans-serif; } .ds-step::before { content: '01'; position: absolute; top: 0; left: 0; display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--brand); color: var(--white); font-weight: 800; } .ds-step h3 { margin: 0; color: var(--ink); font-size: var(--title-md); } .ds-step p { margin: 0; color: var(--muted); font-size: .9375rem; }"
+    },
+    {
+      "name": "Number",
+      "kind": "custom",
+      "description": "A big figure with a short label.",
+      "html": "<div class=\"ds-stat\"><strong>3,000+</strong><span>Global talents</span></div>",
+      "css": ".ds-stat { display: grid; gap: .25rem; padding: .5rem 1.75rem; border-left: 1px solid var(--line); font-family: 'Noto Sans', sans-serif; } .ds-stat strong { color: var(--brand); font-size: clamp(2rem, 1.5rem + 2.2vw, 3.25rem); font-weight: 800; letter-spacing: -.03em; line-height: 1; } .ds-stat span { color: var(--muted); font-size: .9375rem; font-weight: 600; }"
+    },
+    {
+      "name": "Call band",
+      "kind": "custom",
+      "description": "The single most important call on a page, on red.",
+      "html": "<div class=\"ds-band\"><h2>Public calls 2026-2027</h2><a href=\"#\">PDF</a></div>",
+      "css": ".ds-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding: 2rem; background: var(--brand); color: var(--white); font-family: 'Noto Sans', sans-serif; } .ds-band h2 { margin: 0; font-size: clamp(1.25rem, 1.1rem + .8vw, 1.75rem); font-weight: 750; } .ds-band a { display: inline-flex; align-items: center; min-height: 2.875rem; padding: .7rem 1.4rem; border-radius: 62rem; background: var(--white); color: var(--brand-strong); font-weight: 700; font-size: .9375rem; text-decoration: none; transition: background-color .2s, color .2s; } .ds-band a:hover { background: var(--ink); color: var(--white); }"
+    }
+  ],
+  "narrative": {
+    "overview": "This is the website of IMFAHE, a US nonprofit that connects students and professors at partner universities with international mentors. Visitors are students, professors, mentors and partner organizations, reading in English, Spanish or Portuguese. This file is for the people and AI assistants who edit page content once or twice a year: it describes what the site already does so new content looks the same.\n\nThe site is plain HTML and one stylesheet, `docs/assets/site.css`. Pages are white, text is dark grey, and red is used for actions and small marks. Sections alternate white and light grey. Everything here was read from that stylesheet; if this file and the CSS disagree, the CSS is right.",
+    "keyCharacteristics": [
+      "The logo (`docs/assets/images/imfahe-logo.png`), unaltered.",
+      "Brand red `#E6122C` and orange accent `#F39220`.",
+      "Noto Sans as the only typeface.",
+      "Photos keep their original colors. No filters, tints or overlays.",
+      "Icons come from Lucide. The four social logos (Instagram, LinkedIn, X, YouTube) come from Simple Icons.",
+      "The organization's own wording. Do not rewrite, shorten or \"improve\" its text unless asked."
+    ],
+    "rules": [
+      {
+        "name": "The Red Is For Action Rule",
+        "body": "Large red areas are the button and the call band only. Red text for reading uses `--brand-strong`, not `--brand`.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** build pages only from the blocks in `content/COMPONENTS.md`, alternating white and `section--tint` sections.",
+      "**Do** use the color and size variables; let the layout rules place headings and text on wide screens.",
+      "**Do** keep one main action per section: one solid `button`, with `button--outline` or `link-arrow` for the rest.",
+      "**Do** mirror every English change in `content/es` and `content/pt`.",
+      "**Do** rebuild after editing (see README.md) and check the page on a phone-width window."
+    ],
+    "donts": [
+      "**Don't** change the logo, the red, the typeface, or the organization's wording.",
+      "**Don't** add inline styles, new classes, new colors, new font sizes or a second typeface.",
+      "**Don't** put text inside pictures, or apply filters, tints or overlays to photos.",
+      "**Don't** use emoji or icons from outside Lucide and Simple Icons.",
+      "**Don't** add shadows, gradients or colored backgrounds to make a block stand out; use the red band once per page instead.",
+      "**Don't** add carousels, pop-ups, autoplay video or anything that moves by itself.",
+      "**Don't** write a header, footer, sub-menu or related-programs row inside a page; the build adds them.",
+      "**Don't** skip heading levels or add a second `h1`.",
+      "**Don't** embed YouTube directly; use the video block so nothing loads until clicked."
+    ]
+  }
+}

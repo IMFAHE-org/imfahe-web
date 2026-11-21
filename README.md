@@ -4,18 +4,18 @@ The institutional website is built from plain HTML and CSS and published from `m
 
 - Edit page copy and sections in `content/<page>.html`. The building blocks (hero, benefits, steps, quotes, cards and so on) are listed with their markup in [content/COMPONENTS.md](content/COMPONENTS.md).
 - Edit navigation, menu taglines, the footer email and social links in `content/navigation.json`, and page titles and descriptions in `content/pages.json`.
-- Edit the shared page template in `templates/page.html` and styles in `docs/assets/site.css`. Brand colors (`#E6122C` red, `#F39220` orange) and Noto Sans match the imfahe.org theme.
-- The `@site@/` prefix in fragments resolves to the site's root, including when GitHub Pages serves the site from a repository subpath.
+- Edit the shared page template in `templates/page.html` and styles in `docs/assets/site.css`. Brand colors (`#E6122C` red, `#F39220` orange) and Noto Sans match the imfahe.org theme. The design rules are written down in [DESIGN.md](DESIGN.md).
+- In fragments, `@site@/page-slug/` links to a page in the current language (`/`, `/es/` or `/pt/`), and `@site@/assets/...` always points at the shared assets folder. Both work when GitHub Pages serves the site from a repository subpath. A page that has no translation is linked in English.
 - Use local, compressed WebP images with a `srcset`, intrinsic dimensions, meaningful alt text where applicable and lazy loading below the first screen. Keep images in their original colors. Text is real text, never a picture of text.
 - Icons: write `@icon:name@` in a fragment and the build inlines `docs/assets/icons/name.svg`. Use only Lucide SVGs for interface icons. The four social logos in `docs/assets/brands/` come from Simple Icons and are written `@brand:name@`.
 
 ## Languages
 
-English lives in `content/` and is served from the site root. Spanish and Portuguese live in `content/es/` and `content/pt/` and are served from `/es/` and `/pt/`. Menu labels, interface words and translated page titles are in `content/i18n.json`. A page without a translated fragment is simply not built in that language, and the language switch hides that option. When you change an English fragment, make the same change in the other two.
+English lives in `content/` and is served from the site root. Spanish and Portuguese live in `content/es/` and `content/pt/` and are served from `/es/` and `/pt/`. Menu labels, interface words and translated page titles are in `content/i18n.json`. A page without a translated fragment is not built in that language: the language switch hides that option and menus link to the English page instead. When you change an English fragment, make the same change in the other two.
 
 ## Build and preview
 
-After editing, rebuild and preview with Python 3.10 or newer:
+After editing, rebuild and preview with Python 3.10 or newer (the error page, `404.html`, only shows its styles on the published site because its links are absolute):
 
 ```sh
 python3 scripts/build.py --origin https://imfahe.github.io/imfahe-web/
