@@ -218,7 +218,7 @@ address { font-style: normal; }
 .pillar-body > .icon { width: 2rem; height: 2rem; color: var(--brand); }
 .pillar-links { list-style: none; padding: 0; margin: .25rem 0; width: 100%; border-top: 1px solid var(--line); }
 .pillar-links li { margin: 0; border-bottom: 1px solid var(--line); }
-.pillar-links a { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 2.875rem; padding-block: .375rem; color: var(--ink); font-size: .9375rem; font-weight: 650; line-height: 1.3; text-decoration: none; }
+.pillar-links a { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 2.875rem; padding-block: .625rem; color: var(--ink); font-size: .9375rem; font-weight: 650; line-height: 1.3; text-decoration: none; }
 .pillar-links a:hover { color: var(--brand-strong); }
 .pillar-links .icon { color: var(--muted); width: 1.125em; height: 1.125em; transition: transform .25s var(--ease); }
 .pillar-links a:hover .icon { transform: translateX(.25rem); color: var(--brand); }
