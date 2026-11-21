@@ -22,7 +22,7 @@
   --container: 76rem;
   --measure: 68ch;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --section: clamp(3.5rem, 2rem + 6vw, 7rem);
+  --section: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
   --gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   --panel: clamp(1.25rem, 1rem + 1.2vw, 2rem);
   --radius: .75rem;
@@ -94,6 +94,10 @@ address { font-style: normal; }
 .media img { width: 100%; border-radius: var(--radius-lg); }
 .media--contain img { width: auto; max-height: 34rem; margin-inline: auto; border-radius: var(--radius); }
 .media--thumbnail img { aspect-ratio: 3 / 2; object-fit: cover; }
+/* Beside a text column the picture is as tall as the text; on its own row it is 4:3. */
+.split--media:has(> .media--mission) { align-items: stretch; }
+.media--mission { display: grid; }
+.media--mission img { height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* Buttons and links */
 .button { min-height: 2.875rem; max-width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1.4rem; border: .125rem solid var(--brand); border-radius: 62rem; background: var(--brand); color: var(--white); font-size: .9375rem; font-weight: 700; line-height: 1.25; text-align: center; text-decoration: none; transition: background-color .2s, border-color .2s, color .2s, transform .2s var(--ease); }
