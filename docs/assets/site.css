@@ -371,10 +371,10 @@ address { font-style: normal; }
 .site-footer .socials a { width: 2rem; height: 2rem; color: var(--ink); background: var(--white); border: 1px solid var(--line); }
 .site-footer .socials a:hover { color: var(--white); background: var(--brand); border-color: var(--brand); }
 .site-footer .socials .icon { width: 1rem; height: 1rem; }
-.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 2rem; padding-block-start: .125rem; border-top: 1px solid var(--line-strong); font-size: .71875rem; }
+.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 2rem; padding-block-start: .5rem; border-top: 1px solid var(--line-strong); font-size: .71875rem; }
 .footer-legal p { max-width: none; }
 .footer-legal p a { color: inherit; }
-.footer-legal .link-button { min-height: 2rem; color: var(--muted); font-size: inherit; font-weight: 400; text-decoration: underline; text-underline-offset: .2em; }
+.footer-legal .link-button { min-height: 1.5rem; color: var(--muted); font-size: inherit; font-weight: 400; text-decoration: underline; text-underline-offset: .2em; }
 
 /* Cookie question: a small card in the corner, never over the whole page */
 .consent { position: fixed; inset: auto 1rem 1rem auto; z-index: 6; width: min(26rem, calc(100% - 2rem)); display: grid; gap: .875rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); font-size: .9375rem; }
