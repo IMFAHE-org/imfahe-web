@@ -17,6 +17,10 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `competition-idea-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/31116663/ |
 | `competition-pitch-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/7413913/ |
 | `competition-growth-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/11791008/ |
+| `venture-prototype-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/3912369/ |
+| `venture-pitch-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/9034249/ |
+| `venture-growth-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/7710143/ |
+| `venture-deal-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/7414111/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
 

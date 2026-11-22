@@ -271,6 +271,21 @@ def network_parts():
     return width, height, "".join(lines), dots, tiles
 
 
+def collage(match):
+    """@collage:photo-a,photo-b,photo-c,photo-d|Description@ -> the dotted world map with the IMFAHE logo in the middle
+    and four photos (docs/assets/images/<name>-480.webp, 3:2) joined to it by lines that draw themselves."""
+    names, label = match.group(1).split(","), match.group(2)
+    spots = list(zip(names, [(0, 0), (410, 0), (0, 334), (410, 334)]))
+    clips = "".join(f'<clipPath id="collage-{n}"><rect x="{x}" y="{y}" width="190" height="126" rx="12"/></clipPath>' for n, (x, y) in spots)
+    photos = "".join(f'<g class="netmap-org"><image href="@site@/assets/images/{n}-480.webp" x="{x}" y="{y}" width="190" height="126" preserveAspectRatio="xMidYMid slice" clip-path="url(#collage-{n})"/></g>' for n, (x, y) in spots)
+    lines = '<path pathLength="1" d="M120 126 Q135 205 215 215"/><path pathLength="1" d="M480 126 Q465 205 385 215"/><path pathLength="1" d="M120 334 Q135 255 215 245"/><path pathLength="1" d="M480 334 Q465 255 385 245"/>'
+    dots = "".join(f'<circle cx="{x}" cy="{y}" r="4"/>' for x, y in [(120, 126), (480, 126), (120, 334), (480, 334), (215, 215), (385, 215), (215, 245), (385, 245)])
+    return (f'<figure class="media netmap netmap--collage"><svg viewBox="0 0 600 460" role="img" aria-label="{label}"><defs>{clips}</defs>'
+            '<image class="netmap-world" href="@site@/assets/world-dots.svg" x="0" y="118" width="600" height="223"/>'
+            f'<g class="netmap-lines">{lines}</g><g class="netmap-dots">{dots}</g>{photos}'
+            '<g class="collage-logo"><rect x="215" y="188" width="170" height="84" rx="14"/><image href="@site@/assets/images/imfahe-logo.png" x="232" y="198" width="136" height="64"/></g></svg></figure>')
+
+
 def network_map(lang):
     """The map itself. On a phone the logos are too small to read, so they are also listed in a grid below it."""
     width, height, lines, dots, tiles = network_parts()
@@ -407,7 +422,7 @@ def render(page, lang, origin):
         js_version=JS_VERSION,
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
-        content=(text := fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang)).replace("@network@", network_map(lang))) + join_section(page, text, lang) + related(route, lang),
+        content=(text := re.sub(r"@collage:([\w,-]+)\|([^@]+)@", collage, fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang)).replace("@network@", network_map(lang)))) + join_section(page, text, lang) + related(route, lang),
         footer=footer(page, route, lang),
         consent=consent(lang),
     )
