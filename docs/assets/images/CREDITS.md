@@ -10,7 +10,8 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `imfahe-mission-*.webp`, `imfahe-share-1200.jpg` | Home, "Our Goal Is Your Success"; link preview image | https://www.pexels.com/photo/8092999/ |
 | `connects-community-*.webp` | IMFAHE Connects, "Why Join" section | https://www.pexels.com/photo/5486096/ |
 | `conferences-hero-*.webp` | International Conferences, top | https://www.pexels.com/photo/4226140/ |
-| `fellowships-hero-*.webp` | International Fellowships, top | https://www.pexels.com/photo/7972324/ |
+| `fellowships-harvard-*.webp` | International Fellowships, top | https://commons.wikimedia.org/wiki/File:Harvard_University_Widener_Library.jpg (Joseph Williams, CC BY 2.0: the credit under the photo must stay) |
+| `fellowships-campus-*.webp` | International Fellowships, "Why Apply" | https://www.pexels.com/photo/7972324/ |
 | `who-top-*.webp` | Who We Are, top | https://www.pexels.com/photo/7683910/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.

@@ -183,7 +183,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 - **Small cards** (`cards` / `card`): a title with a short list or line, such as universities per country.
 - **Expandable rows** (`accordion`): long lists or questions; one row open at a time when the rows share a `name`.
 - **Quotes** (`quotes` / `quote`): testimonials with a round portrait, name and role. The opening quotation mark is added automatically; do not type quotation marks.
-- **Videos** (`video-grid`, `video-card`, `video-trigger`): a thumbnail with a red play button. YouTube loads only when clicked.
+- **Videos** (`video-grid`, `video-card`, `video-trigger`): a thumbnail with a red play button: large and centered on a single video, small and in the bottom-left corner beside the name in a grid of videos, so faces stay visible. YouTube loads only when clicked.
 - **Events** (`timeline` / `event`): date, title, topic, text and one picture per event.
 - **Table** (`table-scroll` + `table`): real data. Numbers use `class="num"`.
 - **Red call band** (`band`): one line and one button on red, for the single most important call on a page.
@@ -218,7 +218,7 @@ Buttons are at least 2.875rem tall. On hover a button darkens; arrows in links s
 ## Motion
 
 - Hover changes take 0.2 to 0.3 seconds: colors fade, arrows slide 0.25rem, a related card lifts slightly, a button shrinks a touch when pressed. The menu panel fades in; accordion arrows rotate.
-- The hero parts fade up once when a page opens. In browsers that support it, each section fades up as it scrolls into view. Content is visible by default if neither runs.
+- The hero parts fade up once when a page opens. Each section below the first screen fades up once, the first time it scrolls into view; the fade runs on a timer, never tied to the scroll position, so a section cannot rest half faded. Content is visible by default if neither runs.
 - People who ask their device for reduced motion get none of this, and no smooth scrolling.
 - Nothing moves on its own: no carousels, no autoplay, no looping animation.
 

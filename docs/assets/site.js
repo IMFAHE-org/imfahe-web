@@ -61,6 +61,21 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
   document.querySelectorAll(".stats strong").forEach((el) => counter.observe(el));
 }
 
+// Sections below the first screen ease in once, the first time they scroll into view.
+// Without this script, or with reduced motion, every section is simply visible.
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  const rise = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.replace("is-waiting", "is-in");
+    rise.unobserve(entry.target);
+  }));
+  document.querySelectorAll("main > .section:not(.section--hero) > .wrap").forEach((wrap) => {
+    if (wrap.getBoundingClientRect().top < innerHeight) return;
+    wrap.classList.add("is-waiting");
+    rise.observe(wrap);
+  });
+}
+
 // Partner logos appear one after another the first time the wall scrolls into view.
 // Without this script, or with reduced motion, the wall is simply visible.
 const wall = document.querySelector(".logos--cards");

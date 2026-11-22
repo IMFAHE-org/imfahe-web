@@ -180,6 +180,8 @@ address { font-style: normal; }
 .hero--banner h1 { max-width: 28ch; font-size: clamp(1.875rem, 1.2rem + 2.8vw, 3.25rem); }
 .hero--banner .hero-photo img { width: 100%; aspect-ratio: 3 / 1; object-fit: cover; border-radius: var(--radius-lg); }
 .hero--banner .hero-photo { margin-block: .5rem; }
+.media figcaption { margin-block-start: .375rem; color: var(--muted); font-size: .75rem; text-align: end; } /* photo credit, where the license asks for one */
+.media figcaption a { color: inherit; }
 .hero--banner .hero-photo--natural img { aspect-ratio: auto; } /* a picture that must show whole, like a map */
 .prose--cols { columns: 2 24rem; column-gap: clamp(2rem, 6vw, 5rem); max-width: none; }
 .prose--cols > * { break-inside: avoid; }
@@ -198,6 +200,8 @@ address { font-style: normal; }
 .play-button { position: absolute; inset: 0; margin: auto; display: grid; place-items: center; width: clamp(3.25rem, 2.5rem + 3vw, 4.75rem); aspect-ratio: 1; border-radius: 50%; background: var(--brand); color: var(--white); box-shadow: 0 .5rem 1.5rem -.25rem rgba(0, 0, 0, .45); transition: transform .3s var(--ease), background-color .2s; }
 .play-button .icon { width: 42%; height: 42%; fill: currentColor; translate: 6% 0; }
 .video-trigger:hover .play-button { transform: scale(1.08); background: var(--brand-strong); }
+.video-grid .play-button { z-index: 1; inset: auto auto .625rem .75rem; margin: 0; width: 2.25rem; } /* several videos side by side: small, in the corner, so faces stay visible */
+.video-grid .play-label { padding-inline-start: 3.625rem; }
 .play-label { position: absolute; inset: auto 0 0; padding: 2.5rem 1rem .875rem; background: linear-gradient(transparent, rgba(0, 0, 0, .72)); color: var(--white); font-size: .9375rem; font-weight: 700; line-height: 1.3; }
 .player { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius-lg); background: var(--ink); display: block; }
 .video-grid { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(15.5rem, 100%), 1fr)); gap: var(--gap) clamp(1rem, 2vw, 1.75rem); }
@@ -492,12 +496,11 @@ address { font-style: normal; }
 .link-button { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0; border: 0; background: none; color: var(--ink); font-weight: 600; cursor: pointer; }
 .link-button:hover { color: var(--brand-strong); }
 
-/* Scroll reveal: content is visible by default; browsers with scroll timelines ease sections in. */
+/* Scroll reveal: content is visible by default; site.js eases a section in once, the first time it scrolls into view.
+   The fade runs on a timer, not on the scroll position, so a section can never rest half faded. */
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    main > .section:not(.section--hero) > .wrap { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 12%; }
-    @keyframes rise { from { opacity: 0; transform: translateY(1.5rem); } }
-  }
+  .wrap.is-waiting { opacity: 0; transform: translateY(1.5rem); }
+  .wrap.is-in { transition: opacity .6s var(--ease), transform .6s var(--ease); }
   .section--hero .hero > * { animation: hero-in .9s var(--ease) both; }
   .section--hero .hero > :nth-child(2) { animation-delay: .08s; }
   .section--hero .hero > :nth-child(3) { animation-delay: .16s; }
