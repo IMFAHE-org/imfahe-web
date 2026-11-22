@@ -377,6 +377,10 @@ address { font-style: normal; }
 .socials { display: flex; flex-wrap: wrap; gap: .25rem; }
 .socials a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: var(--muted); transition: color .2s, background-color .2s; }
 .socials a:hover { color: var(--brand-strong); background: var(--rose); }
+/* A quiet closing line with the social icons to its right, set apart from the button above by a line */
+.follow { width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem 1rem; padding-block-start: .75rem; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: .9375rem; }
+.follow p { margin: 0; flex: 1 1 16rem; }
+.follow .socials { margin-inline-end: -.5rem; }
 .photo-card .socials a { width: 2.75rem; height: 2.75rem; }
 .photo-card .socials .icon { width: 1.125rem; height: 1.125rem; }
 
