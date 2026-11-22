@@ -185,6 +185,8 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 - **Expandable rows** (`accordion`): long lists or questions; one row open at a time when the rows share a `name`.
 - **Quotes** (`quotes` / `quote`): testimonials with a round portrait, name and role. The opening quotation mark is added automatically; do not type quotation marks.
 - **Videos** (`video-grid`, `video-card`, `video-trigger`): a thumbnail with a red play button: large and centered on a single video, small and in the bottom-left corner beside the name in a grid of videos, so faces stay visible. YouTube loads only when clicked.
+- **Collage** (`netmap netmap--collage`): a page-top picture drawn in code: the dotted world map, the IMFAHE logo in the middle and four photos joined to it by red lines that draw themselves once. Replaces machine-generated pictures of the same idea. See imfahe-shark-tank-program.html.
+- **Table** (`table`): a white, bordered table with a tinted header row; the first cell of each row is its name. Money is written `$1,000.00`; an empty amount is a dash.
 - **Events** (`timeline` / `event`): date, title, topic, text and one picture per event.
 - **Table** (`table-scroll` + `table`): real data. Numbers use `class="num"`.
 - **Red call band** (`band`): one line and one button on red, for the single most important call on a page.

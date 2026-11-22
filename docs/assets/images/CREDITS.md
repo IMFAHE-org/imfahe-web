@@ -13,6 +13,10 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `fellowships-harvard-*.webp` | International Fellowships, top | https://commons.wikimedia.org/wiki/File:Harvard_University_Widener_Library.jpg (Joseph Williams, CC BY 2.0: the credit under the photo must stay) |
 | `fellowships-campus-*.webp` | International Fellowships, "Why Apply" | https://www.pexels.com/photo/7972324/ |
 | `who-top-*.webp` | Who We Are, top | https://www.pexels.com/photo/7683910/ |
+| `competition-team-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/6913217/ |
+| `competition-idea-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/31116663/ |
+| `competition-pitch-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/7413913/ |
+| `competition-growth-480.webp` | Entrepreneurship Competition, top picture | https://www.pexels.com/photo/11791008/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
 

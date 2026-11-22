@@ -99,7 +99,7 @@
     "skip": [
       "contact",
       "economical-disclosure",
-      "imfahe-connects-program"
+      "imfahe-connects-program", "imfahe-shark-tank-program"
     ]
   }
 }
