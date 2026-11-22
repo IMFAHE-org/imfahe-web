@@ -16,6 +16,7 @@ Rules that apply everywhere:
 - A page can write its own "How to join": `<section class="section join">` with a `join-head` (title and button) and `<ul class="join-list join-list--4">` of icon, title, text and arrow link; see imfahe-connects-program.html. Add the page to `join.skip` in navigation.json so the shared one is not added too.
 - The numbers block of the home page (`stats-block` inside `wrap hero-extras`) can close any page top; see the same page.
 - Every page ends with one closing call. If a page has its own (a `cta` block, or a red `band` as its last section) it keeps it; otherwise the build adds the shared "How to join IMFAHE" section. Contact and Financial Disclosure get none (`join.skip` in `content/navigation.json`).
+- Section titles swap sides down a page (see "The Alternating Sides Rule" in DESIGN.md). With a picture: `<div class="split split--media [split--flip]"><div class="stack"><h2>…</h2>…</div><figure class="media">…</figure></div>`. Without one: `<div class="split split--aside [split--flip]"><div class="stack"><h2>…</h2><p class="section-summary">…</p></div><ul class="cards">…</ul></div>`. The title block always comes first in the file; `split--flip` shows it on the right. See imfahe-international-fellowships-program.html.
 - In a row of actions use at most two button styles: one `button`, alternatives as `button button--outline`. Keep `link-arrow` for the link inside a card or list item; a call to action on its own is a button.
 
 ## Program page hero

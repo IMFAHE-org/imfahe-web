@@ -95,6 +95,8 @@ address { font-style: normal; }
 /* Sections alternate sides down a page: split--flip shows the picture first without changing the reading order. */
 .split--flip > :first-child { order: 2; }
 .split--flip.split--big-media { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } /* a picture that needs room, such as a screenshot */
+.split--aside { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } /* a section without a picture: its title in the narrow column, its cards, videos or steps in the wide one */
+.split--aside.split--flip { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
 .media { width: 100%; }
 .media img { width: 100%; border-radius: var(--radius-lg); }
 .media--contain img { width: auto; max-height: 34rem; margin-inline: auto; border-radius: var(--radius); }
@@ -541,6 +543,8 @@ address { font-style: normal; }
 
 /* Below this width the menu button replaces the row of links, so labels never wrap. */
 @media (max-width: 60rem) {
+  .split--aside, .split--aside.split--flip { grid-template-columns: minmax(0, 1fr); }
+  .split--aside.split--flip > :first-child { order: 0; }
   .main-nav { display: none; }
   .mobile-nav { display: block; }
   .mobile-nav > summary { padding-inline: .875rem; border: 1px solid var(--line); border-radius: 62rem; }
