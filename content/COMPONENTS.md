@@ -16,7 +16,7 @@ Rules that apply everywhere:
 - A page can write its own "How to join": `<section class="section join">` with a `join-head` (title and button) and `<ul class="join-list join-list--4">` of icon, title, text and arrow link; see imfahe-connects-program.html. Add the page to `join.skip` in navigation.json so the shared one is not added too.
 - The numbers block of the home page (`stats-block` inside `wrap hero-extras`) can close any page top; see the same page.
 - Every page ends with one closing call. If a page has its own (a `cta` block, or a red `band` as its last section) it keeps it; otherwise the build adds the shared "How to join IMFAHE" section. Contact and Financial Disclosure get none (`join.skip` in `content/navigation.json`).
-- In a row of actions use at most two button styles: one `button`, alternatives as `button button--outline`. A `link-arrow` in the same `actions` row drops to its own line.
+- In a row of actions use at most two button styles: one `button`, alternatives as `button button--outline`. Keep `link-arrow` for the link inside a card or list item; a call to action on its own is a button.
 
 ## Program page hero
 
@@ -53,9 +53,10 @@ Rules that apply everywhere:
 
 ```html
 <ol class="steps">
-<li><h3>Title</h3><p>Text.</p><p><a class="link-arrow" href="...">Link @icon:arrow-right@</a></p></li>
+<li><h3>Title</h3><p>Text.</p></li>
 </ol>
 <p class="steps-note">@icon:calendar@ Closing note (optional).</p>
+<a class="button" href="...">The action the steps lead to (optional)</a>
 ```
 
 ## Numbers
@@ -162,7 +163,7 @@ Blocks must be in the same order as their tabs, with the same four parts (pictur
 <section class="section section--tint"><div class="wrap"><div class="cta">   <!-- cta--plain when there is no picture; cta--flip puts the picture on the right -->
 <figure class="media"><img ...4:5 picture...></figure>
 <div class="stack"><h2>Heading</h2><div class="prose"><p>Text.</p></div>
-<div class="actions"><a class="button" href="...">Main action</a><a class="button button--outline" href="...">Second action</a><a class="link-arrow" href="...">Text link @icon:arrow-right@</a></div></div>
+<div class="actions"><a class="button" href="...">Main action</a><a class="button button--outline" href="...">Second action</a></div></div>
 </div></div></section>
 ```
 

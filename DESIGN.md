@@ -166,7 +166,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 - Header: logo, menu with drop-downs (program names only; they open on hover or click), the red "contact" button (an outline on the Contact page) and one small language menu. Sticks to the top.
 - Footer: logo, one-line description and social links beside four link columns (the three pillars plus "IMFAHE"), then one thin legal line with the copyright and "Cookie settings".
 - Closing call: every page ends with one. A page keeps its own (`cta`, or a red `band` as its last section); otherwise the build adds the shared "How to join IMFAHE" section on the rose background. Contact and Financial Disclosure have none.
-- Rows of actions: at most two button styles in a row; a text link with an arrow takes its own line.
+- Rows of actions: at most two button styles in a row. Text links with an arrow stay inside cards and list items.
 - Related programs row: sibling programs at the foot of each program page.
 - Skip link, icons, new-tab links.
 
@@ -193,7 +193,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 - **Partner logos** (`logos`): a grid of linked logos. Add `data-shape="square"` to square logos so they show a little taller.
 - **Team** (`team`, `photo-card`, `card-role`, `socials`): one grid of portrait cards, the square photo filling the top of each, then name, role and links.
 - **Press** (`press`, `press-source`, `press-title`): one card per piece of coverage: icon, source, headline, arrow. The whole card is the link.
-- **Buttons and links** (`button`, `button button--outline`, `link-arrow`, `actions`): a solid button for the main action, an outline button for a second one, a text link with an arrow for the rest. `actions` holds a row of them.
+- **Buttons and links** (`button`, `button button--outline`, `link-arrow`, `actions`): a solid button for the main action of a section, outline buttons for the other actions beside it. A text link with an arrow is only for the link inside a card or list item (How to join, the Contact columns). A call to action that stands on its own is always a button, wherever it leads. `actions` holds a row of them.
 - **Uncropped picture** (`media media--contain`): a flyer or chart that must not be cropped.
 
 Buttons are at least 2.875rem tall. On hover a button darkens; arrows in links slide slightly right.
@@ -245,7 +245,7 @@ English lives in `content/` and is the source. Spanish is in `content/es/`, Port
 ### Do:
 - **Do** build pages only from the blocks in `content/COMPONENTS.md`, alternating white and `section--tint` sections.
 - **Do** use the color and size variables; let the layout rules place headings and text on wide screens.
-- **Do** keep one main action per section: one solid `button`, with `button--outline` or `link-arrow` for the rest.
+- **Do** keep one main action per section: one solid `button`, with `button--outline` for the rest.
 - **Do** mirror every English change in `content/es` and `content/pt`.
 - **Do** rebuild after editing (see README.md) and check the page on a phone-width window.
 
