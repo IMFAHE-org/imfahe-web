@@ -39,7 +39,8 @@ const widthSet = [320, 390, 768, 1280];
           .map((heading) => Number(heading.tagName[1]))
           .some((level, index, levels) => index > 0 && level > levels[index - 1] + 1),
         missing: [...document.images].filter((i) => i.complete && !i.naturalWidth).length,
-        filters: [...document.images].filter((i) => getComputedStyle(i).filter !== "none").length,
+        // No picture may carry a CSS filter, except the logos of the Connects map, which are tinted to one ink on purpose.
+        filters: [...document.images].filter((i) => !i.closest(".netmap") && getComputedStyle(i).filter !== "none").length,
         initialBytes: performance.getEntriesByType("resource").reduce((sum, r) => sum + r.encodedBodySize, 0),
       }));
       if (info.overflow || info.headings !== 1 || info.headingJumps || info.missing || info.filters) {

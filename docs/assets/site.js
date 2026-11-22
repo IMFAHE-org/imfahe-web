@@ -40,9 +40,12 @@ document.addEventListener("keydown", (event) => {
   openMenu.querySelector("summary")?.focus();
 });
 
-// Numbers count up once when they scroll into view. Skipped for people who ask their device for less motion.
+// Things that move when they scroll into view. Skipped for people who ask their device for less motion.
+const animate = !matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window;
+
+// Numbers count up once when they scroll into view.
 // shortcut: treats "." and "," as thousands separators, never decimals; revisit if a figure like "1.5" is ever shown.
-if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+if (animate) {
   const counter = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     counter.unobserve(entry.target);
@@ -63,7 +66,7 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
 
 // Sections below the first screen ease in once, the first time they scroll into view.
 // Without this script, or with reduced motion, every section is simply visible.
-if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+if (animate) {
   const rise = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.replace("is-waiting", "is-in");
@@ -79,7 +82,7 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
 // Partner logos appear one after another the first time the wall scrolls into view.
 // Without this script, or with reduced motion, the wall is simply visible.
 const wall = document.querySelector(".logos--cards");
-if (wall && !matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+if (wall && animate) {
   wall.classList.add("is-waiting");
   [...wall.children].forEach((logo, index) => logo.style.setProperty("--i", index));
   new IntersectionObserver((entries, observer) => {
@@ -92,7 +95,7 @@ if (wall && !matchMedia("(prefers-reduced-motion: reduce)").matches && "Intersec
 // Network map: the first time it scrolls into view the world fades in, the lines draw themselves and the logos follow.
 // Without this script, or with reduced motion, the whole map is simply visible.
 document.querySelectorAll(".netmap").forEach((map) => {
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  if (!animate) return;
   for (const group of [".netmap-lines path", ".netmap-dots circle", ".netmap-org"]) map.querySelectorAll(group).forEach((part, index) => part.style.setProperty("--i", index));
   map.classList.add("is-waiting");
   new IntersectionObserver((entries, observer) => {
@@ -102,8 +105,6 @@ document.querySelectorAll(".netmap").forEach((map) => {
   }, { threshold: 0.2 }).observe(map);
 });
 
-// Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
-// It is also skipped on a developer's machine so previews stay out of the reports.
 // Public calls: the day after its deadline a call is marked closed and moves below the open ones.
 // Dates are compared as plain days in the visitor's own time, so a call stays open through its deadline day.
 const today = new Date().toLocaleDateString("sv"); // "sv" formats as YYYY-MM-DD
@@ -117,6 +118,8 @@ document.querySelectorAll(".calls").forEach((list) => {
   });
 });
 
+// Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
+// It is also skipped on a developer's machine so previews stay out of the reports.
 function loadAnalytics() {
   if (window.gtag || /^(localhost|127\.|\[::1\])/.test(location.hostname)) return;
   const tag = document.createElement("script");

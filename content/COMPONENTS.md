@@ -27,7 +27,7 @@ Rules that apply everywhere:
 <div class="wrap hero hero--banner">
 <h1>Title</h1>
 <p class="lead">One-line tagline (optional).</p>
-<figure class="media hero-photo"><img ... 3:1 picture, fetchpriority="high"></figure>   <!-- add hero-photo--natural to show the whole picture uncropped -->
+<figure class="media hero-photo"><img ... 3:1 picture, fetchpriority="high"></figure>
 <div class="prose prose--cols"><p>Intro paragraphs flow in two columns.</p></div>
 </div>
 </section>

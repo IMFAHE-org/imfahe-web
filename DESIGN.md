@@ -138,7 +138,7 @@ Sizes grow smoothly with the screen; nobody sets a size by hand. Secondary text 
 
 - Heading beside intro: a `.section-intro` holding an `h2` and an intro line puts the heading on the left and the intro on the right.
 - Heading beside text: a section that is only an `h2` followed by `.prose` puts the heading in a narrow left column (one third) and the text beside it. The same applies to a `cta--plain` with body text.
-- Centered short calls: a `cta--plain` with no body text, or a `section-layout--center`, is centered with centered text.
+- Centered short calls: a `cta--plain` with no body text is centered with centered text.
 - Two-column page tops: `hero--single` puts the `h1` on the left and everything else on the right. `hero--banner` with a `.lead` puts the title on the left, the tagline and button on the right, and the picture across the full width below. The banner intro text (`prose--cols`) flows in two columns.
 - **The Alternating Sides Rule.** Down a page, section titles swap sides: the page top has its title on the left, the next section on the right, the next on the left, and so on, on every page. With a picture: `split split--media`, plus `split--flip` for title on the right. Without a picture, when the content fits two thirds of the width (a few cards, videos, a 2×2 list): `split split--aside`, plus `split--flip`. When the content needs the full width (team, steps, quotes, tables, timelines, lists): keep it full width and put the title on the right half with `section-intro section-intro--flip` (any summary takes the left half). A closing block without a picture flips with `cta cta--plain cta--flip`; one with a picture with `cta cta--flip`. Not counted: the red and grey bands, the thin strips under a page top (numbers, intro text), and the shared closing blocks ("How to join", "More in …"). Below 960px everything stacks, title first.
 - Team groups: the group name sits in a narrow left column with three people per row beside it.
@@ -173,7 +173,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 
 **Blocks you place in a page:**
 
-- **Program page hero** (`hero hero--banner`): title, optional one-line tagline, 3:1 photo, intro text. Use at the top of a program page. Add `hero-photo--natural` when the picture must show whole (a map).
+- **Program page hero** (`hero hero--banner`): title, optional one-line tagline, 3:1 photo, intro text. Use at the top of a program page.
 - **Plain page top** (`hero hero--single`): title and text with no photo.
 - **Home hero** (`hero`): title, text and the three entry links (`entry-links`) beside the video. Home only.
 - **Section heading with intro** (`section-intro` + `section-summary`): start of most sections.

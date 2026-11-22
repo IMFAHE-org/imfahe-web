@@ -280,7 +280,7 @@ def collage(match):
     photos = "".join(f'<g class="netmap-org"><image href="@site@/assets/images/{n}-480.webp" x="{x}" y="{y}" width="190" height="126" preserveAspectRatio="xMidYMid slice" clip-path="url(#collage-{n})"/></g>' for n, (x, y) in spots)
     lines = '<path pathLength="1" d="M120 126 Q135 205 215 215"/><path pathLength="1" d="M480 126 Q465 205 385 215"/><path pathLength="1" d="M120 334 Q135 255 215 245"/><path pathLength="1" d="M480 334 Q465 255 385 245"/>'
     dots = "".join(f'<circle cx="{x}" cy="{y}" r="4"/>' for x, y in [(120, 126), (480, 126), (120, 334), (480, 334), (215, 215), (385, 215), (215, 245), (385, 245)])
-    return (f'<figure class="media netmap netmap--collage"><svg viewBox="0 0 600 460" role="img" aria-label="{label}"><defs>{clips}</defs>'
+    return (f'<figure class="media netmap netmap--collage"><svg viewBox="0 0 600 460" role="img" aria-label="{escape(label, quote=True)}"><defs>{clips}</defs>'
             '<image class="netmap-world" href="@site@/assets/world-dots.svg" x="0" y="118" width="600" height="223"/>'
             f'<g class="netmap-lines">{lines}</g><g class="netmap-dots">{dots}</g>{photos}'
             '<g class="collage-logo"><rect x="215" y="188" width="170" height="84" rx="14"/><image href="@site@/assets/images/imfahe-logo.png" x="232" y="198" width="136" height="64"/></g></svg></figure>')
@@ -298,7 +298,7 @@ def network_map(lang):
             src = f'@site@/assets/{org["logo"]}'
             flat = " netmap-flat" if org["logo"].startswith("images/") else ""  # a file with a white background, not a transparent one
             plates.append(f'<g class="netmap-org{flat}">{plate}<image href="{src}" x="{x + 1.5:.1f}" y="{y + 1.5:.1f}" width="{w - 3:.1f}" height="{h - 3:.1f}"><title>{name}</title></image></g>')
-            items.append(f'<li{" class=" + chr(34) + "netmap-flat" + chr(34) if flat else ""}><img alt="{name}" loading="lazy" decoding="async" src="{src}" width="{round(org["ratio"] * 40)}" height="40"></li>')
+            items.append(f'<li{" class=" + chr(34) + "netmap-flat" + chr(34) if flat else ""}><img alt="{name}" loading="lazy" decoding="async" src="{src}" width="{round(w / h * 40)}" height="40"></li>')
         else:  # no logo file yet: the name stands in
             size = min(7, (w - 2) / (len(org["name"]) * .56))
             plates.append(f'<g class="netmap-org">{plate}<text x="{tile["x"]:.1f}" y="{tile["y"]:.1f}" font-size="{size:.1f}" text-anchor="middle" dominant-baseline="central">{name}</text></g>')
@@ -408,6 +408,13 @@ def head_links(page, route, lang, origin):
     return "\n".join(lines)
 
 
+def page_content(page, lang):
+    """A page's own fragment, with the tokens that stand for generated blocks filled in."""
+    text = fragment(page, lang).read_text().rstrip()
+    text = text.replace("@calls@", calls_list(lang)).replace("@network@", network_map(lang))
+    return re.sub(r"@collage:([\w,-]+)\|([^@]+)@", collage, text)
+
+
 def render(page, lang, origin):
     route = page["route"]
     depth = (prefix(lang) + route).count("/")
@@ -422,7 +429,7 @@ def render(page, lang, origin):
         js_version=JS_VERSION,
         head_links=head_links(page, route, lang, origin),
         header=header(page, route, lang),
-        content=(text := re.sub(r"@collage:([\w,-]+)\|([^@]+)@", collage, fragment(page, lang).read_text().rstrip().replace("@calls@", calls_list(lang)).replace("@network@", network_map(lang)))) + join_section(page, text, lang) + related(route, lang),
+        content=(text := page_content(page, lang)) + join_section(page, text, lang) + related(route, lang),
         footer=footer(page, route, lang),
         consent=consent(lang),
     )
