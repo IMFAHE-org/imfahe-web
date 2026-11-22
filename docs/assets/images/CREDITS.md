@@ -21,6 +21,10 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `venture-pitch-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/9034249/ |
 | `venture-growth-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/7710143/ |
 | `venture-deal-480.webp` | Venture Building, top picture | https://www.pexels.com/photo/7414111/ |
+| `academy-students-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/6684534/ |
+| `academy-online-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/4261785/ |
+| `academy-professor-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/8197513/ |
+| `academy-certificate-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/8106683/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
 
