@@ -105,6 +105,9 @@ document.querySelectorAll(".netmap").forEach((map) => {
   }, { threshold: 0.2 }).observe(map);
 });
 
+// The copyright year follows the calendar; the year written in the page is the fallback without scripts.
+document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+
 // Public calls: the day after its deadline a call is marked closed and moves below the open ones.
 // Dates are compared as plain days in the visitor's own time, so a call stays open through its deadline day.
 const today = new Date().toLocaleDateString("sv"); // "sv" formats as YYYY-MM-DD

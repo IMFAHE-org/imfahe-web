@@ -364,7 +364,7 @@ def footer(page, route, lang):
         </ul></div></nav>
       </div>
       <div class="footer-legal">
-        <p>Copyright © 2026 {escape(MENU["legalName"])} (<a href="@site@/">imfahe.org</a>). {escape(ui(lang, "rights"))}</p>
+        <p>Copyright © <span data-year>2026</span> {escape(MENU["legalName"])} (<a href="@site@/">imfahe.org</a>). {escape(ui(lang, "rights"))}</p>
         <button class="link-button" type="button" data-consent-open>{escape(ui(lang, "cookieSettings"))}</button>
       </div>
     </div>
