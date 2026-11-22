@@ -25,6 +25,10 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | `academy-online-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/4261785/ |
 | `academy-professor-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/8197513/ |
 | `academy-certificate-480.webp` | Global Academy, top picture | https://www.pexels.com/photo/8106683/ |
+| `workshops-speaker-480.webp` | Workshops, top picture | https://www.pexels.com/photo/1708912/ |
+| `workshops-session-480.webp` | Workshops, top picture | https://www.pexels.com/photo/9301872/ |
+| `workshops-networking-480.webp` | Workshops, top picture | https://www.pexels.com/photo/8761647/ |
+| `workshops-audience-480.webp` | Workshops, top picture | https://www.pexels.com/photo/35064535/ |
 
 Files named `pexels-*` came from the original WordPress site and keep the photographer and photo number in their names.
 
