@@ -52,6 +52,7 @@ Each file is the organization's own logo, taken from Wikimedia Commons, the orga
 | `university-of-alabama-at-birmingham.svg` | University of Alabama at Birmingham (UAB) | https://commons.wikimedia.org/wiki/File:UAB_Core_Logo_Centered_Full_Color.svg | Public domain |
 | `university-of-oxford.svg` | University of Oxford | https://commons.wikimedia.org/wiki/File:University_of_Oxford.svg | Public domain |
 | `university-of-waterloo.svg` | University of Waterloo | https://commons.wikimedia.org/wiki/File:University_of_Waterloo_wordmark.svg | Public domain |
+| `unscripted.webp` | Unscripted | https://unscripted.design/ (cut from the landing picture) | Organization's own website (no free license stated) |
 | `uthealth-houston.svg` | UTHealth Houston | https://en.wikipedia.org/wiki/File:UTHealth_Houston_Logo_2022.svg | Non-free logo (fair use on Wikipedia) |
 
 The partner universities' logos on the map are the files in `../images/` that the partner wall on the home page uses.
