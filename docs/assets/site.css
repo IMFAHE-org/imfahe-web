@@ -95,7 +95,6 @@ address { font-style: normal; }
 /* Sections alternate sides down a page: split--flip shows the picture first without changing the reading order. */
 .split--flip > :first-child { order: 2; }
 .split--flip.split--big-media { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } /* a picture that needs room, such as a screenshot */
-.split:has(> .accordion) { padding-block-start: var(--gap); border-top: 1px solid var(--line-strong); } /* a list of details beside its title starts a new row, set apart by a line */
 .media { width: 100%; }
 .media img { width: 100%; border-radius: var(--radius-lg); }
 .media--contain img { width: auto; max-height: 34rem; margin-inline: auto; border-radius: var(--radius); }
@@ -346,6 +345,8 @@ address { font-style: normal; }
 /* Closing call to action */
 .cta { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 1rem + 3vw, 4rem); align-items: center; }
 .cta > * { min-width: 0; }
+.cta--flip { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
+.cta--flip > .media { order: 2; } /* picture on the right when the section before it has its visual on the left */
 .cta .media img { aspect-ratio: 4 / 5; object-fit: cover; max-height: 32rem; }
 .cta--plain { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: 1.125rem; }
 /* A short closing call with no body text sits centered. */
@@ -571,7 +572,7 @@ address { font-style: normal; }
   .team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
   .calls li { grid-template-columns: 4.5rem minmax(0, 1fr); }
   .calls .actions { grid-column: 1 / -1; justify-content: flex-start; }
-  .split--flip > :first-child { order: 0; }
+  .split--flip > :first-child, .cta--flip > .media { order: 0; }
   .split--flip.split--big-media, .join-list--4 { grid-template-columns: minmax(0, 1fr); }
   .join-list--4 li:nth-child(n+3) { margin-block-start: 0; }
   .tab-panel, .tab-panels { grid-template-columns: minmax(0, 1fr); }

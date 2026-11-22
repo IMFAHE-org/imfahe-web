@@ -159,7 +159,7 @@ Blocks must be in the same order as their tabs, with the same four parts (pictur
 ```html
 <section class="band"><div class="wrap"><h2><a href="...">Call text</a></h2><a class="button" href="...">Label</a></div></section>
 
-<section class="section section--tint"><div class="wrap"><div class="cta">   <!-- cta--plain when there is no picture -->
+<section class="section section--tint"><div class="wrap"><div class="cta">   <!-- cta--plain when there is no picture; cta--flip puts the picture on the right -->
 <figure class="media"><img ...4:5 picture...></figure>
 <div class="stack"><h2>Heading</h2><div class="prose"><p>Text.</p></div>
 <div class="actions"><a class="button" href="...">Main action</a><a class="button button--outline" href="...">Second action</a><a class="link-arrow" href="...">Text link @icon:arrow-right@</a></div></div>

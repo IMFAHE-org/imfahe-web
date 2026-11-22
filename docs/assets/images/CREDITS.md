@@ -5,7 +5,8 @@ Photos from [Pexels](https://www.pexels.com/license/), free to use without attri
 | File | Used on | Source |
 |---|---|---|
 | `mentor-hero-*.webp` | International Mentor Program, top | https://www.pexels.com/photo/6325975/ |
-| `mentor-join-*.webp` | International Mentor Program, closing section | https://www.pexels.com/photo/9572395/ |
+| `mentor-join-*.webp` | International Mentor Program, closing section | https://www.pexels.com/photo/6684501/ |
+| `mentor-mentee-*.webp` | International Mentor Program, "Who Can Participate?" | https://www.pexels.com/photo/8199255/ |
 | `imfahe-mission-*.webp`, `imfahe-share-1200.jpg` | Home, "Our Goal Is Your Success"; link preview image | https://www.pexels.com/photo/8092999/ |
 | `connects-community-*.webp` | IMFAHE Connects, "Why Join" section | https://www.pexels.com/photo/5486096/ |
 | `conferences-hero-*.webp` | International Conferences, top | https://www.pexels.com/photo/4226140/ |
