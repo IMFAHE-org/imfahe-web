@@ -48,9 +48,11 @@ def navigation_items(route):
 
 
 def menu_link(item, route, button=False):
-    current = ' aria-current="page"' if item["path"] == route else ""
+    path = item.get("path")
+    href = item["url"] if "url" in item else "@site@/" + item["path"]
+    current = ' aria-current="page"' if path == route else ""
     style = ' class="button button--outline"' if button else ""
-    return f'<a href="@site@/{escape(item["path"], quote=True)}"{style}{current}>{escape(item["label"])}</a>'
+    return f'<a href="{escape(href, quote=True)}"{style}{current}>{escape(item["label"])}</a>'
 
 
 def header(route):
@@ -102,7 +104,7 @@ def render(page, origin):
         header=header(route),
         content=(CONTENT / f'{page["slug"]}.html').read_text().rstrip(),
         footer=footer(),
-    ).replace("@site@", base)
+    ).replace("@site@", base).replace("@connects-login@", escape(MENU["connects_login_url"], quote=True))
 
 
 def write_sitemap(origin):

@@ -1,4 +1,5 @@
 {
+  "connects_login_url": "https://connects.imfahe.org/index.php?r=user%2Fauth%2Flogin",
   "pages": [
     {
       "label": "Who We Are",
@@ -11,6 +12,10 @@
         {
           "label": "IMFAHE Connects",
           "path": "imfahe-connects-program/"
+        },
+        {
+          "label": "Sign in to IMFAHE Connects",
+          "url": "@connects-login@"
         },
         {
           "label": "International Mentor Program",
