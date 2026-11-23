@@ -126,16 +126,6 @@ summary::-webkit-details-marker { display: none; }
 .hero--single { grid-template-columns: 1fr; }
 .hero .media img { width: 100%; }
 .hero .lead { max-width: 56ch; }
-.centered-copy {
-  width: min(100%, var(--measure));
-  margin-inline: auto;
-  justify-items: center;
-  text-align: center;
-}
-.centered-copy .rule::after { margin-inline: auto; }
-.media--banner img, .media--diagram img { width: 100%; max-height: none; }
-.media--diagram { width: min(100%, 70rem); margin-inline: auto; }
-.diagram-link { display: block; cursor: zoom-in; }
 .hero-title--home { max-width: 33ch; }
 .title-fragment:first-child { color: var(--brand); }
 .grid { width: 100%; display: grid; grid-template-columns: repeat(var(--columns,2), minmax(0,1fr)); gap: var(--gap); align-items: start; }
@@ -241,5 +231,4 @@ summary::-webkit-details-marker { display: none; }
 @media (max-width: 30rem) {
   .grid--4, .grid--5, .grid--6, .footer-inner { grid-template-columns: 1fr; }
   .grid--logos { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .media--banner img { aspect-ratio: 2.25 / 1; object-fit: cover; }
 }
