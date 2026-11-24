@@ -100,6 +100,7 @@
     "skip": [
       "contact",
       "economical-disclosure",
+      "privacy",
       "imfahe-connects-program", "imfahe-shark-tank-program", "imfahe-professors-international-professional-development-program"
     ]
   }

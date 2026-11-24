@@ -367,6 +367,7 @@ def footer(page, route, lang):
           <li><a href="mailto:{email}?subject={support.replace(" ", "%20")}">{support}</a></li>
           <li><a href="@site@/public-calls/">{escape(ui(lang, "calls"))}</a></li>
           <li><a href="@site@/economical-disclosure/">{escape(ui(lang, "financial"))}</a></li>
+          <li><a href="@site@/privacy/">{escape(ui(lang, "privacy"))}</a></li>
         </ul></div></nav>
       </div>
       <div class="footer-legal">
@@ -380,7 +381,7 @@ def footer(page, route, lang):
 def consent(lang):
     """Analytics only loads after the visitor accepts. The choice is kept in the browser."""
     return f'''  <div class="consent" id="consent" role="region" aria-label="{escape(ui(lang, "cookieSettings"), quote=True)}" hidden>
-    <p>{escape(ui(lang, "consentText"))}</p>
+    <p>{escape(ui(lang, "consentText"))} <a href="@site@/privacy/">{escape(ui(lang, "privacy"))}</a></p>
     <div class="actions"><button class="button" type="button" data-consent="yes">{escape(ui(lang, "consentAccept"))}</button><button class="button button--outline" type="button" data-consent="no">{escape(ui(lang, "consentDecline"))}</button></div>
   </div>'''
 
