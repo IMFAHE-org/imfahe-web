@@ -129,7 +129,7 @@ address { font-style: normal; }
 .site-header { position: sticky; top: 0; z-index: 5; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .92); backdrop-filter: saturate(1.6) blur(.75rem); }
 .header-inner { display: flex; align-items: center; gap: clamp(.75rem, 2vw, 1.5rem); min-height: 4.25rem; padding-block: .5rem; }
 .logo { display: inline-flex; align-items: center; min-height: 2.75rem; flex-shrink: 0; margin-inline-end: auto; }
-.logo img { width: auto; height: 2.75rem; mix-blend-mode: multiply; } /* the logo file has a white background */
+.logo img { width: auto; height: 2.75rem; }
 .main-nav { display: flex; align-items: center; gap: clamp(0rem, .7vw, .75rem); }
 .main-nav > a:not(.button), .nav-group > summary, .mobile-nav > summary { display: flex; align-items: center; gap: .25rem; min-height: 2.75rem; white-space: nowrap; padding-inline: .5rem; border-radius: .5rem; color: var(--ink); font-size: .9375rem; font-weight: 600; text-decoration: none; }
 .main-nav > a:not(.button):hover, .nav-group > summary:hover { color: var(--brand-strong); }
@@ -426,6 +426,8 @@ address { font-style: normal; }
 /* Network map: a dotted world, connection lines and one logo per organization. The build draws it from content/network.json. */
 .netmap { width: 100%; margin: 0; }
 .netmap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.netmap-title { margin-block-end: .75rem; color: var(--ink); font-size: var(--title-md); font-weight: 750; letter-spacing: -.01em; }
+.netmap-note { max-width: 96ch; margin: 1rem 0 0; color: var(--muted); font-size: .8125rem; line-height: 1.5; } /* the affiliations disclaimer the organization asked for */
 .netmap-lines path { fill: none; stroke: var(--brand); stroke-width: .55; opacity: .5; }
 .netmap-dots circle { fill: var(--brand); }
 .netmap-plate { fill: var(--white); fill-opacity: .62; } /* see-through, so the map's dots show under each logo */

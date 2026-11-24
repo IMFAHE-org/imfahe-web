@@ -76,7 +76,7 @@ def icons(html):
 def home_logo():
     return (
         '<a href="@site@/" class="logo" aria-label="IMFAHE">'
-        '<img src="@site@/assets/images/imfahe-logo.png" width="325" height="155" alt="IMFAHE">'
+        '<img src="@site@/assets/images/imfahe-logo-380.png" width="380" height="193" alt="IMFAHE">'
         '</a>'
     )
 
@@ -289,7 +289,7 @@ def collage(match):
     return (f'<figure class="media netmap netmap--collage"><svg viewBox="0 0 600 460" role="img" aria-label="{escape(label, quote=True)}"><defs>{clips}</defs>'
             '<image class="netmap-world" href="@site@/assets/world-dots.svg" x="0" y="118" width="600" height="223"/>'
             f'<g class="netmap-lines">{lines}</g><g class="netmap-dots">{dots}</g>{photos}'
-            '<g class="collage-logo"><rect x="215" y="188" width="170" height="84" rx="14"/><image href="@site@/assets/images/imfahe-logo.png" x="232" y="198" width="136" height="64"/></g></svg></figure>')
+            '<g class="collage-logo"><rect x="215" y="188" width="170" height="84" rx="14"/><image href="@site@/assets/images/imfahe-logo-380.png" x="232" y="198" width="136" height="64"/></g></svg></figure>')
 
 
 def network_map(lang):
@@ -310,10 +310,11 @@ def network_map(lang):
             plates.append(f'<g class="netmap-org">{plate}<text x="{tile["x"]:.1f}" y="{tile["y"]:.1f}" font-size="{size:.1f}" text-anchor="middle" dominant-baseline="central">{name}</text></g>')
             items.append(f'<li>{name}</li>')
     return (
-        f'<figure class="netmap"><svg viewBox="0 0 {width} {height}" role="img" aria-label="{escape(ui(lang, "networkMap"), quote=True)}">'
+        f'<figure class="netmap"><figcaption class="netmap-title">{escape(ui(lang, "networkTitle"))}</figcaption>'
+        f'<svg viewBox="0 0 {width} {height}" role="img" aria-label="{escape(ui(lang, "networkMap"), quote=True)}">'
         f'<image class="netmap-world" href="@site@/assets/world-dots.svg" width="{width}" height="{height}"/>'
         f'<g class="netmap-lines">{lines}</g><g class="netmap-dots">{dots}</g>{"".join(plates)}</svg>'
-        f'<ul class="netmap-list">{"".join(items)}</ul></figure>'
+        f'<ul class="netmap-list">{"".join(items)}</ul><p class="netmap-note">{escape(ui(lang, "networkNote"))}</p></figure>'
     )
 
 

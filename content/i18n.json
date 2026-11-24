@@ -3,6 +3,8 @@
     "name": "English",
     "htmlLang": "en",
     "ui": {
+      "networkTitle": "Institutional Affiliations of IMFAHE’s Global Talent Network",
+      "networkNote": "The organizations displayed on this map represent current or former institutional affiliations of members of IMFAHE’s Global Talent Network. Their inclusion is for informational purposes only and does not imply any formal partnership, sponsorship, endorsement or institutional collaboration with IMFAHE. All institutional names, logos and trademarks remain the property of their respective owners.",
       "privacy": "Privacy Notice",
       "connectsLogin": "Log in to IMFAHE Connects",
       "skip": "Skip to content",
@@ -62,6 +64,8 @@
     "name": "Español",
     "htmlLang": "es",
     "ui": {
+      "networkTitle": "Afiliaciones institucionales de la Red Global de Talento de IMFAHE",
+      "networkNote": "Las organizaciones que aparecen en este mapa representan afiliaciones institucionales actuales o pasadas de miembros de la Red Global de Talento de IMFAHE. Su inclusión tiene fines meramente informativos y no implica ninguna asociación formal, patrocinio, respaldo ni colaboración institucional con IMFAHE. Todos los nombres, logotipos y marcas institucionales son propiedad de sus respectivos titulares.",
       "privacy": "Aviso de privacidad",
       "connectsLogin": "Inicia sesión en IMFAHE Connects",
       "skip": "Saltar al contenido",
@@ -203,6 +207,8 @@
     "name": "Português",
     "htmlLang": "pt-PT",
     "ui": {
+      "networkTitle": "Afiliações institucionais da Rede Global de Talento da IMFAHE",
+      "networkNote": "As organizações apresentadas neste mapa representam afiliações institucionais atuais ou anteriores de membros da Rede Global de Talento da IMFAHE. A sua inclusão tem fins meramente informativos e não implica qualquer parceria formal, patrocínio, apoio ou colaboração institucional com a IMFAHE. Todos os nomes, logótipos e marcas institucionais são propriedade dos respetivos titulares.",
       "privacy": "Aviso de privacidade",
       "connectsLogin": "Inicie sessão na IMFAHE Connects",
       "skip": "Saltar para o conteúdo",
