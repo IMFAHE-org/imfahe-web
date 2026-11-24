@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://imfahe.github.io/imfahe-web/sitemap.xml

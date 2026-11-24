@@ -122,9 +122,9 @@ document.querySelectorAll(".calls").forEach((list) => {
 });
 
 // Google Analytics (same property as imfahe.org) loads only after the visitor accepts cookies.
-// It is also skipped on a developer's machine so previews stay out of the reports.
+// It is also skipped on a developer's machine and on a preview hidden from search engines, so tests stay out of the reports.
 function loadAnalytics() {
-  if (window.gtag || /^(localhost|127\.|\[::1\])/.test(location.hostname)) return;
+  if (window.gtag || /^(localhost|127\.|\[::1\])/.test(location.hostname) || document.querySelector('meta[name="robots"][content="noindex"]')) return;
   const tag = document.createElement("script");
   tag.async = true;
   tag.src = "https://www.googletagmanager.com/gtag/js?id=G-8Q9PR9CWSB";

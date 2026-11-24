@@ -17,7 +17,7 @@ jobs:
           persist-credentials: false
       - name: Check generated HTML
         run: |
-          python3 scripts/build.py --origin https://imfahe.github.io/imfahe-web/
+          python3 scripts/build.py --origin https://new.imfahe.org/ --noindex
           git diff --exit-code -- docs
       - name: Install Chromium for verification
         run: |

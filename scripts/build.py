@@ -25,6 +25,7 @@ LANGS = list(I18N)  # first language is the default and lives at the site root
 CSS_VERSION = sha256((SITE / "assets/site.css").read_bytes()).hexdigest()[:10]
 JS_VERSION = sha256((SITE / "assets/site.js").read_bytes()).hexdigest()[:10]
 ICON_TOKEN = re.compile(r"@(icon|brand):([a-z0-9-]+)@")
+NOINDEX = False  # set by --noindex: a preview address that search engines should not list
 
 
 def prefix(lang):
@@ -399,10 +400,11 @@ def new_tab_links(html):
 
 
 def head_links(page, route, lang, origin):
+    hidden = ['  <meta name="robots" content="noindex">'] if NOINDEX else []
     if not origin:
-        return ""
+        return "\n".join(hidden)
     url = escape(origin + prefix(lang) + route, quote=True)
-    lines = [f'  <link rel="canonical" href="{url}">', f'  <meta property="og:url" content="{url}">']
+    lines = hidden + [f'  <link rel="canonical" href="{url}">', f'  <meta property="og:url" content="{url}">']
     for other in LANGS:
         if fragment(page, other).exists():
             lines.append(
@@ -490,7 +492,10 @@ def write_sitemap(origin, routes):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--origin", default="", help="Published URL of the homepage, including the GitHub project path.")
+    parser.add_argument("--noindex", action="store_true", help="Ask search engines not to list the site, for a preview address.")
     args = parser.parse_args()
+    global NOINDEX
+    NOINDEX = args.noindex
     origin = args.origin.rstrip("/") + "/" if args.origin else ""
     if origin:
         url = urlsplit(origin)
@@ -505,7 +510,7 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(render(page, lang, origin))
             routes.append(prefix(lang) + page["route"])
-    write_sitemap(origin, routes)
+    write_sitemap("" if NOINDEX else origin, routes)  # a hidden preview offers no sitemap
     (SITE / "404.html").write_text(not_found(origin))
     print(f"Built {len(routes)} IMFAHE pages in {len(LANGS)} languages.")
 
