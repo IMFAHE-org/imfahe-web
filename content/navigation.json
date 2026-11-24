@@ -90,7 +90,8 @@
       "url": "https://www.instagram.com/imfahe_org"
     }
   ],
-  "email": "contact@imfahe.org",
+  "connects": "https://connects.imfahe.org/",
+ "email": "contact@imfahe.org",
   "shareImage": "imfahe-share-1200.jpg",
   "legalName": "International Mentoring Foundation for the Advancement of Higher Education",
   "join": {

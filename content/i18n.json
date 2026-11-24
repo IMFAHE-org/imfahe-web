@@ -3,6 +3,7 @@
     "name": "English",
     "htmlLang": "en",
     "ui": {
+      "connectsLogin": "Log in to IMFAHE Connects",
       "skip": "Skip to content",
       "menu": "Menu",
       "mainNavigation": "Main navigation",
@@ -60,6 +61,7 @@
     "name": "Español",
     "htmlLang": "es",
     "ui": {
+      "connectsLogin": "Inicia sesión en IMFAHE Connects",
       "skip": "Saltar al contenido",
       "menu": "Menú",
       "mainNavigation": "Navegación principal",
@@ -198,6 +200,7 @@
     "name": "Português",
     "htmlLang": "pt-PT",
     "ui": {
+      "connectsLogin": "Inicie sessão na IMFAHE Connects",
       "skip": "Saltar para o conteúdo",
       "menu": "Menu",
       "mainNavigation": "Navegação principal",

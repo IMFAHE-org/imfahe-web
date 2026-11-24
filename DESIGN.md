@@ -143,7 +143,7 @@ Sizes grow smoothly with the screen; nobody sets a size by hand. Secondary text 
 - **The Alternating Sides Rule.** Down a page, section titles swap sides: the page top has its title on the left, the next section on the right, the next on the left, and so on, on every page. With a picture: `split split--media`, plus `split--flip` for title on the right. Without a picture, when the content fits two thirds of the width (a few cards, videos, a 2×2 list): `split split--aside`, plus `split--flip`. When the content needs the full width (team, steps, quotes, tables, timelines, lists): keep it full width and put the title on the right half with `section-intro section-intro--flip` (any summary takes the left half). A closing block without a picture flips with `cta cta--plain cta--flip`; one with a picture with `cta cta--flip`. Not counted: the red and grey bands, the thin strips under a page top (numbers, intro text), and the shared closing blocks ("How to join", "More in …"). Below 960px everything stacks, title first.
 - Team groups: the group name sits in a narrow left column with three people per row beside it.
 
-**Small screens.** Below 960px the menu becomes a single "Menu" button that opens a full-width panel. At 1024px and below the footer blocks stack; the three home pillars stack, each with its picture beside its text; three-column benefits become two; an event moves its date above the text.
+**Small screens.** Below 1168px the menu becomes a single "Menu" button that opens a full-width panel. At 1024px and below the footer blocks stack; the three home pillars stack, each with its picture beside its text; three-column benefits become two; an event moves its date above the text.
 
 **Phones (720px and below).** Everything becomes one column: hero, `.split`, `.cta`, pillars, benefits, events, the footer lists. Steps stack vertically with the dashed line running down between the numbers. Partner logos go two per row. The banner picture changes from 3:1 to 2:1, the closing picture from 4:5 to 3:2, and the logo gets slightly smaller.
 
@@ -164,7 +164,7 @@ Markup for every block is in [content/COMPONENTS.md](content/COMPONENTS.md). Cop
 
 **Added by the build on every page (do not write these in a page):**
 
-- Header: logo, menu with drop-downs (program names only; they open on hover or click), the red "contact" button (an outline on the Contact page) and one small language menu. Sticks to the top.
+- Header: logo, menu with drop-downs (program names only; they open on hover or click), the red "contact" button (an outline on the Contact page) and one small language menu. Sticks to the top. Beside Contact sits an outline "Connects" button that opens the members' platform (its address is `connects` in navigation.json).
 - Footer: logo, one-line description and social links beside four link columns (the three pillars plus "IMFAHE"), then one thin legal line with the copyright and "Cookie settings".
 - Closing call: every page ends with one. A page keeps its own (`cta`, or a red `band` as its last section); otherwise the build adds the shared "How to join IMFAHE" section on the rose background. Contact and Financial Disclosure have none.
 - Rows of actions: at most two button styles in a row. Text links with an arrow stay inside cards and list items.

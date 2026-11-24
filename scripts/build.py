@@ -102,6 +102,11 @@ def navigation_items(route, lang):
                 f'<ul>{links}</ul></details>'
             )
         else:
+            if item["path"] == "contact/":  # the members' platform sits beside Contact: the header's two actions
+                items.append(
+                    f'<a class="button button--outline" href="{escape(MENU["connects"], quote=True)}" aria-label="{escape(ui(lang, "connectsLogin"), quote=True)}">'
+                    '@icon:log-in@ Connects</a>'
+                )
             items.append(menu_link(item, route, lang, item["path"] == "contact/"))
     return "\n      ".join(items)
 

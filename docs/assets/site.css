@@ -578,6 +578,10 @@ address { font-style: normal; }
 @media (max-width: 60rem) {
   .split--aside, .split--aside.split--flip { grid-template-columns: minmax(0, 1fr); }
   .split--aside.split--flip > :first-child { order: 0; }
+}
+
+/* The bar needs about 1150px in its longest language (Spanish), so below that it becomes the Menu button. */
+@media (max-width: 73rem) {
   .main-nav { display: none; }
   .mobile-nav { display: block; }
   .mobile-nav > summary { padding-inline: .875rem; border: 1px solid var(--line); border-radius: 62rem; }
