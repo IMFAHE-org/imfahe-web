@@ -221,7 +221,7 @@ def network_parts():
         lon, lat = point
         return ((lon + 360 if lon < m["lon"][0] else lon) - m["lon"][0]) * k, (m["lat"][0] - lat) * k
 
-    area, gap, tiles = 1050, 1.5, []
+    area, gap, tiles = 760, 1.5, []
     for index, org in enumerate(NETWORK["orgs"]):
         x, y = xy(org["at"])
         ratio = min(4.2, max(1.15, org.get("ratio") or len(org["name"]) * .33))
