@@ -340,13 +340,13 @@
    "ratio": 3.79
   },
   {
-   "name": "Be The Match",
+   "name": "NMDP",
    "at": [
     -93.3,
     45
    ],
-   "logo": "logos/be-the-match.webp",
-   "ratio": 6.18
+   "logo": "logos/nmdp.webp",
+   "ratio": 3.25
   },
   {
    "name": "University of Alabama at Birmingham",
@@ -698,6 +698,393 @@
    ],
    "logo": "logos/la-trobe-university.svg",
    "ratio": 3.5
+  },
+  {
+   "name": "RWTH Aachen University",
+   "at": [
+    6.08,
+    50.78
+   ],
+   "logo": "logos/rwth-aachen-university.svg",
+   "ratio": 3.69
+  },
+  {
+   "name": "University of Basel",
+   "at": [
+    7.58,
+    47.56
+   ],
+   "logo": "logos/university-of-basel.svg",
+   "ratio": 3.01
+  },
+  {
+   "name": "University of Glasgow",
+   "at": [
+    -4.29,
+    55.87
+   ],
+   "logo": "logos/university-of-glasgow.svg",
+   "ratio": 3.21
+  },
+  {
+   "name": "Sobi",
+   "at": [
+    7.6,
+    47.55
+   ],
+   "logo": "logos/sobi.webp",
+   "ratio": 3.64
+  },
+  {
+   "name": "Istituto Superiore di Sanità",
+   "at": [
+    12.5,
+    41.9
+   ],
+   "logo": "logos/istituto-superiore-di-sanita.webp",
+   "ratio": 1.01
+  },
+  {
+   "name": "Lancaster University",
+   "at": [
+    -2.79,
+    54.01
+   ],
+   "logo": "logos/lancaster-university.webp",
+   "ratio": 3.17
+  },
+  {
+   "name": "Pulmotree Medical",
+   "at": [
+    11.58,
+    48.14
+   ],
+   "logo": "logos/pulmotree-medical.webp",
+   "ratio": 3.85
+  },
+  {
+   "name": "Amgen",
+   "at": [
+    -1.26,
+    51.75
+   ],
+   "logo": "logos/amgen.svg",
+   "ratio": 3.91
+  },
+  {
+   "name": "HHMI Janelia Research Campus",
+   "at": [
+    -77.49,
+    39.07
+   ],
+   "logo": "logos/hhmi-janelia-research-campus.webp",
+   "ratio": 3.16
+  },
+  {
+   "name": "Cellbricks",
+   "at": [
+    13.4,
+    52.52
+   ],
+   "logo": "logos/cellbricks.webp",
+   "ratio": 3.82
+  },
+  {
+   "name": "TU Delft",
+   "at": [
+    4.37,
+    52.0
+   ],
+   "logo": "logos/tu-delft.svg",
+   "ratio": 2.55
+  },
+  {
+   "name": "University of Antwerp",
+   "at": [
+    4.41,
+    51.22
+   ],
+   "logo": "logos/university-of-antwerp.webp",
+   "ratio": 3.51
+  },
+  {
+   "name": "Northeastern University",
+   "at": [
+    -71.09,
+    42.34
+   ],
+   "logo": "logos/northeastern-university.svg",
+   "ratio": 3.13
+  },
+  {
+   "name": "Department of Public Expenditure and Reform",
+   "at": [
+    -6.26,
+    53.34
+   ],
+   "logo": "logos/department-of-public-expenditure-and-reform.webp",
+   "ratio": 5.31
+  },
+  {
+   "name": "Texas Tech University",
+   "at": [
+    -101.88,
+    33.58
+   ],
+   "logo": "logos/texas-tech-university.svg",
+   "ratio": 3.86
+  },
+  {
+   "name": "Carnegie Mellon University",
+   "at": [
+    -79.94,
+    40.44
+   ],
+   "logo": "logos/carnegie-mellon-university.svg",
+   "ratio": 5.71
+  },
+  {
+   "name": "University of Lausanne",
+   "at": [
+    6.58,
+    46.52
+   ],
+   "logo": "logos/university-of-lausanne.svg",
+   "ratio": 2.83
+  },
+  {
+   "name": "Hovione",
+   "at": [
+    -9.17,
+    38.83
+   ],
+   "logo": "logos/hovione.svg",
+   "ratio": 4.58
+  },
+  {
+   "name": "Universidad Mayor",
+   "at": [
+    -70.65,
+    -33.45
+   ],
+   "logo": "logos/universidad-mayor.webp",
+   "ratio": 6.04
+  },
+  {
+   "name": "Insud Pharma",
+   "at": [
+    -3.7,
+    40.42
+   ],
+   "logo": "logos/insud-pharma.webp",
+   "ratio": 3.02
+  },
+  {
+   "name": "Columbia College Chicago",
+   "at": [
+    -87.62,
+    41.87
+   ],
+   "logo": "logos/columbia-college-chicago.webp",
+   "ratio": 3.94
+  },
+  {
+   "name": "Micron Technology",
+   "at": [
+    120.68,
+    24.15
+   ],
+   "logo": "logos/micron-technology.svg",
+   "ratio": 4.67
+  },
+  {
+   "name": "University of Graz",
+   "at": [
+    15.45,
+    47.08
+   ],
+   "logo": "logos/university-of-graz.webp",
+   "ratio": 1.93
+  },
+  {
+   "name": "University of Warwick",
+   "at": [
+    -1.56,
+    52.38
+   ],
+   "logo": "logos/university-of-warwick.svg",
+   "ratio": 3.74
+  },
+  {
+   "name": "Sanofi",
+   "at": [
+    2.35,
+    48.86
+   ],
+   "logo": "logos/sanofi.svg",
+   "ratio": 3.76
+  },
+  {
+   "name": "University College London",
+   "at": [
+    -0.13,
+    51.52
+   ],
+   "logo": "logos/university-college-london.svg",
+   "ratio": 3.57
+  },
+  {
+   "name": "University of Melbourne",
+   "at": [
+    144.96,
+    -37.8
+   ],
+   "logo": "logos/university-of-melbourne.webp",
+   "ratio": 1.0
+  },
+  {
+   "name": "University of Montpellier",
+   "at": [
+    3.87,
+    43.63
+   ],
+   "logo": "logos/university-of-montpellier.webp",
+   "ratio": 2.74
+  },
+  {
+   "name": "BBVA",
+   "at": [
+    -3.69,
+    40.5
+   ],
+   "logo": "logos/bbva.svg",
+   "ratio": 3.34
+  },
+  {
+   "name": "The Last Puzzle Piece",
+   "at": [
+    -0.12,
+    51.5
+   ],
+   "logo": "logos/the-last-puzzle-piece.webp",
+   "ratio": 4.55
+  },
+  {
+   "name": "Ghent University",
+   "at": [
+    3.72,
+    51.05
+   ],
+   "logo": "logos/ghent-university.svg",
+   "ratio": 1.25
+  },
+  {
+   "name": "Nagoya University",
+   "at": [
+    136.97,
+    35.15
+   ],
+   "logo": "logos/nagoya-university.svg",
+   "ratio": 4.7
+  },
+  {
+   "name": "Universidad Católica del Uruguay",
+   "at": [
+    -56.16,
+    -34.89
+   ],
+   "logo": "logos/universidad-catolica-del-uruguay.webp",
+   "ratio": 4.35
+  },
+  {
+   "name": "University of Duisburg-Essen",
+   "at": [
+    6.76,
+    51.43
+   ],
+   "logo": "logos/university-of-duisburg-essen.webp",
+   "ratio": 2.74
+  },
+  {
+   "name": "Macquarie University",
+   "at": [
+    151.11,
+    -33.77
+   ],
+   "logo": "logos/macquarie-university.svg",
+   "ratio": 3.35
+  },
+  {
+   "name": "KnowBe4",
+   "at": [
+    5.12,
+    52.09
+   ],
+   "logo": "logos/knowbe4.svg",
+   "ratio": 5.32
+  },
+  {
+   "name": "University of Southern Denmark",
+   "at": [
+    10.43,
+    55.37
+   ],
+   "logo": "logos/university-of-southern-denmark.svg",
+   "ratio": 3.77
+  },
+  {
+   "name": "Universidad Nacional de Cuyo",
+   "at": [
+    -68.86,
+    -32.88
+   ],
+   "logo": "logos/universidad-nacional-de-cuyo.webp",
+   "ratio": 4.33
+  },
+  {
+   "name": "Halliburton",
+   "at": [
+    -68.1,
+    -38.95
+   ],
+   "logo": "logos/halliburton.svg",
+   "ratio": 13.67
+  },
+  {
+   "name": "Society of Petroleum Engineers",
+   "at": [
+    -68.5,
+    -31.5
+   ],
+   "logo": "logos/society-of-petroleum-engineers.webp",
+   "ratio": 1.93
+  },
+  {
+   "name": "SINTEF",
+   "at": [
+    10.4,
+    63.44
+   ],
+   "logo": "logos/sintef.svg",
+   "ratio": 4.85
+  },
+  {
+   "name": "Universidad Europea",
+   "at": [
+    -3.92,
+    40.37
+   ],
+   "logo": "logos/universidad-europea.webp",
+   "ratio": 4.21
+  },
+  {
+   "name": "Richi Foundation",
+   "at": [
+    -71.06,
+    42.36
+   ],
+   "logo": "logos/richi-foundation.webp",
+   "ratio": 2.67
   }
  ]
 }
