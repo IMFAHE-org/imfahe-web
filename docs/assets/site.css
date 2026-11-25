@@ -427,7 +427,7 @@ address { font-style: normal; }
 .netmap { width: 100%; margin: 0; }
 .netmap svg { display: block; width: 100%; height: auto; overflow: visible; }
 .netmap-title { margin-block-end: .75rem; color: var(--ink); font-size: var(--title-md); font-weight: 750; letter-spacing: -.01em; }
-.netmap-note { max-width: none; margin: 1rem 0 0; text-wrap: pretty; color: var(--muted); font-size: .8125rem; line-height: 1.5; } /* the affiliations disclaimer the organization asked for */
+.netmap-note { max-width: none; margin: 1rem 0 0; text-wrap: pretty; color: var(--muted); font-size: .75rem; line-height: 1.5; } /* the affiliations disclaimer the organization asked for */
 .netmap-lines path { fill: none; stroke: var(--brand); stroke-width: .55; opacity: .5; }
 .netmap-dots circle { fill: var(--brand); }
 .netmap-plate { fill: var(--white); fill-opacity: .62; } /* see-through, so the map's dots show under each logo */
