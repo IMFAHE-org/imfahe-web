@@ -48,13 +48,8 @@
     },
     {
       "label": "Global Education",
-      "path": "imfahe-professors-international-professional-development-program/",
+      "path": "imfahe-international-quarter-courses/",
       "children": [
-        {
-          "label": "Professors' Professional Development (iPDP)",
-          "path": "imfahe-professors-international-professional-development-program/",
-          "tagline": "Stand out as a researcher and educator."
-        },
         {
           "label": "IMFAHE Global Academy",
           "path": "imfahe-international-quarter-courses/",
@@ -101,7 +96,10 @@
       "contact",
       "economical-disclosure",
       "privacy",
-      "imfahe-connects-program", "imfahe-shark-tank-program", "imfahe-professors-international-professional-development-program"
+      "imfahe-connects-program", "imfahe-shark-tank-program"
     ]
+  },
+  "redirects": {
+    "imfahe-professors-international-professional-development-program/": "imfahe-international-quarter-courses/"
   }
 }
