@@ -512,6 +512,18 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(render(page, lang, origin))
             routes.append(prefix(lang) + page["route"])
+        # A page that was folded into another keeps its old address: links and search results land on the new page.
+        for old, new in MENU.get("redirects", {}).items():
+            page = next(item for item in PAGES if item["route"] == new)
+            target = SITE / prefix(lang) / old / "index.html"
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(
+                f'<!doctype html>\n<html lang="{escape(I18N[lang]["htmlLang"], quote=True)}">\n<meta charset="utf-8">\n'
+                f'<title>{escape(meta(page, lang, "title"))}</title>\n<meta name="robots" content="noindex">\n'
+                + (f'<link rel="canonical" href="{origin}{prefix(lang)}{new}">\n' if origin else "")
+                + f'<meta http-equiv="refresh" content="0; url=../{new}">\n'
+                f'<a href="../{new}">{escape(meta(page, lang, "title"))}</a>\n</html>\n'
+            )
     write_sitemap("" if NOINDEX else origin, routes)  # a hidden preview offers no sitemap
     (SITE / "404.html").write_text(not_found(origin))
     print(f"Built {len(routes)} IMFAHE pages in {len(LANGS)} languages.")

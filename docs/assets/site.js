@@ -21,8 +21,13 @@ if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
     let closing;
     menu.addEventListener("mouseenter", () => { clearTimeout(closing); menu.open = true; });
     menu.addEventListener("mouseleave", () => { closing = setTimeout(() => { menu.open = false; }, 180); });
-    // A mouse click on a label that hover already opened should not close it again (keyboard Enter still toggles).
-    menu.querySelector("summary").addEventListener("click", (event) => { if (menu.open && event.detail > 0) event.preventDefault(); });
+    // Hover has already opened the list, so a mouse click on its label goes to the first page in it, as on the
+    // old site, instead of closing the list again. The language menu just stays open. Keyboard Enter still toggles.
+    menu.querySelector("summary").addEventListener("click", (event) => {
+      if (!menu.open || !event.detail) return;
+      event.preventDefault();
+      if (!menu.classList.contains("lang-menu")) menu.querySelector("a")?.click();
+    });
   });
 }
 
