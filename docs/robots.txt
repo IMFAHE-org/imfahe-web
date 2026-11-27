@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://www.imfahe.org/sitemap.xml

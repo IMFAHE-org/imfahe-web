@@ -19,11 +19,11 @@ English lives in `content/` and is served from the site root. Spanish and Portug
 After editing, rebuild and preview with Python 3.10 or newer (the error page, `404.html`, only shows its styles on the published site because its links are absolute):
 
 ```sh
-python3 scripts/build.py --origin https://new.imfahe.org/ --noindex
+python3 scripts/build.py --origin https://www.imfahe.org/
 python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 ```
 
-The site is published by GitHub Pages from the `docs` folder of `main`, at the address in `docs/CNAME`. While it is a preview at `new.imfahe.org`, `--noindex` asks search engines not to list it and keeps analytics off. When it moves to its final address: change `docs/CNAME`, change `--origin` here and in `.github/workflows/check-site.yml`, drop `--noindex`, and rebuild.
+The site is published by GitHub Pages from the `docs` folder of `main`, at the address in `docs/CNAME`. For a preview at another address, change `docs/CNAME` and `--origin` (here and in `.github/workflows/check-site.yml`) and add `--noindex`, which asks search engines not to list it, leaves out the sitemap and keeps analytics off.
 
 Preview at http://127.0.0.1:8080/. Commit the edited source and the regenerated files under `docs` together. A merge to `main` publishes the updated site. Python is used only to assemble common HTML and does not run on the server.
 
